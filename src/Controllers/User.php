@@ -28,18 +28,18 @@ class User{
 			$newUser->admin = $admin;
 			$newUser->save();			
      }
-     //Nueva nota (1 BD para cada usuario)
-     $newNotes = new MNotita;
+     //obtener el id del usuario
+     //Buscar: hacer una consulta sql para apartir de una colummna obtener el id
+     $dato = MNuser::get();
+     $dato2 = $req->post->id;
+     print_r($dato);  
+     print_r($dato2);
      
-     //cargar la cuenta de solo usuario
-     //Ordenar de forma decendente
-			$value = 'id';
-      $order = 'DESC';
-		  MNotita::orderBy($value, $order);
-     $contenido = MNotita::get();
-     View::render("index",['notitas' => $contenido]);
-     
-     
+     //$dato3 = MNuser::getVars();
+     //print_r($dato3);
+     $id = "id";
+     $dato4 = MNuser::search($id);
+     print_r($dato4);
   }
   
   
