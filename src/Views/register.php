@@ -10,7 +10,7 @@
       <label for="password">contraseña:</label><br>
       <input type="password" name="password" value=""><br><br>
       
-      <input id="center" type="checkbox" name="admin">Admin
+      <!--<input id="center" type="checkbox" name="admin">Admin -->
       
       <input type="submit" value="Save">
     </form>
