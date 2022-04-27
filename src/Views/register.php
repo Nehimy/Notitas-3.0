@@ -7,7 +7,7 @@
       </p>Registro<p>
       <label for="name">Nombre:</label><br>
       <input type="text" name="name" value=""><br>
-      <label for="name">Correo:</label><br>
+      <label for="name">Correo:</label><br>       
       <input type="email" name="mail" value=""><br>
       <label for="password">contraseña:</label><br>
       <input type="password" name="password" value=""><br><br>

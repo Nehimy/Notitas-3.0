@@ -31,7 +31,18 @@ class User{
 			$newUser->admin = $admin;
 			$newUser->save();			
      }
-     echo $newUser->nick;
+      //id del usuario
+      echo "Usuario ya registrado, proceda a logearse por favor.";
+      ?>
+      <html>
+        <header>
+        </header>
+        </body>
+          <input class="boton" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save"
+        </body>
+     
+      </html>  
+      <?php
   }
   
   
