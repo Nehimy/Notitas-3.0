@@ -1,6 +1,6 @@
 <?php
 define('dbhost', 'localhost');
-define('dbname', 'PostIt');
+define('dbname', 'YourNotes');
 define('dbuser', 'root');
 define('dbpass', '123');
 
