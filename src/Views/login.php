@@ -3,7 +3,7 @@
   </header>
   <body>
     Esto es el Login
-    por favor incie sesión
+    por favor inicie sesión
     
       <form method="POST">
       </p>Registro<p>

@@ -38,19 +38,21 @@ class User{
         </header>
         </body>
           Usuario ya registrado, proceda a logearse por favor.
-          <a href="<?=SITE_URL?>login">Save</a>
+          <a href="<?=SITE_URL?>login">Iniciar sesión</a>
         </body>
      
       </html>  
       <?php
   }
   
-    // Método
+    // Método: 
   public static function UserLogin(){
     View::render('login');
   }
   
-  
+    public static function Login(){
+    //preguntar si este usuario ya esta en lista
+  }
   
   
   
