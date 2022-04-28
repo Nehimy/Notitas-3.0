@@ -14,7 +14,7 @@ Router::post("/note/{id}/update", "Controllers\Notita::update");
 /******************************User***********************************/
 
 Router::get("/register", "Controllers\User::UserRegister");
-Router::post("/register", "Controllers\User::addUser"); //nuevo user
-
+Router::post("/register", "Controllers\User::AddUser"); //nuevo user
+Router::get("/login", "Controllers\User::UserLogin");
 
 

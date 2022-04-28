@@ -9,13 +9,13 @@ use Libs\Router;
 
 class User{
   
-  // Método que carge o lleve a login.php
+  // Método que carge registro
   public static function UserRegister(){
-    View::render('register');
+    View::render('register'); 
   }
   
   // Método que guarde el usuario
-  public static function addUser($req){
+  public static function AddUser($req){
     $newUser = new MNuser;
     
     $nick = $req->post->name;
@@ -31,23 +31,24 @@ class User{
 			$newUser->admin = $admin;
 			$newUser->save();			
      }
-      //id del usuario
-      echo "Usuario ya registrado, proceda a logearse por favor.";
+
       ?>
       <html>
         <header>
         </header>
         </body>
-          <input class="boton" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save"
+          Usuario ya registrado, proceda a logearse por favor.
+          <a href="<?=SITE_URL?>login">Save</a>
         </body>
      
       </html>  
       <?php
   }
   
-  
-  
-  
+    // Método
+  public static function UserLogin(){
+    View::render('login');
+  }
   
   
   
