@@ -3,7 +3,7 @@
 namespace Controllers;
 
 use Libs\View;
-use Models\User as MNuser;
+use Models\User as MUser;
 use Models\Notita as MNotita;
 use Libs\Router;
 
@@ -16,7 +16,7 @@ class User{
   
   // Método que guarde el usuario
   public static function AddUser($req){
-    $newUser = new MNuser;
+    $newUser = new MUser;
     
     $nick = $req->post->name;
     $mail = $req->post->mail;
@@ -25,6 +25,13 @@ class User{
     $admin = 0;
     
     if(isset($nick) & isset($password)){
+    
+       $user = MUser::where("nick", "$nick")
+                      ->getFirst();
+      
+      if (isset($user))
+        exit("El nick \"$nick\" ya está en uso.");
+    
 			$newUser->nick = $nick;
 			$newUser->mail = $mail;
 			$newUser->password = $password;
@@ -50,8 +57,23 @@ class User{
     View::render('login');
   }
   
-    public static function Login(){
+  public static function Login($req){
     //preguntar si este usuario ya esta en lista
+    $nick = $req->post->name;
+    $password = $req->post->password;
+      
+   //obtener tabla users
+    $result = MUser::select(["id","nick", "password"])
+                    ->where("nick", "$nick")
+                    ->and("password", "$password")
+                    ->getFirst();
+    
+    if(is_null($result)){
+      echo "Datos incorrectos";
+    }else{
+      echo "Eres el Llexy de Verdad :D";
+    }
+          
   }
   
   

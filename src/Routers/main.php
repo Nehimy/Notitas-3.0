@@ -17,7 +17,7 @@ Router::get("/register", "Controllers\User::UserRegister");
 Router::post("/register", "Controllers\User::AddUser"); //nuevo user
 
 Router::get("/login", "Controllers\User::UserLogin");
-Router::get("/login", "Controllers\User::Login");//confirmar logueo
+Router::post("/login", "Controllers\User::Login");//confirmar logueo
 
 
 

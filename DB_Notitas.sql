@@ -9,8 +9,8 @@ CREATE TABLE notitas (
 
 CREATE TABLE users (
   id int primary key auto_increment,
-  nick varchar(80),
-  mail varchar(80),
+  nick varchar(80) unique,
+  mail varchar(80) unique,
   password varchar(255),
   admin bool
 );
