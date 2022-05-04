@@ -21,6 +21,8 @@ class User{
     $nick = $req->post->name;
     $mail = $req->post->mail;
     $password = $req->post->password;
+    //Encriptando contraseña
+    $password = password_hash($password, PASSWORD_DEFAULT);
     //$admin = isset($req->post->admin) ? 1:0;
     $admin = 0;
     
@@ -61,24 +63,18 @@ class User{
     //preguntar si este usuario ya esta en lista
     $nick = $req->post->name;
     $password = $req->post->password;
-      
-   //obtener tabla users
-    $result = MUser::select(["id","nick", "password"])
-                    ->where("nick", "$nick")
-                    ->and("password", "$password")
-                    ->getFirst();
-    
-    if(is_null($result)){
+
+    //obtener tabla users
+    $result = MUser::select(["password"])
+                     ->where("nick", "$nick")
+                     ->getFirst();       
+                           
+    if(password_verify($password, $result->password))
+      echo "Logueado correctamente";
+    else
       View::render('login', ['error'=> 'Datos incorrectos']);
-    }else{
-      echo "Eres el Llexy de Verdad :D";
-    }
-          
+               
   }
-  
-  
-  
-  
   
   
 }
