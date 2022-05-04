@@ -2,11 +2,11 @@
   <header>
   </header>
   <body>
-    Esto es el Login
-    por favor inicie sesión
-    
-      <form method="POST">
-      </p>Registro<p>
+    <form method="POST">
+      </p>Inicio de sesión<p>
+      <?php if (isset($view->error)): ?>
+      <div class="error-tip"><?=$view->error?></div>
+      <?php endif; ?>
       <label for="name">Nombre:</label><br>
       <input type="text" name="name" value=""><br>
       <label for="password">contraseña:</label><br>

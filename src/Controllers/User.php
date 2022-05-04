@@ -69,7 +69,7 @@ class User{
                     ->getFirst();
     
     if(is_null($result)){
-      echo "Datos incorrectos";
+      View::render('login', ['error'=> 'Datos incorrectos']);
     }else{
       echo "Eres el Llexy de Verdad :D";
     }
