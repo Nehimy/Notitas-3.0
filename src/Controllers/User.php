@@ -69,16 +69,15 @@ class User{
                      ->where("nick", "$nick")
                      ->getFirst();       
                            
-    if(password_verify($password, $result->password))
+    if(password_verify($password, $result->password)){
       echo "Logueado correctamente";
       //Crear una cookie (token o llave identificativa)
       setcookie("Ney", 'time login', time()+(24*60*60*31),true);
       //Vamos al panel del usuario
       
-    else
-      View::render('login', ['error'=> 'Datos incorrectos']);
-               
+    }else{
+      View::render('login', ['error'=> 'Datos incorrectos']);           
+    }
   }
-  
   
 }
