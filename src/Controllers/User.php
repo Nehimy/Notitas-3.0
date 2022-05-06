@@ -65,16 +65,27 @@ class User{
     $password = $req->post->password;
 
     //obtener tabla users
-    $result = MUser::select(["password"])
+    $result = MUser::select(["password,id"])
                      ->where("nick", "$nick")
                      ->getFirst();       
                            
     if(password_verify($password, $result->password)){
-      echo "Logueado correctamente";
+      echo "Logueado correctamente <br>";
       //Crear una cookie (token o llave identificativa)
       setcookie("Ney", 'time login', time()+(24*60*60*31),true);
-      //Vamos al panel del usuario
       
+      //Vamos al panel del usuario
+      $MyId = $result->id; //id del usuario
+      $TheNote = new MNotita;
+      $TheNote = MNotita::select(['user_id'])
+                        ->where('user_id',"$MyId")
+                        ->getFirst();
+      if($TheNote){
+        //Cagar todo lo que tenga
+      }else{
+        //Carga el panel vacio el usuario
+        echo "Nuevo usuario contenido vacio";
+      }
     }else{
       View::render('login', ['error'=> 'Datos incorrectos']);           
     }

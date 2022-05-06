@@ -36,7 +36,7 @@ class Notita {
 		public static function view($req){
 			$id = $req->params->id;
 			$notita = MNotita::getById($id);
-			
+
 			//carga la pagina
 			View::render("view", ['notita'=> $notita]);
 		}
