@@ -12,5 +12,7 @@ CREATE TABLE users (
   nick varchar(80) unique,
   mail varchar(80) unique,
   password varchar(255),
+  token varchar(255),
   admin bool
+  
 );

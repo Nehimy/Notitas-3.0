@@ -9,4 +9,14 @@ class User extends ModelMySQL{
   public $mail;
   public $password;
   public $admin;
+  public $token;
+  
+  public function createCookie() {
+    $token = md5($this->id.'-'.time().PRIVATE_KEY);
+
+    $this->token = $token;
+    $this->save();
+    
+    setcookie("notita", $token, time()+(24*60*60*31),true);
+  }
 }
