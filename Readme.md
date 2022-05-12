@@ -4,4 +4,5 @@ Cookies
 - Llave unica
 - Debe poder relacionarse con el usuario
 - sha256 o cambiar la base de datos
+- aes
 

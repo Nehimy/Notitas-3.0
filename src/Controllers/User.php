@@ -54,25 +54,29 @@ class User{
       <?php
   }
   
-    // Método: 
+    //Método: 
   public static function UserLogin(){
     View::render('login');
   }
   
   public static function Login($req){
-    //preguntar si este usuario ya esta en lista
+    
     $nick = $req->post->name;
     $password = $req->post->password;
 
-    //obtener tabla users
+    //Otener el users
     $user = MUser::select(["password,id"])
                      ->where("nick", "$nick")
                      ->getFirst();       
-                           
-    if(password_verify($password, $user->password)){
+                     
+    //Preguntar si la contraseña es correcta                
+    if(isset($user) && password_verify($password, $user->password)){
       echo "Logueado correctamente <br>";
-      //Crear una cookie (token o llave identificativa)
+      //Crear una cookie
       $user->createCookie();
+      //Ir al panel de usuario (redirigir)
+      //¿Cómo se que el panel que carga es del usuario?
+      Router::redirect('/all');
     }else{
       View::render('login', ['error'=> 'Datos incorrectos']);           
     }

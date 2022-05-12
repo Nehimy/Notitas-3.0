@@ -42,14 +42,18 @@ class Notita {
 		}
 		
 		// Obtener todas las notas
-		public static function all(){
+		public static function all($req){
 		  //Ordenar de forma decendente
 			$value = 'id';
       $order = 'DESC';
-		  MNotita::orderBy($value, $order);
 		  //Ver todas las notas
-			$NotasDesc = MNotita::get();
-			View::render("index",['notitas' => $NotasDesc]);
+		  $user_id = $req->user->id;
+		  // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
+		  $notas = MNotita::where('user_id', $user_id)
+		                    ->orderBy($value, $order)
+		                    ->get();
+		                    
+			View::render("index",['notitas' => $notas]);
 			
 		}	
 		// Eliminar nota apartir del id		

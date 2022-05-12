@@ -11,6 +11,7 @@ class User extends ModelMySQL{
   public $admin;
   public $token;
   
+  //Genera el token y crea la cookie
   public function createCookie() {
     $token = md5($this->id.'-'.time().PRIVATE_KEY);
 
