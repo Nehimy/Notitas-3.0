@@ -67,15 +67,12 @@ class User{
     //Otener el users
     $user = MUser::select(["password,id"])
                      ->where("nick", "$nick")
-                     ->getFirst();       
-                     
+                     ->getFirst();                     
     //Preguntar si la contraseña es correcta                
     if(isset($user) && password_verify($password, $user->password)){
-      echo "Logueado correctamente <br>";
       //Crear una cookie
       $user->createCookie();
       //Ir al panel de usuario (redirigir)
-      //¿Cómo se que el panel que carga es del usuario?
       Router::redirect('/all');
     }else{
       View::render('login', ['error'=> 'Datos incorrectos']);           

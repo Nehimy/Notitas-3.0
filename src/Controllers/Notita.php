@@ -12,17 +12,21 @@ class Notita {
 			View::render("new");
 		}
 		
-	 	// Lo del formulario pasa al modelo - guardar nota
+	 	// Crea una nota - guardar nota
 		public static function add($req){
 			$newNotita = new MNotita;
 			#variable
 			$titulo = $req->post->title;
 			$contenido = $req->post->content;
+			
+			//Preguntar si el usuario esta logueado
+			
 			#preguntamos si no es nulo y si esta definido
 			if(isset($titulo) & isset($contenido)){
 				$newNotita->title = $titulo;
 				$newNotita->content = $contenido;
 				$newNotita->color = $req->post->color;
+				$newNotita->user_id = $req->user->id;
 				$newNotita->save();
 				//Ir al index
 				Router::redirect('/all');
