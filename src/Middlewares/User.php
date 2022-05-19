@@ -3,15 +3,17 @@
 namespace Middlewares;
 
 use Models\User as MUser;
+use Models\Notita as MNotita;
 use Libs\Router;
+use Libs\Middleware;
 
-class User {
-  public static function check($callback, $req) {
-    $token = $_COOKIE['notita'];
-    
-    if (is_null($token))
+class User extends Middleware {
+  public static function check($req) {
+   
+    if (is_null($_COOKIE['notita']))
       return Router::redirect('/login');  
-      
+    else
+       $token = $_COOKIE['notita'];
     //Preguntar si el token esta en la BD
     //where busca y getFirst retorna una coinsidencia (objeto)
     $user = MUser::where('token', "$token")->getFirst();
@@ -20,7 +22,45 @@ class User {
       return Router::redirect('/login'); 
     
     $req->user = $user;
-    call_user_func_array($callback, [$req]);
+    static::next($req);
   }
-
+  
+  //verificar dueño
+   public static function verifyOwner($req) {
+     $notitaId = $req->params->id;
+        
+     $notita = MNotita::getById($notitaId);
+      
+     if(is_null($notita))
+        exit('La nota no existe.');
+        
+     $req->notita = $notita;
+         
+     if($notita->user_id == $req->user->id)
+       static::next($req);
+     else
+       exit('Acceso denegado.');     
+   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

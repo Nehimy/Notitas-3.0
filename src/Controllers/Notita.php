@@ -11,16 +11,16 @@ class Notita {
 		public static function form(){
 			View::render("new");
 		}
-		
+
 	 	// Crea una nota - guardar nota
 		public static function add($req){
 			$newNotita = new MNotita;
 			#variable
 			$titulo = $req->post->title;
 			$contenido = $req->post->content;
-			
+
 			//Preguntar si el usuario esta logueado
-			
+
 			#preguntamos si no es nulo y si esta definido
 			if(isset($titulo) & isset($contenido)){
 				$newNotita->title = $titulo;
@@ -33,7 +33,7 @@ class Notita {
 			}else{
 				Router::redirect('/new');
 			}
-			
+
 		}
 
 		// Método o camino que lleve a ver la nota completa
@@ -44,40 +44,36 @@ class Notita {
 			//carga la pagina
 			View::render("view", ['notita'=> $notita]);
 		}
-		
+
 		// Obtener todas las notas
 		public static function all($req){
-		  //Ordenar de forma decendente
+      //Ordenar de forma decendente
 			$value = 'id';
       $order = 'DESC';
-		  //Ver todas las notas
-		  $user_id = $req->user->id;
-		  // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
-		  $notas = MNotita::where('user_id', $user_id)
-		                    ->orderBy($value, $order)
-		                    ->get();
-		                    
+      //Ver todas las notas
+      $user_id = $req->user->id;
+      // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
+      $notas = MNotita::where('user_id', $user_id)
+		          ->orderBy($value, $order)
+              ->get();
+
 			View::render("index",['notitas' => $notas]);
-			
-		}	
-		// Eliminar nota apartir del id		
-		public static function delete($req){		
-			$idid = $req->params->id;
-			$killNota = MNotita::getById($idid);
-			//echo $killNota->get;
-			$killNota->delete();
-			
+
+		}
+		// Eliminar nota apartir del id
+		public static function delete($req){
+			$req->notita->delete();
+
 			//Regresar al index
-			Router::redirect('/all');		
+			Router::redirect('/all');
 		}
-		
+
 		/************************************/
-		// Editar una nota ya creada 
+		// Editar una nota ya creada
 		public static function editing($req){
-			$editNota = MNotita::getById($req->params->id);			
-			View::render("edit", ["editMyNota"=>$editNota]);
+			View::render("edit", ["editMyNota"=>$req->notita]);
 		}
-		
+
 		// Guardar nota modificada
 		public static function update($req){
 			$saveNota = MNotita::getById($req->params->id);
@@ -85,9 +81,8 @@ class Notita {
 			$saveNota->content = $req->post->contenido;
 			$saveNota->color = $req->post->color;
 			$saveNota->save();
-			//Ver la nota acabada de guardar		
+			//Ver la nota acabada de guardar
 			Router::redirect('/note/'.$saveNota->id);
 		}
 		/************************************/
 }
-

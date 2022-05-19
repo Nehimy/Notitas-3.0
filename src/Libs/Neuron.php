@@ -1,6 +1,6 @@
 <?php
-/*
- * DuckBrain - Microframework
+/**
+ * Neuron - DuckBrain
  *
  * Neuron, sirve para crear un objeto que alojará valores, pero
  * además tiene la característica especial de que al intentar
@@ -11,9 +11,9 @@
  * El constructor recibe un objeto o arreglo con los valores que
  * sí estarán definidos.
  *
- * Autor: KJ
- * Web: https://kj2.me
- * Licencia: MIT
+ * @author KJ
+ * @website https://kj2.me
+ * @licence MIT
  */
 
 namespace Libs;

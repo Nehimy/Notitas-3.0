@@ -1,14 +1,14 @@
 <?php
-/*
- * DuckBrain - Microframework
+/**
+ * Router - DuckBrain
  *
  * Librería de Enrrutador.
  * Depende de manera forzada de que la constante ROOT_DIR esté definida
  * y de manera optativa de que la constante SITE_URL lo esté también.
  *
- * Autor: KJ
- * Web: https://kj2.me
- * Licencia: MIT
+ * @author KJ
+ * @website https://kj2.me
+ * @licence MIT
  */
 
 namespace Libs;
@@ -21,7 +21,7 @@ class Router {
     private static $last;
     public static $notFoundCallback = 'Libs\Router::defaultNotFound';
 
-    private static function defaultNotFound () {
+    public static function defaultNotFound () {
         header("HTTP/1.0 404 Not Found");
         echo '<h2 style="text-align: center;margin: 25px 0px;">Error 404 - Página no encontrada</h2>';
     }
@@ -34,7 +34,7 @@ class Router {
      * @param string $path
      *   Ruta con pseudovariables.
      *
-     * @param callable $callback
+     * @param mixed $callback
      *   Callback que será llamado cuando la ruta configurada en $path coincida.
      *
      * @return array
@@ -42,7 +42,7 @@ class Router {
      *     path        - Contiene la ruta con las pseudovariables reeplazadas por expresiones regulares.
      *     callback    - Contiene el callback en formato Namespace\Clase::Método.
      */
-    private static function parse($path, $callback) {
+    private static function parse(string $path, $callback) : array {
         preg_match_all('/{(\w+)}/s', $path, $matches, PREG_PATTERN_ORDER);
         $paramNames = $matches[1];
 
@@ -58,7 +58,7 @@ class Router {
 
         return [
             'path'       => $path,
-            'callback'   => $callback,
+            'callback'   => [$callback],
             'paramNames' => $paramNames
         ];
     }
@@ -69,8 +69,10 @@ class Router {
      *
      * Ej: Si la url del sistema está en "https://ejemplo.com/duckbrain"
      *     entonces la ruta base sería "/duckbrain"
+     *
+     * @return string
      */
-    public static function basePath() {
+    public static function basePath() : string {
         if (defined('SITE_URL'))
             return parse_url(SITE_URL, PHP_URL_PATH);
         return str_replace($_SERVER['DOCUMENT_ROOT'], '/', ROOT_DIR);
@@ -86,7 +88,7 @@ class Router {
      *     llamamos a Router::redirect('/docs'), entonces seremos
      *     redirigidos a "https://ejemplo.com/duckbrain/docs".
      */
-    public static function redirect($path) {
+    public static function redirect(string $path) {
         header('Location: '.static::basePath().substr($path,1));
     }
 
@@ -94,14 +96,14 @@ class Router {
      * Añade un middleware a la última ruta usada.
      * Solo se puede usar un middleware a la vez.
      *
-     * @param string $callback
+     * @param mixed $callback
      *
-     * @return static
+     * @return Router
      *   Devuelve un enlace estático.
      */
-    public static function middleware($callback){
+    public static function middleware($callback) : Router{
         if (!isset(static::$last))
-            return;
+            return new static();
 
         $method = static::$last[0];
         $index = static::$last[1];
@@ -110,21 +112,21 @@ class Router {
             $callback = 'Middlewares\\'.$callback;
         }
 
-        static::$$method[$index]['middleware'] = $callback;
+        static::$$method[$index]['callback'][] = $callback;
 
         return new static();
     }
 
     /*
-     * @return object
+     * @return Neuron
      *   Devuelve un objeto que contiene los atributos:
      *     post  - Donde se encuentran los valores enviados por $_POST.
      *     get   - Donde se encuentran los valores enviados por $_GET.
      *     json  - Donde se encuentran los valores JSON enviados en el body.
      *
      */
-    private static function getReq() {
-        $req             = (object) '';
+    private static function getReq() : Neuron {
+        $req             = new Neuron();
         $req->get        = new Neuron($_GET);
         $req->post       = new Neuron($_POST);
         $req->json       = new Neuron(static::get_json());
@@ -137,7 +139,7 @@ class Router {
      * @return object
      *   Devuelve un objeto con los datos recibidos en JSON.
      */
-    private static function get_json() {
+    private static function get_json() : object {
         $contentType = isset($_SERVER["CONTENT_TYPE"]) ? trim($_SERVER["CONTENT_TYPE"]) : '';
         if ($contentType === "application/json") {
             return json_decode(trim(file_get_contents("php://input")));
@@ -151,13 +153,13 @@ class Router {
      * @param string $path
      *   Ruta con pseudovariables.
      *
-     * @param callable $callback
+     * @param mixed $callback
      *   Callback que será llamado cuando la ruta configurada en $path coincida.
      *
-     * @return static
+     * @return Router
      *   Devuelve un enlace estático.
      */
-    public static function get($path, $callback) {
+    public static function get(string $path, $callback) {
         static::$get[] = static::parse($path, $callback);
         static::$last = ['get', count(static::$get)-1];
         return new static();
@@ -169,13 +171,13 @@ class Router {
      * @param string $path
      *   Ruta con pseudovariables.
      *
-     * @param callable $callback
+     * @param mixed $callback
      *   Callback que será llamado cuando la ruta configurada en $path coincida.
      *
-     * @return static
+     * @return Router
      *   Devuelve un enlace estático.
      */
-    public static function post($path, $callback) {
+    public static function post(string $path, $callback) : Router {
         static::$post[] = static::parse($path, $callback);
         static::$last   = ['post', count(static::$post)-1];
         return new static();
@@ -187,14 +189,14 @@ class Router {
      * @param string $path
      *   Ruta con pseudovariables.
      *
-     * @param callable $callback
+     * @param mixed $callback
      *   Callback que será llamado cuando la ruta configurada en $path coincida.
      *
-     * @return static
+     * @return Router
      *   Devuelve un enlace estático
      */
 
-    public static function put($path, $callback) {
+    public static function put(string $path, $callback) : Router {
         static::$put[]  = static::parse($path, $callback);
         static::$last   = ['put', count(static::$put)-1];
         return new static();
@@ -212,7 +214,7 @@ class Router {
      * @return static
      *   Devuelve un enlace estático
      */
-    public static function delete($path, $callback) {
+    public static function delete(string $path, $callback) : Router {
         static::$delete[] = static::parse($path, $callback);
         static::$last     = ['delete', count(static::$delete)-1];
         return new static();
@@ -220,8 +222,10 @@ class Router {
 
     /*
      * Devuelve la ruta actual.
+     *
+     * @return string
      */
-    public static function currentPath() {
+    public static function currentPath() : string {
         return preg_replace('/'.preg_quote(static::basePath(), '/').'/',
                             '/', strtok($_SERVER['REQUEST_URI'], '?'), 1);
     }
@@ -263,7 +267,7 @@ class Router {
                 break;
         }
 
-        $args = static::getReq();
+        $req = static::getReq();
 
         foreach ($routers as $router) { // revisa todos los routers para ver si coinciden con la ruta actual
             if (preg_match_all('/^'.$router['path'].'\/?$/si',$path, $matches, PREG_PATTERN_ORDER)) {
@@ -273,15 +277,14 @@ class Router {
                 if (isset($matches[1])) {
                     foreach ($matches as $index => $match) {
                         $paramName = $router['paramNames'][$index-1];
-                        $args->params->$paramName = urldecode($match[0]);
+                        $req->params->$paramName = urldecode($match[0]);
                     }
                 }
 
-                // Comprobando si hay middleware
-                if (isset($router['middleware']))
-                    $data = call_user_func_array($router['middleware'], [$router['callback'], $args]);
-                else
-                    $data = call_user_func_array($router['callback'], [$args]);
+                // Llamar al último callback configurado
+                $next         = array_pop($router['callback']);
+                $req->next    = $router['callback'];
+                $data         = call_user_func_array($next, [$req]);
 
                 if (isset($data)) {
                     header('Content-Type: application/json');
@@ -293,7 +296,7 @@ class Router {
         }
 
         // Si no hay router que coincida llamamos a $notFoundCallBack
-        call_user_func_array(static::$notFoundCallback, [$args]);
+        call_user_func_array(static::$notFoundCallback, [$req]);
     }
 }
 ?>

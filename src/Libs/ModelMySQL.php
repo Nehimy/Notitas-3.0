@@ -1,31 +1,31 @@
 <?php
-/*
- * DuckBrain - Microframework
+/**
+ * ModelMysql - DuckBrain
  *
  * Modelo ORM para objetos que hagan uso de una base de datos MySQL.
  * Depende de que exista Libs\Database para poder funcionar.
  *
- * Autor: KJ
- * Web: https://kj2.me
- * Licencia: MIT
+ * @author KJ
+ * @website https://kj2.me
+ * @licence MIT
  */
 
 namespace Libs;
 
 use Libs\Database;
+use mysqli;
 
 class ModelMySQL {
 
-    public $id;
-    protected $toNull = [];
-
-    static protected $primaryKey = 'id';
-    static protected $ignoreSave = ['id'];
-    static protected $forceSave = [];
-    static protected $table;
-    static protected $tableSufix = 's';
-    static protected $db;
-    static protected $querySelect = [
+    public           ?int    $id          = null;
+    protected        array   $toNull      = [];
+    static protected string  $primaryKey  = 'id';
+    static protected array   $ignoreSave  = ['id'];
+    static protected array   $forceSave   = [];
+    static protected string  $table;
+    static protected string  $tableSufix  = 's';
+    static protected ?mysqli $db          = null;
+    static protected array   $querySelect = [
         'select'              => ['*'],
         'where'               => '',
         'from'                => '',
@@ -39,19 +39,19 @@ class ModelMySQL {
         'sql_calc_found_rows' => false
     ];
 
-    /*
+    /**
      * Sirve para obtener la instancia de la base de datos.
      *
      * @return mysqli
      */
-    protected static function db() {
+    protected static function db() : mysqli {
         if (is_null(static::$db))
             static::$db = Database::getConnection();
 
         return static::$db;
     }
 
-    /*
+    /**
      * Ejecuta una sentencia SQL en la base de datos.
      *
      * @param string $query
@@ -60,8 +60,8 @@ class ModelMySQL {
      * @throws \Exception
      *   En caso de que la sentencia SQL falle, devolverá un error en pantalla.
      *
-     * @return mysqli_result
-     *   Contiene el resultado de la llamada SQL.
+     * @return mixed
+     *   Contiene el resultado de la llamada SQL (mysqli_result o bool).
      */
     protected static function query($query) {
         $db = static::db();
@@ -80,7 +80,7 @@ class ModelMySQL {
         return $result;
     }
 
-    /*
+    /**
      * Reinicia la configuración de la sentencia SQL.
      */
     protected static function resetQuery() {
@@ -99,17 +99,17 @@ class ModelMySQL {
         ];
     }
 
-    /*
+    /**
      * Construye la sentencia SQL a partir static::$querySelect y una vez
      * construída, llama a resetQuery.
      *
-     * @param boolean $resetQuery
+     * @param bool $resetQuery
      *   Indica si el query debe reiniciarse o no (por defecto es true).
      *
      * @return string
      *   Contiene la sentencia SQL.
      */
-    protected static function buildQuery($resetQuery = true) {
+    protected static function buildQuery(bool $resetQuery = true) : string {
         if (static::$querySelect['sql_calc_found_rows'])
             $sql = 'SELECT SQL_CALC_FOUND_ROWS '.join(', ', static::$querySelect['select']);
         else
@@ -159,7 +159,7 @@ class ModelMySQL {
         return $sql;
     }
 
-    /*
+    /**
      * Crea una instancia del objeto actual a partir de un arreglo.
      *
      * @param mixed $elem
@@ -169,7 +169,7 @@ class ModelMySQL {
      * @return ModelMySQL
      *   Retorna un objeto de la clase actual.
      */
-    protected static function getInstance($elem = []) {
+    protected static function getInstance(array $elem = []) : ModelMySQL {
         $class = get_called_class();
         $instance = new $class;
 
@@ -180,18 +180,24 @@ class ModelMySQL {
         return $instance;
     }
 
-    /*
+    /**
+     * Devuelve los atributos a guardar de la case actual.
+     * Los atributos serán aquellos que seran public y
+     * no esten excluidos en static::$ignoresave y aquellos
+     * que sean private o protected pero estén en static::$forceSave.
+     *
      * @return array
      *   Contiene los atributos indexados del objeto actual.
      */
-    protected function getVars() {
+    protected function getVars() : array {
         $reflection = new \ReflectionClass($this);
         $properties = $reflection->getProperties(\ReflectionProperty::IS_PUBLIC);
         $result = [];
 
         foreach($properties as $property) {
             $att = $property->name;
-            $result[$att] = $this->$att;
+            $result[$att] = isset($this->$att)
+                          ? $this->$att : null;
         }
 
         foreach (static::$ignoreSave as $del) {
@@ -199,34 +205,37 @@ class ModelMySQL {
         }
 
         foreach (static::$forceSave as $value) {
-            $result[$value] = $this->$value;
+            $result[$value] = isset($this->$value)
+                            ? $this->$value: null;
         }
 
         return $result;
     }
 
-    /*
+    /**
+     * Devuelve el nombre de la clase actual aunque sea una clase extendida.
+     *
      * @return string
      *   Devuelve el nombre de la clase actual.
      */
-    public static function className() {
+    public static function className() : string {
         return strtolower(substr(strrchr(get_called_class(), '\\'), 1));
     }
 
-    /*
+    /**
      * Construye (a partir del nombre de la clase y el sufijo en static::$tableSufix)
      * y/o develve el nombre de la tabla de la BD en la que se alojará o
      * se aloja el objeto actual.
      *
      * @return string
      */
-    protected static function table() {
+    protected static function table() : string {
         if (isset(static::$table))
             return static::$table;
         return static::className().static::$tableSufix;
     }
 
-    /*
+    /**
      * Actualiza los valores en la BD con los valores del objeto actual.
      */
     protected function update() {
@@ -252,7 +261,7 @@ class ModelMySQL {
         static::query($sql);
     }
 
-    /*
+    /**
      * Inserta una nueva fila en la base de datos a partir del
      * objeto actual.
      */
@@ -275,7 +284,7 @@ class ModelMySQL {
         $this->$pk = $db->insert_id;
     }
 
-    /*
+    /**
      * Revisa si el objeto a guardar es nuevo o no y según el resultado
      * llama a update para actualizar o add para insertar una nueva fila.
      */
@@ -287,7 +296,7 @@ class ModelMySQL {
             $this->add();
     }
 
-    /*
+    /**
      * Elimina el objeto actual de la base de datos.
      */
     public function delete() {
@@ -305,13 +314,15 @@ class ModelMySQL {
         static::query($sql);
     }
 
-    /*
+    /**
      * Define SELECT en la sentencia SQL.
      *
      * @param array $columns
      *   Columnas que se selecionarán en la consulta SQL.
+     *
+     * @return ModelMySQL
      */
-    public static function select($columns) {
+    public static function select(array $columns) : ModelMySQL {
         $db = static::db();
         $select = [];
         foreach($columns as $column) {
@@ -323,13 +334,15 @@ class ModelMySQL {
         return new static();
     }
 
-    /*
+    /**
      * Define FROM en la sentencia SQL.
      *
      * @param array $tables
      *   Tablas que se selecionarán en la consulta SQL.
+     *
+     * @return ModelMySQL
      */
-    public static function from($tables) {
+    public static function from(array $tables) : ModelMySQL {
         $db = static::db();
         $from = [];
         foreach($tables as $table) {
@@ -341,42 +354,40 @@ class ModelMySQL {
         return new static();
     }
 
-    /*
+    /**
      * Define el WHERE en la sentencia SQL.
      *
      * @param string $column
      *   La columna a comparar.
      *
-     * @param string $operador
-     *   El operador o el valor a comparar en la columna en caso de que eloperador sea "=".
+     * @param string $operatorOrValue
+     *   El operador o el valor a comparar como igual en caso de que $value no se defina.
      *
      * @param string $value
-     *   El valor el valor a comparar en la columna.
+     *   (opcional) El valor el valor a comparar en la columna.
      *
-     * @param $no_quote
-     *   Se usa cuando $value es una columna o un valor que no requiere comillas
+     * @param bool $no_quote
+     *   (opcional) Se usa cuando $value es una columna o un valor que no requiere comillas.
      *
-     * Sintaxis posibles:
-     *  - static::where(columna, operador, valor)
-     *  - static::where(columna, valor)  // Operador por defecto "="
+     * @return ModelMySQL
      */
-    public static function where($column, $operator, $value=null, $no_quote = false) {
+    public static function where(string $column, string $operatorOrValue, string $value=null, bool $no_quote = false) : ModelMySQL {
         if (is_null($value)) {
-            $value = $operator;
-            $operator = '=';
+            $value = $operatorOrValue;
+            $operatorOrValue = '=';
         }
 
         $value = static::db()->real_escape_string($value);
 
         if ($no_quote)
-            static::$querySelect['where'] = "$column$operator$value";
+            static::$querySelect['where'] = "$column$operatorOrValue$value";
         else
-            static::$querySelect['where'] = "$column$operator'$value'";
+            static::$querySelect['where'] = "$column$operatorOrValue'$value'";
 
         return new static();
     }
 
-    /*
+    /**
      * Define WHERE usando IN en la sentencia SQL.
      *
      * @param string $column
@@ -385,10 +396,12 @@ class ModelMySQL {
      * @param array $arr
      *   Arreglo con todos los valores a comparar con la columna.
      *
-     * @param boolean $in
-     *   Define si se usará IN o NOT IN en la sentencia SQL.
+     * @param bool $in
+     *   Define si se tienen que comprobar negativa o positivamente.
+     *
+     * @return ModelMySQL
      */
-    public static function where_in($column,$arr, $in = true) {
+    public static function where_in(string $column, array $arr, bool $in = true) : ModelMySQL {
         foreach($arr as $index => $value) {
             $arr[$index] = static::db()->real_escape_string($value);
         }
@@ -401,7 +414,7 @@ class ModelMySQL {
         return new static();
     }
 
-    /*
+    /**
      * Define LEFT JOIN en la sentencia SQL.
      *
      * @param string $table
@@ -410,32 +423,30 @@ class ModelMySQL {
      * @param string $columnA
      *   Columna a comparar para hacer el join.
      *
-     * @param string $operador
-     *   Operador o columna a comparar para hacer el join en caso de que el operador sea "=".
+     * @param string $operatorOrColumnB
+     *   Operador o columna a comparar como igual para hacer el join en caso de que $columnB no se defina.
      *
      * @param string $columnB
-     *   Columna a comparar para hacer el join.
+     *   (opcional) Columna a comparar para hacer el join.
      *
-     * Sintaxis posibles:
-     *  - static::leftJoin(tabla,columnaA, operador, columnB)
-     *  - static::leftJoin(tabla,columnaA, columnB) // Operador por defecto "="
+     * @return ModelMySQL
      */
-    public static function leftJoin($table, $columnA, $operator, $columnB = null) {
+    public static function leftJoin(string $table, string $columnA, string $operatorOrColumnB, string $columnB = null) : ModelMySQL {
         if (is_null($columnB)) {
-            $columnB = $operator;
-            $operator = '=';
+            $columnB = $operatorOrColumnB;
+            $operatorOrColumnB = '=';
         }
 
         $columnA = static::db()->real_escape_string($columnA);
         $columnB = static::db()->real_escape_string($columnB);
 
-        static::$querySelect['leftJoin'] .= ' LEFT JOIN ' . $table . ' ON ' . "$columnA$operator$columnB";
+        static::$querySelect['leftJoin'] .= ' LEFT JOIN ' . $table . ' ON ' . "$columnA$operatorOrColumnB$columnB";
 
 
         return new static();
     }
 
-    /*
+    /**
      * Define RIGHT JOIN en la sentencia SQL.
      *
      * @param string $table
@@ -444,31 +455,29 @@ class ModelMySQL {
      * @param string $columnA
      *   Columna a comparar para hacer el join.
      *
-     * @param string $operador
-     *   Operador o columna a comparar para hacer el join en caso de que el operador sea "=".
+     * @param string $operatorOrColumnB
+     *   Operador o columna a comparar como igual para hacer el join en caso de que $columnB no se defina.
      *
      * @param string $columnB
-     *   Columna a comparar para hacer el join.
+     *   (opcional) Columna a comparar para hacer el join.
      *
-     * Sintaxis posibles:
-     *  - static::rightJoin(tabla,columnaA, operador, columnB)
-     *  - static::rightJoin(tabla,columnaA, columnB) // Operador por defecto "="
+     * @return ModelMySQL
      */
-    public static function rightJoin($table, $columnA, $operator, $columnB = null) {
+    public static function rightJoin(string $table, string $columnA, string $operatorOrColumnB, string $columnB = null) : ModelMySQL {
         if (is_null($columnB)) {
-            $columnB = $operator;
-            $operator = '=';
+            $columnB = $operatorOrColumnB;
+            $operatorOrColumnB = '=';
         }
 
         $columnA = static::db()->real_escape_string($columnA);
         $columnB = static::db()->real_escape_string($columnB);
 
-        static::$querySelect['rightJoin'] .= ' RIGHT JOIN ' . $table . ' ON ' . "$columnA$operator$columnB";
+        static::$querySelect['rightJoin'] .= ' RIGHT JOIN ' . $table . ' ON ' . "$columnA$operatorOrColumnB$columnB";
 
         return new static();
     }
 
-    /*
+    /**
      * Define INNER JOIN en la sentencia SQL.
      *
      * @param string $table
@@ -477,117 +486,116 @@ class ModelMySQL {
      * @param string $columnA
      *   Columna a comparar para hacer el join.
      *
-     * @param string $operador
-     *   Operador o columna a comparar para hacer el join en caso de que el operador sea "=".
+     * @param string $operatorOrColumnB
+     *   Operador o columna a comparar como igual para hacer el join en caso de que $columnB no se defina.
      *
      * @param string $columnB
-     *   Columna a comparar para hacer el join.
+     *   (opcional) Columna a comparar para hacer el join.
      *
-     * Sintaxis posibles:
-     *  - static::innerJoin(tabla,columnaA, operador, columnB)
-     *  - static::innerJoin(tabla,columnaA, columnB) // Operador por defecto "="
+     * @return ModelMySQL
      */
-    public static function innerJoin($table, $columnA, $operator, $columnB = null) {
+    public static function innerJoin(string $table, string $columnA, string $operatorOrColumnB, string $columnB = null) : ModelMySQL {
         if (is_null($columnB)) {
-            $columnB = $operator;
-            $operator = '=';
+            $columnB = $operatorOrColumnB;
+            $operatorOrColumnB = '=';
         }
 
         $columnA = static::db()->real_escape_string($columnA);
         $columnB = static::db()->real_escape_string($columnB);
 
-        static::$querySelect['innerJoin'] .= ' INNER JOIN ' . $table . ' ON ' . "$columnA$operator$columnB";
+        static::$querySelect['innerJoin'] .= ' INNER JOIN ' . $table . ' ON ' . "$columnA$operatorOrColumnB$columnB";
 
         return new static();
     }
 
-    /*
+    /**
      * Define AND en la sentencia SQL (se puede anidar).
      *
      * @param string $column
      *   La columna a comparar.
      *
-     * @param string $operador
-     *   El operador o el valor a comparar en la columna en caso de que eloperador sea "=".
+     * @param string $operatorOrValue
+     *   El operador o el valor a comparar como igual en caso de que $value no se defina.
      *
      * @param string $value
-     *   El valor el valor a comparar en la columna.
+     *   (opcional) El valor el valor a comparar en la columna.
      *
-     * @param $no_quote
-     *   Se usa cuando $value es una columna o un valor que no requiere comillas.
+     * @param bool $no_quote
+     *   (opcional) Se usa cuando $value es una columna o un valor que no requiere comillas.
      *
-     * Sintaxis posibles:
-     *  - static::and(columna, operador, valor).
-     *  - static::and(columna, valor)  // Operador por defecto "=".
-     *  - static::and(columna, valor)->and(columna, valor)->and(columna, valor) // anidado.
+     * @return ModelMySQL
      */
-    public static function and($column, $operator, $value=null, $no_quote = false) {
+    public static function and(string $column, string $operatorOrValue, string $value=null, bool $no_quote = false) : ModelMySQL {
         if (is_null($value)) {
-            $value = $operator;
-            $operator = '=';
+            $value = $operatorOrValue;
+            $operatorOrValue = '=';
         }
 
         $value = static::db()->real_escape_string($value);
 
         if ($no_quote)
-            static::$querySelect['AndOr'] .= " AND $column$operator$value";
+            static::$querySelect['AndOr'] .= " AND $column$operatorOrValue$value";
         else
-            static::$querySelect['AndOr'] .= " AND $column$operator'$value'";
+            static::$querySelect['AndOr'] .= " AND $column$operatorOrValue'$value'";
 
         return new static();
     }
 
-    /*
+    /**
      * Define OR en la sentencia SQL (se puede anidar).
      *
      * @param string $column
      *   La columna a comparar.
      *
-     * @param string $operador
-     *   El operador o el valor a comparar en la columna en caso de que eloperador sea "=".
+     * @param string $operatorOrValue
+     *   El operador o el valor a comparar como igual en caso de que $value no se defina.
      *
      * @param string $value
-     *   El valor el valor a comparar en la columna.
+     *   (opcional) El valor el valor a comparar en la columna.
      *
-     * @param $no_quote
-     *   Se usa cuando $value es una columna o un valor que no requiere comillas.
+     * @param bool $no_quote
+     *   (opcional) Se usa cuando $value es una columna o un valor que no requiere comillas.
      *
-     * Sintaxis posibles:
-     *  - static::or(columna, operador, valor).
-     *  - static::or(columna, valor)  // Operador por defecto "=".
-     *  - static::or(columna, valor)->or(columna, valor)->or(columna, valor) // anidado.
+     * @return ModelMySQL
      */
-    public static function or($column, $operator, $value=null, $no_quote = false) {
+    public static function or(string $column, string $operatorOrValue, string $value=null, bool $no_quote = false) : ModelMySQL {
         if (is_null($value)) {
-            $value = $operator;
-            $operator = '=';
+            $value = $operatorOrValue;
+            $operatorOrValue = '=';
         }
 
         $value = static::db()->real_escape_string($value);
 
         if ($no_quote)
-            static::$querySelect['AndOr'] .= " OR $column$operator$value";
+            static::$querySelect['AndOr'] .= " OR $column$operatorOrValue$value";
         else
-            static::$querySelect['AndOr'] .= " OR $column$operator'$value'";
+            static::$querySelect['AndOr'] .= " OR $column$operatorOrValue'$value'";
 
         return new static();
     }
 
-    /*
+    /**
      * Define GROUP BY en la sentencia SQL.
      *
      * @param array $arr
      *   Columnas por las que se agrupará.
+     *
+     * @return ModelMySQL
      */
-    public static function groupBy($arr) {
+    public static function groupBy(array $arr) : ModelMySQL {
         static::$querySelect['groupBy'] = join(', ', $arr);
         return new static();
     }
 
-    public static function limit($initial, $final = 0) {
-        $initial = (int)$initial;
-        $final = (int)$final;
-
+    /**
+     * Define LIMIT en la sentencia SQL.
+     *
+     * @param int $initial
+     * @param int $final
+     *
+     * @return ModelMySQL
+     */
+    public static function limit(int $initial, int $final = 0) : ModelMySQL {
         if ($final==0)
             static::$querySelect['limit'] = $initial;
         else
@@ -596,17 +604,19 @@ class ModelMySQL {
         return new static();
     }
 
-    /*
+    /**
      * Define ORDER BY en la sentencia SQL.
      *
      * @param string $value
      *   Columna por la que se ordenará.
      *
      * @param string $order
-     *   Define si el orden será de manera ascendente (ASC),
+     *   (opcional) Define si el orden será de manera ascendente (ASC),
      *   descendente (DESC) o aleatorio (RAND).
+     *
+     * @return ModelMySQL
      */
-    public static function orderBy($value, $order = 'ASC') {
+    public static function orderBy(string $value, string $order = 'ASC') : ModelMySQL {
         if ($value == "RAND") {
             static::$querySelect['orderBy'] = 'RAND()';
             return new static();
@@ -622,18 +632,18 @@ class ModelMySQL {
         return new static();
     }
 
-    /*
+    /**
      * Retorna la cantidad de filas que hay en un query.
      *
-     * @param boolean $resetQuery
-     *   Indica si el query debe reiniciarse o no (por defecto es true).
+     * @param bool $resetQuery
+     *   (opcional) Indica si el query debe reiniciarse o no (por defecto es true).
      *
-     * @param boolean $useLimit
-     *   Permite usar limit para estabecer un máximo inical y final para contar. Requiere que se haya definido antes el límite.
+     * @param bool $useLimit
+     *   (opcional) Permite usar limit para estabecer un máximo inical y final para contar. Requiere que se haya definido antes el límite (por defecto en false).
      *
      * @return int
      */
-    public static function count($resetQuery = true, $useLimit = false) {
+    public static function count(bool $resetQuery = true, bool $useLimit = false) : int {
         if (!$resetQuery)
             $backup = [
                 'select'              => static::$querySelect['select'],
@@ -671,46 +681,49 @@ class ModelMySQL {
         return $result;
     }
 
-    /*
+    /**
      * Retorna las filas contadas en el último query.
      *
      * @return int
      */
-    public static function found_row() {
+    public static function found_row() : int {
         $result = static::query('SELECT FOUND_ROWS() AS quantity')->fetch_assoc();
         return $result['quantity'];
     }
 
-    /*
+    /**
      * Habilita el conteo de todos las coincidencias posibles incluso usando limit.
      *
      * @return ModelMySQL
      */
-    public static function sql_calc_found_rows() {
+    public static function sql_calc_found_rows() : ModelMySQL {
         static::$querySelect['sql_calc_found_rows'] = true;
         return new static();
     }
 
-    /*
+    /**
      * Obtiene una instancia según su primary key (generalmente id).
+     * Si no encuentra una instancia, devuelve nulo.
      *
      * @param mixed $id
-     * @return ModelMySQL
+     * @return mixed
      */
     public static function getById($id) {
         return static::where(static::$primaryKey, $id)->getFirst();
     }
 
-    /*
+    /**
      * Realiza una búsqueda en la tabla de la instancia actual.
      *
      * @param string $search
      *   Contenido a buscar.
      *
      * @param array $in
-     *   Columnas en las que se va a buscar (null para buscar en todas).
+     *   (opcional) Columnas en las que se va a buscar (null para buscar en todas).
+     *
+     * @return ModelMySQL
      */
-    public static function search($search, $in = null) {
+    public static function search(string $search, array $in = null) : ModelMySQL {
         if ($in == null) {
             $className = get_called_class();
             $in = array_keys((new $className())->getVars());
@@ -734,15 +747,16 @@ class ModelMySQL {
         return new static();
     }
 
-    /*
+    /**
      * Obtener los resultados de la consulta SQL.
      *
-     * @param boolean $resetQuery
-     *   Indica si el query debe reiniciarse o no (por defecto es true).
+     * @param bool $resetQuery
+     *   (opcional) Indica si el query debe reiniciarse o no (por defecto es true).
      *
-     * @return ModelMySQL[]
+     * @return array
+     *   Contiene un arreglo de instancias de la clase actual.
      */
-    public static function get($resetQuery = true) { // Devuelve array vacío si no encuentra nada.
+    public static function get(bool $resetQuery = true) : array { // Devuelve array vacío si no encuentra nada.
         $sql = static::buildQuery($resetQuery);
         $result = static::query($sql);
 
@@ -755,27 +769,28 @@ class ModelMySQL {
         return $instances;
     }
 
-    /*
+    /**
      * El primer elemento de la consulta SQL.
      *
-     * @param boolean $resetQuery
-     *   Indica si el query debe reiniciarse o no (por defecto es true).
+     * @param bool $resetQuery
+     *   (opcional) Indica si el query debe reiniciarse o no (por defecto es true).
      *
      * @return mixed
      *   Puede retornar un objeto ModelMySQL o null.
      */
-    public static function getFirst($resetQuery = true) { // Devuelve null si no encuentra nada.
+    public static function getFirst(bool $resetQuery = true) { // Devuelve null si no encuentra nada.
         static::limit(1);
         $instances = static::get($resetQuery);
         return empty($instances) ? null : $instances[0];
     }
 
-    /*
+    /**
      * Obtener todos los elementos del la tabla de la instancia actual.
      *
-     * @return ModelMySQL[]
+     * @return array
+     *   Contiene un arreglo de instancias de la clase actual.
      */
-    public static function all() {
+    public static function all() : array {
         $sql = 'SELECT * FROM '.static::table();
 
         $result = static::query($sql);
@@ -789,13 +804,16 @@ class ModelMySQL {
         return $instances;
     }
 
-    /*
+    /**
      * Permite definir como nulo el valor de un atributo.
      * Sólo funciona para actualizar un elemento de la BD, no para insertar.
      *
+     * @trows \Exception
+     *   Devolverá un error en caso de usarse en un insert.
+     *
      * @param array $atts
      */
-    public function setNull($atts) {
+    public function setNull(array $atts) {
         if (!isset($this->id))
             throw new \Exception(
                 "\nEl método setNull sólo funciona para actualizar, no al insertar."

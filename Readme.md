@@ -5,4 +5,4 @@ Cookies
 - Debe poder relacionarse con el usuario
 - sha256 o cambiar la base de datos
 - aes
-- 17 de mayo 12:05 El usuario dueño es el unico que puede ver la nota,editarla y eliminarla.
+- 17 de mayo 12:05 El usuario dueño, es el unico que puede ver la nota,editarla y eliminarla.
