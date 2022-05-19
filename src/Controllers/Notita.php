@@ -19,8 +19,6 @@ class Notita {
 			$titulo = $req->post->title;
 			$contenido = $req->post->content;
 
-			//Preguntar si el usuario esta logueado
-
 			#preguntamos si no es nulo y si esta definido
 			if(isset($titulo) & isset($contenido)){
 				$newNotita->title = $titulo;
