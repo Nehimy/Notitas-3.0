@@ -29,6 +29,7 @@ Router::get("/note/{id}/edit", "Controllers\Notita::editing")
     ->middleware('Middlewares\User::check');
 // guardar nota editada
 Router::post("/note/{id}/update", "Controllers\Notita::update")
+    ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
 /******************************User***********************************/

@@ -61,7 +61,6 @@ class Notita {
 		// Eliminar nota apartir del id
 		public static function delete($req){
 			$req->notita->delete();
-
 			//Regresar al index
 			Router::redirect('/all');
 		}
