@@ -231,7 +231,40 @@ textarea{
 	}
 }
 
+/***********************Panel**************************/
 
+.row {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 20px;
+}
+
+.row .col {
+  float: left;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 0 0.75rem;
+  min-height: 1px;
+}
+
+.col.s3 {
+  background: blanchedalmond;
+  /*height: 100%;*/
+  width: 25%;
+  margin-left: auto;
+  padding: 55px 0px;
+  min-height: calc(100vh - 84px);
+}
+
+.col.s9 {
+  background: blue;
+  /*height: 100%;*/
+  width: 75%;
+  margin-left: auto;
+  padding: 55px 0px;
+  margin: 0 auto;
+  min-height: calc(100vh - 84px);
+}
 
 
 

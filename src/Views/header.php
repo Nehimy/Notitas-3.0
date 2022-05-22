@@ -2,7 +2,7 @@
 	<head>
 		<meta charset="UTF-8">
     <link rel="stylesheet" href="<?=SITE_URL?>css/style.css">
-
+    <!--link rel="stylesheet" href="<?=SITE_URL?>css/materialize.css">-->
     <link rel="icon" type="image/svg" href="<?=SITE_URL?>css/Notitas_icono.svg">
     <title>Notitas</title>
 				

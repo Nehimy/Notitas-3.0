@@ -38,7 +38,7 @@ class User{
 			$newUser->mail = $mail;
 			$newUser->password = $password;
 			$newUser->admin = $admin;
-			$newUser->save();			
+			$newUser->save();
      }
 
       ?>
@@ -65,18 +65,27 @@ class User{
     $password = $req->post->password;
 
     //Otener el users
-    $user = MUser::select(["password,id"])
+    $user = MUser::select(["password,id,admin"])
                      ->where("nick", "$nick")
                      ->getFirst();                     
-    //Preguntar si la contraseña es correcta                
+    //Preguntar si la contraseña es correcta           
     if(isset($user) && password_verify($password, $user->password)){
       //Crear una cookie
       $user->createCookie();
-      //Ir al panel de usuario (redirigir)
-      Router::redirect('/all');
+      
+      if($user->admin == 1)
+        Router::redirect('/panel');
+        //View::render("panel", ['user'=> $user]);
+        //View::render("panel");
+      else
+        Router::redirect('/all');
     }else{
-      View::render('login', ['error'=> 'Datos incorrectos']);           
+       View::render('login', ['error'=> 'Datos incorrectos']);           
     }
   }
   
+   // Método que lleve a panel.php
+	public static function panelAdmin(){
+	  View::render("panel");
+	}
 }
