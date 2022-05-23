@@ -11,12 +11,12 @@ body{
   z-index: 1;
 }
 
-ul{
+.list-bar{
 	list-style-type: none;
 	position: absolute;
 }
 
-li{
+.logo,.new-note{
 	display: inline-block;
 }
 

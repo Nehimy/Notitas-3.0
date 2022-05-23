@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<div class="navigation-bar">
-			<ul>
+			<ul class = "list-bar">
 				<!--El título esta aquí-->
 				<li class="logo">
 					<a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo"> 
