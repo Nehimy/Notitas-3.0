@@ -257,7 +257,7 @@ textarea{
 }
 
 .col.s9 {
-  background: blue;
+  background: #5858c1;
   /*height: 100%;*/
   width: 75%;
   margin-left: auto;
@@ -266,5 +266,15 @@ textarea{
   min-height: calc(100vh - 84px);
 }
 
+.option {
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+  transition: background-color .2s;
+}
+
+.list {
+  list-style-type: none;
+  font-family: 'Carter One', cursive;
+  text-decoration: none;
+}
 
 

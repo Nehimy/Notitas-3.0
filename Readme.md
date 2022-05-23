@@ -6,4 +6,7 @@ Cookies
 - sha256 o cambiar la base de datos
 - aes
 - 17 de mayo 12:05 El usuario dueño, es el unico que puede ver la nota,editarla y eliminarla.
-- El admin tiene que ir a otro panel
+- El admin tiene que ir al panel
+
+- 23 de mayo 11:35
+- Cuando le click a la lista de obcciones tiene que cargar ej. todas las notas dentro del mismo panel y lo mismo con los usuarios

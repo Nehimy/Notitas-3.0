@@ -5,10 +5,8 @@
 	<div id="sky-blue-set">
 	  <div class="transparent-set">
 		  <div class="white-set">
-			   <?php
-			   //Obtener el id del usuario
-			   
-			   
+			  <?php
+			   //Obtener el id del usuario  
 				  foreach($view->notitas as $nota){
 			  ?>
 			  <div class="note <?=$nota->color?>">

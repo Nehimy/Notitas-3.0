@@ -44,6 +44,8 @@ Router::post("/login", "Controllers\User::Login");//confirmar logueo
 
 Router::get("/panel", "Controllers\User::panelAdmin");
 
+/*enlace de prueba*/
 
+Router::get("/panel", "Controllers\Notita::allNotes");
 
 
