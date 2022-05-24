@@ -46,6 +46,9 @@ Router::get("/panel", "Controllers\User::panelAdmin");
 
 /*enlace de prueba*/
 
-Router::get("/panel", "Controllers\Notita::allNotes");
+Router::get("/panel", "Controllers\User::allNotes");
+
+Router::get("/panelusers", "Controllers\User::allUsers")
+    ->middleware('Middlewares\User::check');
 
 

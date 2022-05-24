@@ -5,7 +5,7 @@
     <div class="col s3">       
       <ul class="list">
         <li class="option">
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>panel"> Todos los usuarios
+          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>panelusers"> Todos los usuarios
           </a>
         </li>
         <li class="option">
@@ -19,8 +19,10 @@
       </ul>
     </div>
     <div class="col s9">
-      <?php		   
-			  foreach($view->notitas as $notas){
+      <?php
+        /*print_r($notas);
+			  foreach($view->notitas as $notas){*/
+
 		  ?>
 			<div class="note <?=$notas->color?>">
 		    <!--Botón de eliminar -->
@@ -40,7 +42,7 @@
 				</div> 
 			</div>			
 			<?php
-			  }
+			 // }
 			?>
   </div>
 <?php

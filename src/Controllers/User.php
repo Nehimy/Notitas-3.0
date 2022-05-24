@@ -75,8 +75,6 @@ class User{
       
       if($user->admin == 1)
         Router::redirect('/panel');
-        //View::render("panel", ['user'=> $user]);
-        //View::render("panel");
       else
         Router::redirect('/all');
     }else{
@@ -88,4 +86,21 @@ class User{
 	public static function panelAdmin(){
 	  View::render("panel");
 	}
+	
+	public static function allNotes($req){
+    if($req->user->admin){
+      $notas = MNotita::all();
+  	  View::render("panel",['notitas' => $notas]);
+	  }
+	}
+	
+	public static function allUsers($req){
+	  if($req->user->admin){
+      $users = MUser::all();
+  	  View::render("panelusers",['all' => $users]);
+	  }
+
+	} 
+	
+	
 }

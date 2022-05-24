@@ -7,6 +7,7 @@ use Models\Notita as MNotita;
 use Libs\Router;
 use Libs\Middleware;
 
+// compreba si el usuario es ese
 class User extends Middleware {
   public static function check($req) {
    
