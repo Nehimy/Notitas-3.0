@@ -89,15 +89,16 @@ class User{
 	
 	public static function allNotes($req){
     if($req->user->admin){
-      $notas = MNotita::all();
-  	  View::render("panel",['notitas' => $notas]);
+      $notas = MNotita::orderBy('id', 'DESC')->get();
+      //$notas->orderBy('id', 'DESC');
+  	  View::render("panel-notes",['notitas' => $notas]);
 	  }
 	}
 	
 	public static function allUsers($req){
 	  if($req->user->admin){
       $users = MUser::all();
-  	  View::render("panelusers",['all' => $users]);
+  	  View::render("panel-users",['all' => $users]);
 	  }
 
 	} 

@@ -46,29 +46,12 @@ class Notita {
 		// Obtener todas las notas
 		public static function all($req){
       $user_id = $req->user->id;    
-      
-      /*if($req->user->admin){
-        $notas = MNotita::all();
-			  View::render("panel",['notitas' => $notas] );
-			}else{*/
 			  // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
         $notas = MNotita::where('user_id', $user_id)
 		          ->orderBy('id', 'DESC')
               ->get();
         View::render("index",['notitas' => $notas]);
-      //}		
 		}
-		
-		/*public static function allNotes($req){
-		  echo "teta";
-		  print_r($req->user);
-      $user_id = $req->user->id;    
-      echo "aaaaaaaa";
-      if($req->user->admin){
-        $notas = MNotita::all();
-			  View::render("panel",['notitas' => $notas] );
-	    }
-		}*/
 		
 		// Eliminar nota apartir del id
 		public static function delete($req){
