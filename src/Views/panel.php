@@ -5,21 +5,28 @@
     <div class="col s3">       
       <ul class="list">
         <li class="option">
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>panel-users"> Todos los usuarios
+          <a alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>panel-users"> Todos los usuarios
           </a>
         </li>
         <li class="option">
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>panel-notes"> Todas las notas
+          <a alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>panel-notes"> Todas las notas
           </a>	
         </li>
         <li class="option">
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> Lo de más allá...
+          <a alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>new"> Lo demás...
           </a>	
         </li>
       </ul>
     </div>
-    <div class="col s9">
-  </div>
+    <!--Contenedor-->
+    <!--<div class="col s9">
+      
+	    <div class="transparent-box">
+		    <div class="white-box">
+        </div>
+		  </div>
+  </div>-->
+  <script src="<?=SITE_URL?>js/script.js"></script>
 <?php
 	include 'footer.html';
 ?>

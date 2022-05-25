@@ -1,10 +1,11 @@
 <?php
-	include 'header.php';
+	include 'panel.php';
 ?>
-
+<div class="col s9">
+  <div class="transparent-box">
+    <div class="white-box">
       <?php
 			  foreach($view->notitas as $notas){
-
 		  ?>
 			<div class="note <?=$notas->color?>">
 		    <!--Botón de eliminar -->
@@ -22,10 +23,13 @@
 			  <div class="font-index">
 				  <?=$notas->content;?>
 				</div> 
-			</div>			
+			</div>
 			<?php
 			  }
-			?>
+		  ?>
+    </div>
+  </div>
+</div>
 <?php
 	include 'footer.html';
 ?>

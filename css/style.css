@@ -248,18 +248,18 @@ textarea{
 }
 
 .col.s3 {
-  background: blanchedalmond;
-  /*height: 100%;*/
-  width: 25%;
+  background: #fbde43;
+  width: 15%;
   margin-left: auto;
   padding: 55px 0px;
   min-height: calc(100vh - 84px);
+  text-align: center;
 }
 
 .col.s9 {
-  background: #5858c1;
+  background: #26c2ff ;
   /*height: 100%;*/
-  width: 75%;
+  width: 85%;
   margin-left: auto;
   padding: 55px 0px;
   margin: 0 auto;
@@ -269,12 +269,35 @@ textarea{
 .option {
   border-bottom: 1px solid rgba(0,0,0,0.2);
   transition: background-color .2s;
+  padding: 10 0px;
 }
 
 .list {
   list-style-type: none;
   font-family: 'Carter One', cursive;
   text-decoration: none;
+  margin: 0 auto;
+  padding-left: 0px;
 }
 
+.transparent-box{
+	border-radius: 15px;
+	position: relative;
+	margin: 0 auto;
+	background: #ffffff63;
+	padding: 10px 0px;
+	width: 72vw;
+	min-height: 270px;
+}
+
+.white-box{
+	border-radius: 15px;
+	position: relative;
+	margin: 0 auto;
+	background: white;
+	padding: 10px 0px;
+	width: 70vw;
+	min-height: 270px;
+	text-align: center;
+}
 
