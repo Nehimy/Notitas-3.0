@@ -10,3 +10,10 @@ Cookies
 
 - 23 de mayo 11:35
 - Cuando le click a la lista de obcciones tiene que cargar ej. todas las notas dentro del mismo panel y lo mismo con los usuarios
+
+
+- ¿Usuarios con avatar?
+- buscador shearch
+- opcion de eliminar usuarios
+- opcion de eliminar notas
+- botón y/o radio button que ponga las notas de forma ascendente o descendente 

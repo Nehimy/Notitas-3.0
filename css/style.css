@@ -301,3 +301,22 @@ textarea{
 	text-align: center;
 }
 
+.search{
+  cursor: pointer;
+  width: 20px;
+  right: 27px;
+  position: relative;
+  top: 5px;
+}
+
+.box{
+  border-top: 1px solid rgba(0,0,0,0.2);
+  padding: 10 0px;
+  position: relative;
+}
+
+
+
+
+
+

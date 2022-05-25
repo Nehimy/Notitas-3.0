@@ -90,7 +90,6 @@ class User{
 	public static function allNotes($req){
     if($req->user->admin){
       $notas = MNotita::orderBy('id', 'DESC')->get();
-      //$notas->orderBy('id', 'DESC');
   	  View::render("panel-notes",['notitas' => $notas]);
 	  }
 	}

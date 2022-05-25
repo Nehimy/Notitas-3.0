@@ -5,6 +5,13 @@
     <div class="col s3">       
       <ul class="list">
         <li class="option">
+          
+          <div class="box">
+            <input placeholder="Search">  
+            <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+          </div>
+        </li>
+        <li class="option">
           <a alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>panel-users"> Todos los usuarios
           </a>
         </li>
