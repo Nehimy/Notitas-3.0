@@ -16,4 +16,7 @@ Cookies
 - buscador shearch
 - opcion de eliminar usuarios
 - opcion de eliminar notas
-- botón y/o radio button que ponga las notas de forma ascendente o descendente 
+- botón y/o radio button que ponga las notas de forma ascendente o descendente
+
+- Hacer una función que busque coincidencias palabra por palabra
+

@@ -8,9 +8,9 @@
           
           <div class="box">
             <form method="POST"  action="<?=SITE_URL?>search-for">
-              <input id="mysearch" placeholder="Search">  
+              <input id="mysearch" placeholder="Search" type="text" name="palabra" required="" value="">  
               <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
-              <input class="boton-search" type="submit" name="palabra" required value="">
+              <input class="boton-search" type="submit">
             </form>
           </div>
         </li>
