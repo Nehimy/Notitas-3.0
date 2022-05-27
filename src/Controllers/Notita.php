@@ -83,10 +83,12 @@ class Notita {
 			echo "<br>";
 			//$notas = MNotita::orderBy('id', 'DESC')->get();
 			
-			$notas = MNotita::where('title', $req->post->palabra)
+			$notas = MNotita::search($req->post->palabra, ['title'])->get();
+			print_r($notas);
+			/*$notas = MNotita::where('title', $req->post->palabra)
 		       ->orderBy('id', 'DESC')
            ->get();
-      print_r($notas);
+      print_r($notas);*/
 			//Router::redirect('/search');
 			//View::render("/search");
 		}
