@@ -7,8 +7,11 @@
         <li class="option">
           
           <div class="box">
-            <input placeholder="Search">  
-            <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+            <form method="POST"  action="<?=SITE_URL?>search-for">
+              <input id="mysearch" placeholder="Search">  
+              <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+              <input class="boton-search" type="submit" name="palabra" required value="">
+            </form>
           </div>
         </li>
         <li class="option">
@@ -25,14 +28,6 @@
         </li>
       </ul>
     </div>
-    <!--Contenedor-->
-    <!--<div class="col s9">
-      
-	    <div class="transparent-box">
-		    <div class="white-box">
-        </div>
-		  </div>
-  </div>-->
   <script src="<?=SITE_URL?>js/script.js"></script>
 <?php
 	include 'footer.html';

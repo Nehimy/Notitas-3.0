@@ -21,7 +21,7 @@
 								  <option value="lilac">Lila</option>
 								  <option value="lightBlue">Celeste</option>
 							  </select>
-							  <input class="boton" type="submit" value="Save">
+							  <input class="boton" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save">
 					  </form>
 				  </div>
 			  </div>

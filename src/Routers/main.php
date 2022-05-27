@@ -52,4 +52,10 @@ Router::get("/panel-notes", "Controllers\User::allNotes")
 Router::get("/panel-users", "Controllers\User::allUsers")
     ->middleware('Middlewares\User::check');
 
+// enlace del search
+
+Router::post("/search-for", "Controllers\Notita::searching")
+    ->middleware('Middlewares\User::check');
+
+
 

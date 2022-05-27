@@ -77,4 +77,17 @@ class Notita {
 			Router::redirect('/note/'.$saveNota->id);
 		}
 		/************************************/
+		public static function searching($req){
+		  echo "value palabra";
+			print_r($req->post->palabra);
+			print($req->value);
+			echo "<br>";
+			echo "<br>";
+			$notas = MNotita::orderBy('id', 'DESC')->get();
+			//print_r($notas);
+			
+			//Router::redirect('/search');
+			//View::render("/search");
+		}
+		
 }

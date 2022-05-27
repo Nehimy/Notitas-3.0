@@ -189,7 +189,7 @@ select{
 	margin: 5px;
 	color: white;
 	border-radius: 3px;
-	letter-spacing: 1px;
+	/*letter-spacing: 1px;*/
 }
 
 .boton{
@@ -267,7 +267,7 @@ textarea{
 }
 
 .option {
-  border-bottom: 1px solid rgba(0,0,0,0.2);
+  border-bottom: 1px solid rgb(255, 244, 188);
   transition: background-color .2s;
   padding: 10 0px;
 }
@@ -301,12 +301,15 @@ textarea{
 	text-align: center;
 }
 
+/*******search*******/
+
 .search{
   cursor: pointer;
-  width: 20px;
-  right: 27px;
+  width: 19px;
+  right: 25px;
   position: relative;
   top: 5px;
+  z-index: 1;
 }
 
 .box{
@@ -315,6 +318,21 @@ textarea{
   position: relative;
 }
 
+#mysearch:hover{
+  border: 0px solid #ffffff;
+  /*background: #e6e6ff;*/
+  text-decoration: none;
+  color: #a264fd;
+}
+
+.boton-search{
+  position: relative;
+  right: 51px;
+  width: 25px;
+  background: #ff96cc;
+
+  
+}
 
 
 

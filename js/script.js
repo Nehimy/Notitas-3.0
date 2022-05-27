@@ -5,9 +5,18 @@ select.childNodes.forEach(option => {
     option.selected = true
 })
 */
+
+/*
+setTimeout(function(){
+  document.querySelector('.see-note').style.display='inline-block';
+
+},1000);
+
+*/
+
 //Cambiar al color de la nota
 function changeColor(element){
-  console.log(element);
+  //console.log(element);
   element.className = element.value;
 }
 
@@ -49,13 +58,17 @@ function SaveOut(element){
   element.style.width = "93.5px";
   element.style.background = "#155ED0";
 }
-/*
-setTimeout(function(){
-  document.querySelector('.see-note').style.display='inline-block';
 
-},1000);
 
-*/
+// evento keypress 
 
+//tecla enter 13
+function searching(e){
+  if(e.keyCode == '13'){
+	  document.getElementById('mysearch').style.background= "#26c2ff";
+	  document.getElementById('mysearch').style.color= "#fff";
+	}
+}			
+window.onkeypress = searching;
 
 
