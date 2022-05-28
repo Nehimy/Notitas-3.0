@@ -77,20 +77,10 @@ class Notita {
 			Router::redirect('/note/'.$saveNota->id);
 		}
 		/************************************/
-		public static function searching($req){
-			print_r($req->post->palabra);
-			echo "<br>";
-			echo "<br>";
-			//$notas = MNotita::orderBy('id', 'DESC')->get();
-			
+		public static function searching($req){			
 			$notas = MNotita::search($req->post->palabra, ['title'])->get();
-			print_r($notas);
-			/*$notas = MNotita::where('title', $req->post->palabra)
-		       ->orderBy('id', 'DESC')
-           ->get();
-      print_r($notas);*/
-			//Router::redirect('/search');
-			//View::render("/search");
+			View::render("panel-notes", ['notitas'=> $notas]);
+
 		}
 		
 }

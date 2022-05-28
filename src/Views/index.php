@@ -24,7 +24,7 @@
 				  </div>
 				  <div class="font-index">
 				    <?=$nota->content;?>
-				  </div> 
+				  </div>
 			  </div>			
 			  <?php
 				  }
