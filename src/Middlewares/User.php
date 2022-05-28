@@ -23,6 +23,7 @@ class User extends Middleware {
       return Router::redirect('/login'); 
     
     $req->user = $user;
+    //print_r($req->user);
     static::next($req);
   }
   

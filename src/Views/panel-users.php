@@ -2,18 +2,36 @@
 	include 'panel.php';
 ?>
 
-
-
-
 <div class="col s9">
   <div class="transparent-box">
 	  <div class="white-box">
+	  <!--white-box-->
 	    <?php
-	      foreach($view->all as $users){
-	        echo "$users->nick";
-	        echo "<br>";
-        }
+	      //Obtener el id del usuario
+	      foreach($view->theUsers as $users){
+        //}
       ?>
+      <div class="user-box">
+			  <div class="delete-button">
+	    	  <a href="<?=SITE_URL?>user/<?=$users->id?>/remove">
+			      <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
+		      </a>	
+		    </div>
+		    <!--Botón de eliminar -->
+			  <div class="title-box">				
+		      <a onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>note/<?=$nota->id?>">
+				    <?=$users->nick; ?>
+				  </a>					
+        </div>
+      </div>
+      <?php
+			  }
+			?>
+		<!--white-box-->
     </div>
 	</div>
 </div>
+<script src="<?=SITE_URL?>js/script.js"></script>
+<?php
+	include 'footer.html';
+?>

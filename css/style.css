@@ -334,7 +334,19 @@ textarea{
   
 }
 
+/*******users*******/
 
-
+.user-box{
+  background: #28CE91;
+  /*background: #00e6ac;*/
+  width: 250px;
+  height: 50px;
+  display: inline-grid;
+  padding-top: 10px;
+  margin: 20px 10px;
+  box-shadow: 0px 0px 5px #0000003d;
+  border-radius: 4px;
+  position: relative;
+}
 
 

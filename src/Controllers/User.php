@@ -87,6 +87,7 @@ class User{
 	  View::render("panel");
 	}
 	
+	// Cargar todas las notas para el admin
 	public static function allNotes($req){
     if($req->user->admin){
       $notas = MNotita::orderBy('id', 'DESC')->get();
@@ -94,13 +95,19 @@ class User{
 	  }
 	}
 	
+	// Cargar todas los usuarios para el admin
 	public static function allUsers($req){
 	  if($req->user->admin){
       $users = MUser::all();
-  	  View::render("panel-users",['all' => $users]);
+  	  View::render("panel-users",['theUsers' => $users]);
 	  }
-
 	} 
 	
-	
+	// Eliminar usuario
+  public static function deleteUser($req){
+		$theuser = MUser::getById($req->params->id);
+		$theuser->delete();
+		
+		Router::redirect('/panel-users');
+	}
 }

@@ -35,21 +35,29 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
     ->middleware('Middlewares\User::check');
 
 /******************************User***********************************/
-
+// nuevo user
 Router::get("/register", "Controllers\User::UserRegister");
-Router::post("/register", "Controllers\User::AddUser"); //nuevo user
+Router::post("/register", "Controllers\User::AddUser");
+
+// login
 
 Router::get("/login", "Controllers\User::UserLogin");
 Router::post("/login", "Controllers\User::Login");//confirmar logueo
 
 Router::get("/panel", "Controllers\User::panelAdmin");
 
-/*enlace de prueba*/
+// eliminar un usuario
 
-Router::get("/panel-notes", "Controllers\User::allNotes")
+Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
     ->middleware('Middlewares\User::check');
 
+// ver todas los usuarios
+
 Router::get("/panel-users", "Controllers\User::allUsers")
+    ->middleware('Middlewares\User::check');
+    
+// ver todas las notas
+Router::get("/panel-notes", "Controllers\User::allNotes")
     ->middleware('Middlewares\User::check');
 
 // enlace del search
