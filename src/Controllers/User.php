@@ -122,7 +122,14 @@ class User{
 		$newNick = MUser::getById($req->params->id);
     $newNick->nick = $req->post->myname;
 		$newNick->save();
-		Router::redirect('/panel-users');
+		//Router::redirect('/view-user');
+		//Router::redirect("/view-user",['User' => $newNick]);
+		View::render("/view-user",['User' => $newNick]);
+		//View::render("view", ['notita'=> $notita]);
+		//Router::redirect('/note/'.$saveNota->id);
 		}
+	
+	
+	
 	
 }

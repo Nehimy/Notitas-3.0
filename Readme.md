@@ -16,6 +16,7 @@ Cookies
 - buscador shearch ✔️
 - opcion de eliminar usuarios ✔️
 - opcion de eliminar notas
+- Editar user ✔️
 - botón y/o radio button que ponga las notas de forma ascendente o descendente
 
 - ver usuario de forma individual

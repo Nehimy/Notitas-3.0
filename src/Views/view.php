@@ -15,7 +15,8 @@
 						  </a>
 					  </div>
 					  <div class="title-of-view title-box-view"> <?=$view->notita->title?> </div>			
-					  <div class="font"> <?=$view->notita->content?> 
+					  <div class="font">
+					    <?=$view->notita->content?> 
 					  </div>
 				  </div>
 			  </div>
