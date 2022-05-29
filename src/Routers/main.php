@@ -40,19 +40,18 @@ Router::get("/register", "Controllers\User::UserRegister");
 Router::post("/register", "Controllers\User::AddUser");
 
 // login
-
 Router::get("/login", "Controllers\User::UserLogin");
 Router::post("/login", "Controllers\User::Login");//confirmar logueo
 
-Router::get("/panel", "Controllers\User::panelAdmin");
-
+// cargar el panel
+Router::get("/panel", "Controllers\User::panelAdmin")
+    ->middleware('Middlewares\User::check');
+    
 // eliminar un usuario
-
 Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
     ->middleware('Middlewares\User::check');
 
 // ver todas los usuarios
-
 Router::get("/panel-users", "Controllers\User::allUsers")
     ->middleware('Middlewares\User::check');
     
@@ -60,10 +59,18 @@ Router::get("/panel-users", "Controllers\User::allUsers")
 Router::get("/panel-notes", "Controllers\User::allNotes")
     ->middleware('Middlewares\User::check');
 
-// enlace del search
+// editar usuario
+Router::get("/user/{id}/edit", "Controllers\User::editUsers")
+    ->middleware('Middlewares\User::check');
 
+// enlace del search
 Router::post("/search-for", "Controllers\Notita::searching")
     ->middleware('Middlewares\User::check');
 
+
+// Adtualizar usuario
+
+Router::post("/user/{id}/update", "Controllers\User::updateUser")
+    ->middleware('Middlewares\User::check');
 
 

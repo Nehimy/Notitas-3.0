@@ -13,9 +13,12 @@
       ?>
       <div class="user-box">
 			  <div class="delete-button">
+			    <a href="<?=SITE_URL?>user/<?=$users->id?>/edit">
+					  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
+         	</a>
 	    	  <a href="<?=SITE_URL?>user/<?=$users->id?>/remove">
 			      <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
-		      </a>	
+		      </a>
 		    </div>
 		    <!--Botón de eliminar -->
 			  <div class="title-box">				

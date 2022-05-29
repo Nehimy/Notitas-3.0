@@ -349,4 +349,30 @@ textarea{
   position: relative;
 }
 
+.user-box-edit{
+  height: 100px;
+}
+
+
+.box-input{
+  position: absolute;
+  right: 0px;
+  left: 0px;
+  /*margin: 0 auto;*/
+
+}
+
+.position{
+  margin: 10 auto;
+  position: relative;
+}
+
+
+
+
+
+
+
+
+
 

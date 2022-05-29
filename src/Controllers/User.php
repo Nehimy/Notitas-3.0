@@ -110,4 +110,19 @@ class User{
 		
 		Router::redirect('/panel-users');
 	}
+	
+	// Editat usuario
+	public static function editUsers($req){
+	  $theuser = MUser::getById($req->params->id);
+	  View::render("edit-user", ["editUser" => $theuser]);
+	}
+	
+	// Update usuario
+	public static function updateUser($req){
+		$newNick = MUser::getById($req->params->id);
+    $newNick->nick = $req->post->myname;
+		$newNick->save();
+		Router::redirect('/panel-users');
+		}
+	
 }
