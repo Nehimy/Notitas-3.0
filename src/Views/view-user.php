@@ -8,18 +8,19 @@ include 'panel.php';
 	       
 	        <div class="box-input">
 	          <div class="box-iconos">
-	          <a href="<?=SITE_URL?>note/<?=$view->notita->id?>/edit">
-						  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
-         		</a>
-         		<a href="<?=SITE_URL?>note/<?=$view->notita->id?>/remove">
-						  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
-						</a>
+						<a href="<?=SITE_URL?>user/<?=$view->theUser->id?>/edit">
+					    <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
+         	  </a>
+	    	    <a href="<?=SITE_URL?>user/<?=$view->theUser->id?>/remove">
+			        <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
+		        </a>
 						</div>
 	          <div class="title-of-view">
-	            <?=$view->User->nick?>
+	            <?=$view->theUser->nick?>
+	            <?=$view->theUser->password?>
 	          </div>
 	        </div>
-	      
+	        	      
 	    </div>
 	  </div>
 	</div>

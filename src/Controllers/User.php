@@ -119,14 +119,13 @@ class User{
 	
 	// Update usuario
 	public static function updateUser($req){
-		$newNick = MUser::getById($req->params->id);
-    $newNick->nick = $req->post->myname;
-		$newNick->save();
-		//Router::redirect('/view-user');
-		//Router::redirect("/view-user",['User' => $newNick]);
-		View::render("/view-user",['User' => $newNick]);
-		//View::render("view", ['notita'=> $notita]);
-		//Router::redirect('/note/'.$saveNota->id);
+		$user = MUser::getById($req->params->id);
+    $user->mail = $req->post->mail;
+    $password = password_hash($req->post->password, PASSWORD_DEFAULT);
+    $user->password = $password;
+     
+		$user->save();
+		View::render("/view-user",['theUser' => $user]);
 		}
 	
 	

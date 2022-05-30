@@ -7,8 +7,8 @@ include 'panel.php';
 	    <div class=" user-box user-box-edit">
 	       <form method="POST" action="<?=SITE_URL?>user/<?=$view->editUser->id?>/update">
 	        <div class="box-input">
-	          <input type="text" name ="myname" value= "<?=$view->editUser->nick?>">
-	        
+	          <input type="text" name ="mail" value= "<?=$view->editUser->mail?>">
+	          <input type="text" name ="password" value= "<?=$view->editUser->password?>">
 	        <input class="boton position" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save" >
 	        </div>
 	       </form>
