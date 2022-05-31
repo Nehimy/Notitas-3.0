@@ -25,12 +25,12 @@ body{
 	color: #26c2ff;
 }
 
-.logo{	
+.logo{
 	position: relative;
 	bottom: 4px;
 }
 
-.new-note{	
+.new-note{
 	position: relative;
 	bottom: 25px;
 }
@@ -45,7 +45,7 @@ a,input,.titulo, select, .title-of-view{
 #sky-blue-set{
 	background: #26c2ff;
 	text-align: center;
-	padding: 55px 0px;	
+	padding: 55px 0px;
 	position: relative;
 	margin: 0 auto;
 	box-shadow: 0px 0px 5px #0000003d;
@@ -131,9 +131,9 @@ a,input,.titulo, select, .title-of-view{
 	background: #ffdf54;
 	display: inline-block;
 	padding: 10px;
-	margin: 20px 10px;	
+	margin: 20px 10px;
 	box-shadow: 0px 0px 5px #0000003d;
-	border-radius: 2px;	
+	border-radius: 2px;
 	max-width: 450px;
 	min-height: 300px;
 	min-width: 380px;
@@ -331,7 +331,7 @@ textarea{
   width: 25px;
   background: #ff96cc;
 
-  
+
 }
 
 /*******users*******/
@@ -350,7 +350,7 @@ textarea{
 }
 
 .user-box-edit{
-  height: 100px;
+  height: 130px;
 }
 
 
@@ -367,12 +367,6 @@ textarea{
   position: relative;
 }
 
-
-
-
-
-
-
-
-
-
+.input-edit-user{
+    margin: 10px;
+}
