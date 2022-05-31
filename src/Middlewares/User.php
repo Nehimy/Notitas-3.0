@@ -37,12 +37,14 @@ class User extends Middleware {
         exit('La nota no existe.');
         
      $req->notita = $notita;
-         
-     if($notita->user_id == $req->user->id)
+     //print_r($req->user->admin);
+     if($notita->user_id == $req->user->id ||
+     $req->user->admin)
        static::next($req);
      else
        exit('Acceso denegado.');     
    }
+  
 }
 
 

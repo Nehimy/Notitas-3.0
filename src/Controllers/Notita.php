@@ -55,9 +55,15 @@ class Notita {
 		
 		// Eliminar nota apartir del id
 		public static function delete($req){
+			//print_r($req->user->admin);
 			$req->notita->delete();
 			//Regresar al index
-			Router::redirect('/all');
+			if(basename($req->path) == "admin")
+			  Router::redirect('/panel-notes');
+			else
+			  Router::redirect('/all');
+			
+			
 		}
 
 		/************************************/

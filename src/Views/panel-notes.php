@@ -10,7 +10,7 @@
 			<div class="note <?=$notas->color?>">
 		    <!--Botón de eliminar -->
 				<div class="delete-button">
-				  <a href="<?=SITE_URL?>note/<?=$notas->id?>/remove">
+				  <a href="<?=SITE_URL?>note/<?=$notas->id?>/remove/admin">
 					  <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
 					</a>	
 				</div>
