@@ -374,14 +374,15 @@ textarea{
 /*******Login*******/
 
 .box-form{
-    background: #26c2ff;
-    width: 255px;
+    background: #00cc99;
+    width: 330px;
     border-radius: 9px;
     position: absolute;
     margin: 0 auto;
-    padding: 5px;
-    height: 216px;
-    top: calc(50vh - 108px);
+    /*padding: 5px;*/
+    /*height: 216px;*/
+    padding: 8px;
+    top: calc(40vh - 108px);
     z-index: 1;
     left: 0;
     right: 0;
@@ -390,8 +391,10 @@ textarea{
 .box2-form {
   position: relative;
   margin: 0 auto;
-  background: #faebd736;
+  background: #00cc99;
   border-radius: 8px;
+  text-align: center;
+  display: flex;
 }
 
 .bglayer {
@@ -400,6 +403,20 @@ textarea{
   left: 0px;
   right: 0px;
   bottom: 0px;
-  background: #2a60a652;
+  background: #001c42b5;
   z-index: 1;
+}
+
+.boton-login{
+    margin: 0;
+    margin-top: 15px;
+}
+
+
+.login-title{
+    font-size: 20px;
+}
+
+.color-register{
+    background: #ffd600 !important;
 }
