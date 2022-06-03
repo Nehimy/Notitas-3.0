@@ -23,7 +23,7 @@
           </a>	
         </li>
         <li class="option">
-          <a alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>new"> Lo demás...
+          <a alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>all">Mi cuenta de usuario
           </a>	
         </li>
       </ul>

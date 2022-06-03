@@ -16,8 +16,12 @@ include 'panel.php';
 		        </a>
 						</div>
 	          <div class="title-of-view">
-	            <?=$view->theUser->nick?>
-	            <?=$view->theUser->password?>
+	            <div class="view-user">
+	              <?=$view->theUser->nick?>
+	            </div>
+	            <div class="view-user">
+	              <?=$view->theUser->mail?>
+	            </div>
 	          </div>
 	        </div>
 	        	      

@@ -76,8 +76,21 @@ Router::get("/user/{id}/edit", "Controllers\User::editUsers")
 Router::post("/search-for", "Controllers\Notita::searching")
     ->middleware('Middlewares\User::check');
 
-
 // Adtualizar usuario
-
 Router::post("/user/{id}/update", "Controllers\User::updateUser")
     ->middleware('Middlewares\User::check');
+    
+// Ver usuario
+Router::get("/user/{id}/view", "Controllers\User::viewUser")
+    ->middleware('Middlewares\User::check');
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

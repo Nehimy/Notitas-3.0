@@ -54,7 +54,7 @@ class User{
       <?php
   }
   
-    //Método: 
+  //Método: 
   public static function UserLogin(){
     View::render('login');
   }
@@ -74,7 +74,7 @@ class User{
       $user->createCookie();
       
       if($user->admin == 1)
-        Router::redirect('/panel');
+        Router::redirect('/panel-begin');
       else
         Router::redirect('/all');
     }else{
@@ -83,8 +83,11 @@ class User{
   }
   
    // Método que lleve a panel.php
-	public static function panelAdmin(){
-	  View::render("panel");
+	public static function panelAdmin($req){
+	  if($req->user->admin){
+      $notes = MNotita::orderBy('id', 'DESC')->get();
+  	  View::render("panel-begin",['lastNotes' => $notes]);
+	  }
 	}
 	
 	// Cargar todas las notas para el admin
@@ -127,7 +130,11 @@ class User{
 		$user->save();
 		View::render("/view-user",['theUser' => $user]);
 		}
-	
+	// Ver usuario
+	public static function viewUser($req) {
+	  $user = MUser::getById($req->params->id);
+	  View::render("/view-user",['theUser' => $user]);
+	}
 	
 	
 	

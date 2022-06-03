@@ -22,7 +22,7 @@
 		    </div>
 		    <!--Botón de eliminar -->
 			  <div class="title-box">				
-		      <a onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>note/<?=$nota->id?>">
+		      <a onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>user/<?=$users->id?>/view">
 				    <?=$users->nick; ?>
 				  </a>					
         </div>

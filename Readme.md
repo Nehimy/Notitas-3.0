@@ -15,9 +15,11 @@ Cookies
 - ¿Usuarios con avatar?
 - buscador shearch ✔️
 - opcion de eliminar usuarios ✔️
-- opcion de eliminar notas
+- opcion de eliminar notas ✔️
 - Editar user ✔️
 - botón y/o radio button que ponga las notas de forma ascendente o descendente
 
 - ver usuario de forma individual
-- ver nota de forma individual
+- ver nota de forma individual ✔️
+- efecto de carga lenta
+- Panel que cargue las ultimas notas.

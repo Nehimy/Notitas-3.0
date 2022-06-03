@@ -1,6 +1,6 @@
 body{
-	background: #646464;
-	margin: 0;
+    //background: #646464;
+    margin: 0;
 }
 /************Header************/
 .navigation-bar{
@@ -369,4 +369,37 @@ textarea{
 
 .input-edit-user{
     margin: 10px;
+}
+
+/*******Login*******/
+
+.box-form{
+    background: #26c2ff;
+    width: 255px;
+    border-radius: 9px;
+    position: absolute;
+    margin: 0 auto;
+    padding: 5px;
+    height: 216px;
+    top: calc(50vh - 108px);
+    z-index: 1;
+    left: 0;
+    right: 0;
+}
+
+.box2-form {
+  position: relative;
+  margin: 0 auto;
+  background: #faebd736;
+  border-radius: 8px;
+}
+
+.bglayer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: #2a60a652;
+  z-index: 1;
 }
