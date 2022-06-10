@@ -11,9 +11,9 @@
     <div class="box-light-blue">
       <div class="box-white">
         <div>
-        <div class="text-p"><?php echo $view->user->nick ." ". $view->content ?> .</div>
+        <div class="text-p"><?php echo $view->content ?> </div>
         <!--<button class="text-a" id="go-back" onclick="retornar()" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">Regresar atras!</button>-->
-        <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"> <a  href="<?=SITE_URL.$view->url?>"> Regresar al registro! </a></button>
+        <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"> <a  href="<?=SITE_URL.$view->url?>"> <?php echo $view->button ?> </a></button>
         </div>
       </div>
     </div>

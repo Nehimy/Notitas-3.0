@@ -32,7 +32,7 @@ class User{
 
             if (isset($user)){
                 //exit("El nick \"$nick\" ya está en uso.");
-                View::render("option-1", ["user"=>$user, "content"=>"ya esta en uso", "url"=>"register"]);
+                View::render("message", ["content"=>" El nick ya esta en uso", "url"=>"register", "button"=> "Volver al registro!"]);
                 exit();
             }
             $newUser->nick = $nick;
@@ -40,7 +40,7 @@ class User{
             $newUser->password = $password;
             $newUser->admin = $admin;
             $newUser->save();
-            View::render("option-2");
+            View::render("message",["content"=>"Usuario ya registrado, proceda a logearse por favor.", "url"=>"login", "button"=> "Iniciar sesión"]);
         }
     }
     //Método
