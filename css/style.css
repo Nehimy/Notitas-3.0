@@ -424,30 +424,6 @@ textarea{
 
 /**Nick usuado xD**/
 
-.box-one{
-    border-radius: 15px;
-    position: relative;
-    margin: 0 auto;
-    background: #5fd2ff;
-    padding: 10px 0px;
-    width: 96vw;
-    min-height: 270px;
-
-    display: grid;
-
-}
-
-.box-two{
-    border-radius: 15px;
-    position: relative;
-    margin: 0 auto;
-    background: #eaeaea;
-    padding: 10px 0px;
-    width: 95vw;
-    min-height: 270px;
-
-}
-
 .box-light-blue{
     background: #26c2ff;
     text-align: center;
@@ -461,14 +437,17 @@ textarea{
 }
 
 
-.box-tres{
+.box-white{
     background: white;
     width: 25vw;
     position: relative;
     margin: 0 auto;
     border-radius: 5px;
-    min-height: 200px;
-    padding-top: 10px;
+    /*min-height: 200px;
+    padding-top: 10px;*/
+
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 
 
@@ -479,6 +458,14 @@ textarea{
     font-size: larger;
 }
 .text-a {
-    font-size: x-large;
-    color: #7be334 !important;
+    font-size: large;
+    color: #fff !important;
+}
+
+#go-back {
+  width: max-content !important;
+  border-radius: 6px;
+  border: none;
+  font-family: 'Carter One', cursive;
+  background: rgb(21, 94, 208)
 }

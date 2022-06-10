@@ -10,12 +10,10 @@
   </head>
   <body>
     <div class="box-light-blue">
-      <div class="box-one">
-        <div class="box-two">
-          <div class="box-tres">
-            <p class="text-p">El nick ya está en uso.</p>
-            <a class="text-a" onmouseover="colorText(this)" href="<?= SITE_URL ?>register">Volver al registro de usuario</a>
-          </div>
+      <div class="box-white">
+        <div>
+        <div class="text-p"><?php echo $view->user->nick ." ". $view->content ?> .</div>
+        <button class="text-a" id="go-back" onclick="retornar()" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">Regresar atras!</button>
         </div>
       </div>
     </div>

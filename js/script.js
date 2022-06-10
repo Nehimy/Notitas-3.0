@@ -34,7 +34,7 @@ function colorTitleOver(element){
 
 function colorTitleOut(element){
   element.style.color = "fff";
-  
+
 }
 
 function bigImg(element){
@@ -60,7 +60,7 @@ function SaveOut(element){
 }
 
 
-// evento keypress 
+// evento keypress
 
 //tecla enter 13
 function searching(e){
@@ -68,7 +68,12 @@ function searching(e){
 	  document.getElementById('mysearch').style.background= "#26c2ff";
 	  document.getElementById('mysearch').style.color= "#fff";
 	}
-}			
+}
 window.onkeypress = searching;
 
+function retornar(){
+  document.getElementById('go-back').addEventListener('click', () => {
+    history.back();
+  });
 
+}
