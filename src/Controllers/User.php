@@ -32,7 +32,7 @@ class User{
 
             if (isset($user)){
                 //exit("El nick \"$nick\" ya está en uso.");
-                View::render("option-1", ["user"=>$user, "content"=>"ya esta en uso"]);
+                View::render("option-1", ["user"=>$user, "content"=>"ya esta en uso", "url"=>"register"]);
                 exit();
             }
             $newUser->nick = $nick;
