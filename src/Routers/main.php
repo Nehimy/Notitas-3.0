@@ -50,10 +50,12 @@ Router::post("/register", "Controllers\User::AddUser");
 
 // login
 Router::get("/login", "Controllers\User::UserLogin");
-Router::post("/login", "Controllers\User::Login");//confirmar logueo
+
+Router::post("/login", "Controllers\User::Login") //confirmar logueo
+    ->middleware('Middlewares\User::check');
 
 // cargar el panel
-Router::get("/panel", "Controllers\User::panelAdmin")
+Router::get("/panel-begin", "Controllers\User::panelAdmin")
     ->middleware('Middlewares\User::check');
 
 // eliminar un usuario
@@ -79,18 +81,7 @@ Router::post("/search-for", "Controllers\Notita::searching")
 // Adtualizar usuario
 Router::post("/user/{id}/update", "Controllers\User::updateUser")
     ->middleware('Middlewares\User::check');
-    
+
 // Ver usuario
 Router::get("/user/{id}/view", "Controllers\User::viewUser")
     ->middleware('Middlewares\User::check');
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

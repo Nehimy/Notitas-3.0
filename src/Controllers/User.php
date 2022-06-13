@@ -61,11 +61,13 @@ class User{
         if(isset($user) && password_verify($password, $user->password)){
             //Crear una cookie
             $user->createCookie();
-
-            if($user->admin == 1)
+            if($user->admin == 1){
+                print_r($user);
                 Router::redirect('/panel-begin');
-            else
+            }
+            else{
                 Router::redirect('/all');
+            }
         }else{
             View::render('login', ['error'=> 'Datos incorrectos']);
         }
