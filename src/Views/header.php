@@ -23,7 +23,20 @@
           <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
         </li>
       </ul>
+      <div class="box-container">
+      <ul class = "list-bar list-bar2">
+      <li>
+        <a class="sign" onmouseover="colorText(this)" onmouseout="normalColor(this)">
+          Sign off
+        </a>
+      </li>
+      <li>
+        <a>
+        </a>
+      </li>
+      </ul>
+      </div>
 
-      <a> Sign off </a>
+
     </div>
     <script src="<?=SITE_URL?>js/script.js"></script>

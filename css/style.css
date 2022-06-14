@@ -469,3 +469,19 @@ textarea{
   font-family: 'Carter One', cursive;
   background: rgb(21, 94, 208)
 }
+
+/**barra de navegación segunda parte sing**/
+
+.sign {
+    color: rgb(38, 194, 255);
+}
+
+.box-container {
+    position: relative;
+
+}
+
+.list-bar2 {
+    right: 0;
+    padding: 10 15;
+}
