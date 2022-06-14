@@ -26,7 +26,7 @@
       <div class="box-container">
       <ul class = "list-bar list-bar2">
       <li>
-        <a class="sign" onmouseover="colorText(this)" onmouseout="normalColor(this)">
+        <a class="sign" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
           Sign off
         </a>
       </li>

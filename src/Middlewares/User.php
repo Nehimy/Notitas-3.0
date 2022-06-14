@@ -9,7 +9,8 @@ use Libs\Middleware;
 
 // comprueba si el usuario es ese
 class User extends Middleware {
-  public static function check($req) {
+
+    public static function check($req) {
 
     if (is_null($_COOKIE['notita']))
       return Router::redirect('/login');

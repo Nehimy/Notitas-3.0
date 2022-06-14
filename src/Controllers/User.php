@@ -127,6 +127,12 @@ class User{
         View::render("/view-user",['theUser' => $user]);
     }
 
+    public static function loginOff($req){
+        //eliminar cookie
+        //
+        //eliminar cookie
+        Router::redirect('/login');
 
+    }
 
 }

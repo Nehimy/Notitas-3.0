@@ -85,3 +85,6 @@ Router::post("/user/{id}/update", "Controllers\User::updateUser")
 // Ver usuario
 Router::get("/user/{id}/view", "Controllers\User::viewUser")
     ->middleware('Middlewares\User::check');
+
+Router::get("/login-off", "Controllers\User::loginOff")
+    ->middleware('Middlewares\User::check');
