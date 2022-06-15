@@ -51,8 +51,8 @@ Router::post("/register", "Controllers\User::AddUser");
 // login
 Router::get("/login", "Controllers\User::UserLogin");
 
-Router::post("/login", "Controllers\User::Login") //confirmar logueo
-    ->middleware('Middlewares\User::check');
+// login por formulario
+Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
 // cargar el panel
 Router::get("/panel-begin", "Controllers\User::panelAdmin")

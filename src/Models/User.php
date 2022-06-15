@@ -19,4 +19,12 @@ class User extends ModelMySQL{
 
     setcookie("notita", $token, time()+(24*60*60*31),true);
   }
+
+  public function eliminateCookie() {
+      /*$token = md5($this->id.'-'.time().PRIVATE_KEY);
+      $this->token = $token;
+      $this->save();*/
+
+      setcookie("notita", time() - 3600, true);
+  }
 }

@@ -53,7 +53,7 @@ class User{
         $nick = $req->post->name;
         $password = $req->post->password;
 
-        //Otener el users
+        //Otener el user
         $user = MUser::select(["password,id,admin"])
               ->where("nick", "$nick")
               ->getFirst();
@@ -129,8 +129,8 @@ class User{
 
     public static function loginOff($req){
         //eliminar cookie
-        //
-        //eliminar cookie
+
+        $req->user->eliminateCookie();
         Router::redirect('/login');
 
     }
