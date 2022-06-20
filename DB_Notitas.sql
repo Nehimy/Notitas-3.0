@@ -13,5 +13,7 @@ CREATE TABLE users (
        mail varchar(80) unique,
        password varchar(255),
        token varchar(255),
+       avatar varchar(64) unique,
        admin bool
+       
 );
