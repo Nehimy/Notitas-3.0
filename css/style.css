@@ -491,4 +491,12 @@ textarea{
     position: absolute;
     right: 0;
     border-radius: 40px;
+    width: 80px;
+}
+
+.avatar2{
+    position: absolute;
+    right: -20;
+    border-radius: 40px;
+    width: 80px;
 }

@@ -37,10 +37,18 @@
       </ul>
       </div>
       <div class="avatar">
-        <!-- <img class="avatar" src="<?=SITE_URL?>css/avatar_default.svg" alt="Avatar"> -->
+        <!-- <img  src="https://www.gravatar.com/avatar/<?php echo $view->img?>" alt="Avatar"> -->
         <!-- <img class="avatar" src="https://i.imgur.com/nTgwSKj.png" alt="Avatar"> -->
-        <!-- <img class="avatar" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Avatar"> -->
-        <img class="avatar" src="https://www.gravatar.com/avatar/<?=$img->hash?>" alt="Avatar">
+        <?php
+         if($view->img){ ?>
+                   <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->img?>" alt="Avatar">
+         <?php
+          }else{
+          ?>
+                   <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png" alt="Avatar default" />
+         <?php
+          }
+        ?>
 
       </div>
 
