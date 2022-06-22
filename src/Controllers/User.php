@@ -69,8 +69,11 @@ class User{
             }
             else{
                 $hash= md5( strtolower( trim( "$user->mail")));
-                //Router::redirect('/all');
-                View::render('/all', ['img'=> $hash]);
+                echo $hash;
+                echo "<br>";
+                echo $user->mail;
+                // View::render('header', ['img'=> $hash]);
+                // Router::redirect('/all');
             }
         }else{
             View::render('login', ['error'=> 'Datos incorrectos']);

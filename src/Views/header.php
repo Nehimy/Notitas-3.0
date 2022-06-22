@@ -40,7 +40,8 @@
         <!-- <img class="avatar" src="<?=SITE_URL?>css/avatar_default.svg" alt="Avatar"> -->
         <!-- <img class="avatar" src="https://i.imgur.com/nTgwSKj.png" alt="Avatar"> -->
         <!-- <img class="avatar" src="https://www.gravatar.com/avatar/205e460b479e2e5b48aec07710c08d50" alt="Avatar"> -->
-        <img class="avatar" src="https://www.gravatar.com/avatar/<? $img->hash ?>" alt="Avatar">
+        <img class="avatar" src="https://www.gravatar.com/avatar/<?=$img->hash?>" alt="Avatar">
+
       </div>
 
     </div>
