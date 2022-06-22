@@ -43,18 +43,21 @@ class User{
             View::render("message",["content"=>"Usuario ya registrado, proceda a logearse por favor.", "url"=>"login", "button"=> "Iniciar sesión"]);
         }
     }
-    //Método
+
+
+    //Carga el formulario del login
     public static function UserLogin(){
         View::render('login');
     }
 
+    //Carga la cuenta del usuario o admin
     public static function Login($req){
 
         $nick = $req->post->name;
         $password = $req->post->password;
 
         //Otener el user
-        $user = MUser::select(["password,id,admin"])
+        $user = MUser::select(["password,id,admin,mail"])
               ->where("nick", "$nick")
               ->getFirst();
         //Preguntar si la contraseña es correcta
@@ -62,11 +65,12 @@ class User{
             //Crear una cookie
             $user->createCookie();
             if($user->admin == 1){
-                print_r($user);
                 Router::redirect('/panel-begin');
             }
             else{
-                Router::redirect('/all');
+                $hash= md5( strtolower( trim( "$user->mail")));
+                //Router::redirect('/all');
+                View::render('/all', ['img'=> $hash]);
             }
         }else{
             View::render('login', ['error'=> 'Datos incorrectos']);
