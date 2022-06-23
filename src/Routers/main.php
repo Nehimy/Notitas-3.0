@@ -54,14 +54,6 @@ Router::get("/login", "Controllers\User::UserLogin");
 // login por formulario
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
-//
-//
-// Caso raro - redireciono del header al panel de usuario
-//Router::get("/header", "Controllers\User::panelUser")
-//    ->middleware('Middlewares\User::check');
-//
-//
-//
 
 // cargar el panel
 Router::get("/panel-begin", "Controllers\User::panelAdmin")

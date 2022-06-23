@@ -38,10 +38,9 @@
       </div>
       <div class="avatar">
         <!-- <img  src="https://www.gravatar.com/avatar/<?php echo $view->img?>" alt="Avatar"> -->
-        <!-- <img class="avatar" src="https://i.imgur.com/nTgwSKj.png" alt="Avatar"> -->
         <?php
-         if($view->img){ ?>
-                   <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->img?>" alt="Avatar">
+         if($view->avatar){ ?>
+                   <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
          <?php
           }else{
           ?>

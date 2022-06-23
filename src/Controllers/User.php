@@ -68,26 +68,13 @@ class User{
                 Router::redirect('/panel-begin');
             }
             else{
-                $hash= md5(strtolower( trim( "$user->mail")));
-                View::render('header', ['img'=> $hash]);
-                //View::render('all', ['img'=> $hash]);
-                //View::render('/all');
-                //Router::redirect('/header');
+                //$hash= md5(strtolower( trim( "$user->mail")));
+                Router::redirect('/all');
             }
         }else{
             View::render('login', ['error'=> 'Datos incorrectos']);
         }
     }
-
-    //
-    //
-    // Redirigir al panel  de usuario
-    //public static function panelUser($req){
-    //    Router::redirect('/all');
-    //}
-    //
-    //
-    //
 
     // Método que lleve a panel.php
     public static function panelAdmin($req){

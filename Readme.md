@@ -23,3 +23,8 @@ Cookies
 - ver nota de forma individual ✔️
 - efecto de carga lenta
 - Panel que cargue las ultimas notas.
+
+- 23 de junio 10:13
+- Verificar el correo
+- Que el cargar notas del admin este en notas.php
+-

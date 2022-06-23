@@ -50,7 +50,10 @@ class Notita {
         $notas = MNotita::where('user_id', $user_id)
                ->orderBy('id', 'DESC')
                ->get();
-        View::render("index",['notitas' => $notas]);
+
+        $hash= md5(strtolower(trim($req->user->mail)));
+
+        View::render("index",['notitas' => $notas, 'avatar' => $hash]);
     }
 
     // Eliminar nota apartir del id
