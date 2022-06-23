@@ -7,15 +7,15 @@ use Models\User as MUser;
 use Models\Notita as MNotita;
 use Libs\Router;
 
-class User{
+class User {
 
     // Método que carge registro
-    public static function UserRegister(){
+    public static function UserRegister() {
         View::render('register');
     }
 
     // Método que guarde el usuario
-    public static function AddUser($req){
+    public static function AddUser($req) {
         $newUser = new MUser;
 
         $nick = $req->post->name;
@@ -26,21 +26,29 @@ class User{
         //$admin = isset($req->post->admin) ? 1:0;
         $admin = 0;
 
-        if(isset($nick) & isset($password)){
+        if(isset($nick) & isset($password)) {
             $user = MUser::where("nick", "$nick")
                   ->getFirst();
 
-            if (isset($user)){
+            if (isset($user)) {
                 //exit("El nick \"$nick\" ya está en uso.");
                 View::render("message", ["content"=>" El nick ya esta en uso", "url"=>"register", "button"=> "Volver al registro!"]);
                 exit();
             }
             $newUser->nick = $nick;
-            $newUser->mail = $mail;
-            $newUser->password = $password;
             $newUser->admin = $admin;
-            $newUser->save();
-            View::render("message",["content"=>"Usuario ya registrado, proceda a logearse por favor.", "url"=>"login", "button"=> "Iniciar sesión"]);
+            $newUser->password = $password;
+
+            if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
+                $newUser->mail = $mail;
+            }else{
+                //echo "Esta dirección de correo ($mail) es válida.";
+                exit("Esta dirección de correo \"$mail\" no es válida.");
+            }
+
+
+            //$newUser->save();
+            //View::render("message",["content"=>"Usuario ya registrado, proceda a logearse por favor.", "url"=>"login", "button"=> "Iniciar sesión"]);
         }
     }
 
