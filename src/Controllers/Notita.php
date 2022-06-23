@@ -8,8 +8,10 @@ use Libs\Router;
 class Notita {
 
     // Método que carge o lleve a new.php
-    public static function form(){
-        View::render("new");
+    public static function form($req){
+
+        $hash= md5(strtolower(trim($req->user->mail)));
+        View::render("new", ['avatar' => $hash]);
     }
 
     // Crea una nota - guardar nota
@@ -40,7 +42,8 @@ class Notita {
         $notita = MNotita::getById($id);
 
         //carga la pagina
-        View::render("view", ['notita'=> $notita]);
+        $hash= md5(strtolower(trim($req->user->mail)));
+        View::render("view", ['notita'=> $notita, 'avatar' => $hash]);
     }
 
     // Obtener todas las notas
@@ -72,7 +75,9 @@ class Notita {
     /************************************/
     // Editar una nota ya creada
     public static function editing($req){
-        View::render("edit", ["editMyNota"=>$req->notita]);
+
+        $hash= md5(strtolower(trim($req->user->mail)));
+        View::render("edit", ["editMyNota"=>$req->notita, "avatar"=>$hash]);
     }
 
     // Guardar nota modificada
