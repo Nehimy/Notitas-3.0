@@ -26,5 +26,11 @@ Cookies
 
 - 23 de junio 10:13
 - Verificar el correo
+La solución en :https://www.php.net/manual/es/filter.examples.validation.php
 - Que el cargar notas del admin este en notas.php
--
+
+Correo de prueba:
+ -henit46971@serosin.com
+
+
+-pagina de precentación
