@@ -101,14 +101,6 @@ class User {
         }
     }
 
-    // Cargar todas los usuarios para el admin
-    /*public static function allUsers($req){
-        if($req->user->admin){
-            $users = MUser::all();
-            View::render("panel-users",['theUsers' => $users]);
-        }
-        }*/
-
     // Eliminar usuario
     public static function deleteUser($req){
         $theuser = MUser::getById($req->params->id);

@@ -33,9 +33,11 @@ Correo de prueba:
 
 Cosas por hacer en Notitas
 
-- Que el cargar notas del admin este en notas.php
+- Que el cargar notas del admin este en notas.php  ✔️
 - Css para la página de : el correo no es válido. ✔️
 - Intentar modificar la libreria de kj para no escribir muchas linas
-
+- Al eliminar usuario que elimine todas sus notas
+- Cargar el avatarpara el admin
+- Arreglar el panel del admin
 
 -página de precentación de el programa notitas pop-its
