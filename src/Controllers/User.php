@@ -43,12 +43,13 @@ class User {
                 $newUser->mail = $mail;
             }else{
                 //echo "Esta dirección de correo ($mail) es válida.";
-                exit("Esta dirección de correo \"$mail\" no es válida.");
+                $menssage = "Esta dirección de correo \"$mail\" no es válida.";
+                View::render("message", ["content"=>$menssage, "url"=>"register", "button"=> "Volver al registro!"]);
+                exit();
             }
 
-
-            //$newUser->save();
-            //View::render("message",["content"=>"Usuario ya registrado, proceda a logearse por favor.", "url"=>"login", "button"=> "Iniciar sesión"]);
+            $newUser->save();
+            View::render("message",["content"=>"Usuario ya registrado, proceda a logearse por favor.", "url"=>"login", "button"=> "Iniciar sesión"]);
         }
     }
 
@@ -101,12 +102,12 @@ class User {
     }
 
     // Cargar todas los usuarios para el admin
-    public static function allUsers($req){
+    /*public static function allUsers($req){
         if($req->user->admin){
             $users = MUser::all();
             View::render("panel-users",['theUsers' => $users]);
         }
-    }
+        }*/
 
     // Eliminar usuario
     public static function deleteUser($req){
