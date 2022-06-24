@@ -68,7 +68,7 @@ Router::get("/panel-users", "Controllers\User::allUsers")
     ->middleware('Middlewares\User::check');
 
 // ver todas las notas
-Router::get("/panel-notes", "Controllers\User::allNotes")
+Router::get("/panel-notes", "Controllers\Notita::allNotes")
     ->middleware('Middlewares\User::check');
 
 // editar usuario

@@ -2,6 +2,7 @@
 namespace Controllers;
 
 use Libs\View;
+use Models\User as MUser;
 use Models\Notita as MNotita;
 use Libs\Router;
 
@@ -58,6 +59,18 @@ class Notita {
 
         View::render("index",['notitas' => $notas, 'avatar' => $hash]);
     }
+    //
+    //
+    // Cargar todas los usuarios para el admin
+    public static function allUsers($req){
+        if($req->user->admin){
+            $users = MUser::all();
+            View::render("panel-users",['theUsers' => $users]);
+        }
+    }
+    //
+    //
+    //
 
     // Eliminar nota apartir del id
     public static function delete($req){

@@ -25,12 +25,17 @@ Cookies
 - Panel que cargue las ultimas notas.
 
 - 23 de junio 10:13
-- Verificar el correo
+- Verificar el correo ✔️
 La solución en :https://www.php.net/manual/es/filter.examples.validation.php
-- Que el cargar notas del admin este en notas.php
 
 Correo de prueba:
  -henit46971@serosin.com
 
+Cosas por hacer en Notitas
 
--pagina de precentación
+- Que el cargar notas del admin este en notas.php
+- Css para la página de : el correo no es válido. ✔️
+- Intentar modificar la libreria de kj para no escribir muchas linas
+
+
+-página de precentación de el programa notitas pop-its
