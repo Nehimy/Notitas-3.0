@@ -74,10 +74,13 @@ class User {
             //Crear una cookie
             $user->createCookie();
             if($user->admin == 1){
-                Router::redirect('/panel-begin');
+                $hash= md5(strtolower(trim($user->mail)));
+                Router::redirect('/panel-begin', ["avatar"=>$hash]);
+                //Router::redirect('/panel-begin');
             }
             else{
                 //$hash= md5(strtolower( trim( "$user->mail")));
+                //Router::redirect('/all', ["avatar"=>$hash]);
                 Router::redirect('/all');
             }
         }else{
@@ -89,17 +92,22 @@ class User {
     public static function panelAdmin($req){
         if($req->user->admin){
             $notes = MNotita::orderBy('id', 'DESC')->get();
+            //$hash= md5(strtolower(trim($req->user->mail)));
+            //View::render("panel-begin",['lastNotes' => $notes, "avatar"=>$hash]);
             View::render("panel-begin",['lastNotes' => $notes]);
         }
     }
-
-    // Cargar todas las notas para el admin
-    public static function allNotes($req){
+    //
+    // Cargar todas los usuarios para el admin
+    public static function allUsers($req){
         if($req->user->admin){
-            $notas = MNotita::orderBy('id', 'DESC')->get();
-            View::render("panel-notes",['notitas' => $notas]);
+            $users = MUser::all();
+            View::render("panel-users",['theUsers' => $users]);
         }
     }
+    //
+    //
+
 
     // Eliminar usuario
     public static function deleteUser($req){

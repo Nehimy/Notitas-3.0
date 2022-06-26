@@ -39,9 +39,9 @@
       <div class="avatar">
         <!-- <img  src="https://www.gravatar.com/avatar/<?php echo $view->img?>" alt="Avatar"> -->
         <?php
-         if($view->avatar){ ?>
+         if(isset($view->avatar)){ ?>
                    <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
-         <?php
+          <?php
           }else{
           ?>
                    <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png" alt="Avatar default" />

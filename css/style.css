@@ -1,6 +1,6 @@
 body{
-    //background: #646464;
     margin: 0;
+    background: #fbde43;
 }
 /************Header************/
 .navigation-bar{
@@ -496,7 +496,8 @@ textarea{
 
 .avatar2{
     position: absolute;
-    right: -20;
+    //right: -20;
+    right: 3;
     border-radius: 40px;
     width: 80px;
 }

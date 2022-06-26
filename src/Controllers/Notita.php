@@ -56,16 +56,16 @@ class Notita {
                ->get();
 
         $hash= md5(strtolower(trim($req->user->mail)));
-
         View::render("index",['notitas' => $notas, 'avatar' => $hash]);
     }
     //
     //
     // Cargar todas los usuarios para el admin
-    public static function allUsers($req){
+    public static function allNotes($req){
         if($req->user->admin){
-            $users = MUser::all();
-            View::render("panel-users",['theUsers' => $users]);
+            $notas = MNotita::orderBy('id', 'DESC')->get();
+            //$hash= md5(strtolower(trim($req->user->mail)));
+            View::render("panel-notes",['notitas' => $notas]);
         }
     }
     //
