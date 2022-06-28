@@ -67,8 +67,8 @@ Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
 Router::get("/panel-users", "Controllers\User::allUsers")
     ->middleware('Middlewares\User::check');
 
-// ver todas las notas
-Router::get("/panel-notes", "Controllers\Notita::allNotes")
+// ver todas las notas para el admin
+Router::get("/panel-notes", "Controllers\Notita::panelNotes")
     ->middleware('Middlewares\User::check');
 
 // editar usuario

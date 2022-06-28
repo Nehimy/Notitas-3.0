@@ -44,6 +44,7 @@
           }else{
           ?>
                    <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png" alt="Avatar default" />
+
          <?php
           }
         ?>

@@ -28,6 +28,8 @@ class User extends Middleware {
     $req->view = new View;
     $req->view->avatar = md5(strtolower(trim($user->mail)));
 
+
+
     static::next($req);
   }
 

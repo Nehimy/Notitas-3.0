@@ -60,10 +60,11 @@ class Notita {
     //
     //
     // Cargar todas los usuarios para el admin
-    public static function allNotes($req){
+    public static function panelNotes($req){
         if($req->user->admin){
-            $notas = MNotita::orderBy('id', 'DESC')->get();
-            View::render("panel-notes",['notitas' => $notas]);
+            $req->view->notitas =  MNotita::orderBy('id', 'DESC')->get();
+            $req->view->html("panel-notes");
+
         }
     }
     //
