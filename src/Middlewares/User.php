@@ -6,6 +6,7 @@ use Models\User as MUser;
 use Models\Notita as MNotita;
 use Libs\Router;
 use Libs\Middleware;
+use Libs\View;
 
 // comprueba si el usuario es ese
 class User extends Middleware {
@@ -24,17 +25,16 @@ class User extends Middleware {
         return Router::redirect('/login');
 
     $req->user = $user;
-
-    $req->avatar = md5(strtolower(trim($user->mail)));
+    $req->view = new View;
+    $req->view->avatar = md5(strtolower(trim($user->mail)));
 
     static::next($req);
   }
 
   //verificar dueño
    public static function verifyOwner($req) {
-     $notitaId = $req->params->id;
 
-     $notita = MNotita::getById($notitaId);
+     $notita = MNotita::getById($req->params->id);
 
      if(is_null($notita))
         exit('La nota no existe.');

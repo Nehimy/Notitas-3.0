@@ -50,20 +50,11 @@ class Notita {
     // Obtener todas las notas
     //***************************************
     public static function all($req){
-        $user_id = $req->user->id;
         // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
-        $notas = MNotita::where('user_id', $user_id)
+        $req->view->notitas = MNotita::where('user_id', $req->user->id)
                ->orderBy('id', 'DESC')
                ->get();
-
-        //$hash= md5(strtolower(trim($req->user->mail)));
-        //View::render("index",['notitas' => $notas, 'avatar' => $hash]);
-
-        $View = new View;
-        //$View->render("index" ,['notitas' => $notas, 'avatar' => $hash]);
-        //$View->render("index" ,['notitas' => $notas, 'avatar' =>$req->avatar]);
-        echo $req->avatar;
-        //$View->html("index");
+        $req->view->html("index");
     }
     //***************************************
     //
@@ -72,7 +63,6 @@ class Notita {
     public static function allNotes($req){
         if($req->user->admin){
             $notas = MNotita::orderBy('id', 'DESC')->get();
-            //$hash= md5(strtolower(trim($req->user->mail)));
             View::render("panel-notes",['notitas' => $notas]);
         }
     }
