@@ -48,6 +48,7 @@ class Notita {
     }
 
     // Obtener todas las notas
+    //***************************************
     public static function all($req){
         $user_id = $req->user->id;
         // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
@@ -55,9 +56,16 @@ class Notita {
                ->orderBy('id', 'DESC')
                ->get();
 
-        $hash= md5(strtolower(trim($req->user->mail)));
-        View::render("index",['notitas' => $notas, 'avatar' => $hash]);
+        //$hash= md5(strtolower(trim($req->user->mail)));
+        //View::render("index",['notitas' => $notas, 'avatar' => $hash]);
+
+        $View = new View;
+        //$View->render("index" ,['notitas' => $notas, 'avatar' => $hash]);
+        //$View->render("index" ,['notitas' => $notas, 'avatar' =>$req->avatar]);
+        echo $req->avatar;
+        //$View->html("index");
     }
+    //***************************************
     //
     //
     // Cargar todas los usuarios para el admin

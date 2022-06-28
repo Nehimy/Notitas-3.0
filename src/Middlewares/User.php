@@ -21,10 +21,12 @@ class User extends Middleware {
     $user = MUser::where('token', "$token")->getFirst();
 
     if(is_null($user))
-      return Router::redirect('/login');
+        return Router::redirect('/login');
 
     $req->user = $user;
-    //print_r($req->user);
+
+    $req->avatar = md5(strtolower(trim($user->mail)));
+
     static::next($req);
   }
 
@@ -38,7 +40,7 @@ class User extends Middleware {
         exit('La nota no existe.');
 
      $req->notita = $notita;
-     //print_r($req->user->admin);
+
      if($notita->user_id == $req->user->id ||
      $req->user->admin)
        static::next($req);

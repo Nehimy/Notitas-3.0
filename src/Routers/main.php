@@ -89,3 +89,19 @@ Router::get("/user/{id}/view", "Controllers\User::viewUser")
 
 Router::get("/login-off", "Controllers\User::loginOff")
     ->middleware('Middlewares\User::check');
+
+
+//Test 1
+
+Router::get("/pruebita", function(){
+    //echo "hola mundo";
+    \Libs\View::render("login");
+
+} );
+
+//Test 2
+
+Libs\Router::get("/dina-mariguana", function(){
+    $buey = new \Libs\View;
+    $buey ->render("/header", ["avatar"=>"205e460b479e2e5b48aec07710c08d50"]);
+});

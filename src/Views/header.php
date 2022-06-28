@@ -37,7 +37,6 @@
       </ul>
       </div>
       <div class="avatar">
-        <!-- <img  src="https://www.gravatar.com/avatar/<?php echo $view->img?>" alt="Avatar"> -->
         <?php
          if(isset($view->avatar)){ ?>
                    <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
