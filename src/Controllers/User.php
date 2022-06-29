@@ -99,11 +99,11 @@ class User {
     }
     //
     // Cargar todas los usuarios para el admin
-    public static function allUsers($req){
+    public static function panelUsers($req){
         if($req->user->admin){
-            $users = MUser::all();
-            $req->view->Users = $users;
+            $req->view->Users = $users = MUser::all();
             $req->view->html("panel-users");
+
         }
     }
     //

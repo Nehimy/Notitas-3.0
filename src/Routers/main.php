@@ -3,10 +3,10 @@
 use Libs\Router;
 
 /******************************Note***********************************/
-
+// Garga la pagina de new nota
 Router::get("/new", "Controllers\Notita::form")->middleware('Middlewares\User::check');
 
-//nueva nota
+// guarda la nueva nota
 Router::post("/new", "Controllers\Notita::add")
      ->middleware('Middlewares\User::check');
 
@@ -63,8 +63,8 @@ Router::get("/panel-begin", "Controllers\User::panelAdmin")
 Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
     ->middleware('Middlewares\User::check');
 
-// ver todas los usuarios
-Router::get("/panel-users", "Controllers\User::allUsers")
+// ver todas los usuarios para el admin
+Router::get("/panel-users", "Controllers\User::panelUsers")
     ->middleware('Middlewares\User::check');
 
 // ver todas las notas para el admin

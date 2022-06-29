@@ -7,16 +7,17 @@ use Models\Notita as MNotita;
 use Libs\Router;
 
 class Notita {
+    // Método que carge o lleva a crear una nueva nota
 
-    // Método que carge o lleve a new.php
-    public static function form($req){
+    public static function form($req) {
 
-        $hash= md5(strtolower(trim($req->user->mail)));
-        View::render("new", ['avatar' => $hash]);
+        //$hash= md5(strtolower(trim($req->user->mail)));
+        //View::render("new", ['avatar' => $hash]);
+        $req->view->html("new");
     }
 
     // Crea una nota - guardar nota
-    public static function add($req){
+    public static function add($req) {
         $newNotita = new MNotita;
         #variable
         $titulo = $req->post->title;
@@ -59,7 +60,7 @@ class Notita {
     //***************************************
     //
     //
-    // Cargar todas los usuarios para el admin
+    // Cargar todas las notas de los usuarios para el admin
     public static function panelNotes($req){
         if($req->user->admin){
             $req->view->notitas =  MNotita::orderBy('id', 'DESC')->get();

@@ -30,14 +30,19 @@ La solución en :https://www.php.net/manual/es/filter.examples.validation.php
 
 Correo de prueba:
  -henit46971@serosin.com
+ Grvatar:
+
+ https://en.gravatar.com/emails
 
 Cosas por hacer en Notitas
 
 - Que el cargar notas del admin este en notas.php  ✔️
 - Css para la página de : el correo no es válido. ✔️
-- Intentar modificar la libreria de kj para no escribir muchas linas
+- Intentar modificar la libreria de kj para no escribir muchas linas ✔️ hecho por kj
 - Al eliminar usuario que elimine todas sus notas
-- Cargar el avatarpara el admin
-- Arreglar el panel del admin
+- Cargar el avatarpara el admin ✔️
+- Arreglar el panel del admin ✔️
+- Arreglar la lupa del buscador
 
--página de precentación de el programa notitas pop-its
+- página de precentación de el programa notitas pop-its
+- Poner paginación en el admin para notas  y usuarios
