@@ -8,7 +8,7 @@
       <!--white-box-->
       <?php
        //Obtener el id del usuario
-       foreach($view->theUsers as $users){
+       foreach($view->Users as $users){
       //}
       ?>
       <div class="user-box">

@@ -102,7 +102,8 @@ class User {
     public static function allUsers($req){
         if($req->user->admin){
             $users = MUser::all();
-            View::render("panel-users",['theUsers' => $users]);
+            $req->view->Users = $users;
+            $req->view->html("panel-users");
         }
     }
     //
@@ -119,8 +120,8 @@ class User {
 
     // Editat usuario
     public static function editUsers($req){
-        $theuser = MUser::getById($req->params->id);
-        View::render("edit-user", ["editUser" => $theuser]);
+        $user = MUser::getById($req->params->id);
+        View::render("edit-user", ["User" => $user]);
     }
 
     // Update usuario
