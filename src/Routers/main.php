@@ -3,11 +3,12 @@
 use Libs\Router;
 
 /******************************Note***********************************/
+
 // Garga la pagina de new nota
-Router::get("/new", "Controllers\Notita::form")->middleware('Middlewares\User::check');
+Router::get("/new", "Controllers\Notita::newNota")->middleware('Middlewares\User::check');
 
 // guarda la nueva nota
-Router::post("/new", "Controllers\Notita::add")
+Router::post("/new", "Controllers\Notita::addNota")
      ->middleware('Middlewares\User::check');
 
 // ver nota
