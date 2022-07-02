@@ -20,11 +20,12 @@ class Notita {
 
         #preguntamos si no es nulo y si esta definido
         if(isset($req->post->title) & isset($req->post->content)) {
-            $newNotita->title = $titulo;
-            $newNotita->content = $contenido;
+            $newNotita->title = $req->post->title;
+            $newNotita->content = $req->post->content;
             $newNotita->color = $req->post->color;
             $newNotita->user_id = $req->user->id;
-
+            //print_r($req->post->title);
+            //exit();
             $newNotita->save();
 
             //Ir al index
@@ -35,14 +36,10 @@ class Notita {
 
     }
 
-    // Método o camino que lleve a ver la nota completa
-    public static function view($req){
-        $id = $req->params->id;
-        $notita = MNotita::getById($id);
+    // Método o camino que lleve a ver la nota completa del usuario
+    public static function viewNota($req) {
 
-        //carga la pagina
-        $hash= md5(strtolower(trim($req->user->mail)));
-        View::render("view", ['notita'=> $notita, 'avatar' => $hash]);
+        $req->view->html('view');
     }
 
     // Obtener todas las notas

@@ -38,8 +38,11 @@ class User extends Middleware {
 
      if(is_null($notita))
         exit('La nota no existe.');
-
-     $req->notita = $notita;
+     ///////En estas lineas mandamos la nota a cargar en la pagina ////////
+     //$req->notita = $notita;
+     $req->view = new View;
+     $req->view->notita = $notita;
+     ////////////////////////////////////////////////////////////////////////
 
      if($notita->user_id == $req->user->id ||
      $req->user->admin)

@@ -12,7 +12,7 @@ Router::post("/new", "Controllers\Notita::addNota")
      ->middleware('Middlewares\User::check');
 
 // ver nota
-Router::get("/note/{id}", "Controllers\Notita::view")
+Router::get("/note/{id}", "Controllers\Notita::viewNota")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
