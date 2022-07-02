@@ -7,29 +7,26 @@ use Models\Notita as MNotita;
 use Libs\Router;
 
 class Notita {
+
     // Método que carge o lleva a crear una nueva nota
+    public static function newNota($req) {
 
-    public static function form($req) {
-
-        //$hash= md5(strtolower(trim($req->user->mail)));
-        //View::render("new", ['avatar' => $hash]);
         $req->view->html("new");
     }
 
-    // Crea una nota - guardar nota
-    public static function add($req) {
+    // Guardar nota creada
+    public static function addNota($req) {
         $newNotita = new MNotita;
-        #variable
-        $titulo = $req->post->title;
-        $contenido = $req->post->content;
 
         #preguntamos si no es nulo y si esta definido
-        if(isset($titulo) & isset($contenido)){
+        if(isset($req->post->title) & isset($req->post->content)) {
             $newNotita->title = $titulo;
             $newNotita->content = $contenido;
             $newNotita->color = $req->post->color;
             $newNotita->user_id = $req->user->id;
+
             $newNotita->save();
+
             //Ir al index
             Router::redirect('/all');
         }else{

@@ -45,4 +45,7 @@ Cosas por hacer en Notitas
 - Arreglar la lupa del buscador
 
 - página de precentación de el programa notitas pop-its
+
+
+
 - Poner paginación en el admin para notas  y usuarios
