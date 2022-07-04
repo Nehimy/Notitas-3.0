@@ -46,14 +46,15 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
 /******************************User***********************************/
 // nuevo user
 Router::get("/register", "Controllers\User::UserRegister");
+
+// guarda en la base de datos al usuario nuevo
 Router::post("/register", "Controllers\User::AddUser");
 
 // login
 Router::get("/login", "Controllers\User::UserLogin");
 
-// login por formulario
+// loguearce
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
-// ->middleware('Middlewares\User::check');
 
 // cargar el panel
 Router::get("/panel-begin", "Controllers\User::panelAdmin")

@@ -6,8 +6,8 @@
     <div class="white-box">
       <?php
 
-       $mitad = round(count($view->lastNotes)/ 2);
-      foreach($view->lastNotes as $notes){
+       $mitad = round(count($view->notitas)/ 2);
+      foreach($view->notitas as $notes){
       ?>
       <div class="note <?=$notes->color?>">
         <!--Botón de eliminar -->

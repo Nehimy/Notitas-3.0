@@ -31,7 +31,6 @@ class User {
                   ->getFirst();
 
             if (isset($user)) {
-                //exit("El nick \"$nick\" ya está en uso.");
                 View::render("message", ["content"=>" El nick ya esta en uso", "url"=>"register", "button"=> "Volver al registro!"]);
                 exit();
             }
@@ -54,18 +53,18 @@ class User {
     }
 
 
-    //Carga el formulario del login
+    // Carga el formulario del login
     public static function UserLogin(){
         View::render('login');
     }
 
-    //Carga la cuenta del usuario o admin
+    // Carga la cuenta del usuario o admin
     public static function Login($req){
 
         $nick = $req->post->name;
         $password = $req->post->password;
 
-        //Otener el user
+        //Obtener el user
         $user = MUser::select(["password,id,admin,mail"])
               ->where("nick", "$nick")
               ->getFirst();
@@ -76,11 +75,8 @@ class User {
             if($user->admin == 1){
                 $hash= md5(strtolower(trim($user->mail)));
                 Router::redirect('/panel-begin', ["avatar"=>$hash]);
-                //Router::redirect('/panel-begin');
             }
             else{
-                //$hash= md5(strtolower( trim( "$user->mail")));
-                //Router::redirect('/all', ["avatar"=>$hash]);
                 Router::redirect('/all');
             }
         }else{
@@ -92,9 +88,9 @@ class User {
     public static function panelAdmin($req){
         if($req->user->admin){
             $notes = MNotita::orderBy('id', 'DESC')->get();
-            //$hash= md5(strtolower(trim($req->user->mail)));
-            //View::render("panel-begin",['lastNotes' => $notes, "avatar"=>$hash]);
-            View::render("panel-begin",['lastNotes' => $notes]);
+            //View::render("panel-begin",['lastNotes' => $notes]);
+            $req->view->notitas = $notes;
+            $req->view->html('panel-begin');
         }
     }
     //
