@@ -108,11 +108,11 @@ class User {
         $notes = MNotita::where('user_id', $req->params->id)
               ->orderBy('id', 'DESC')
                ->get();
-
+        //Eliminar todas sus notas
         foreach($notes as $note){
             $note->delete();
         }
-        //Eliminar todas sus notas
+        // Eliminar usuario
         MUser::getById($req->params->id)->delete();
         Router::redirect('/panel-users');
     }
