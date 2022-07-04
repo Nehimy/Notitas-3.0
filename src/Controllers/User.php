@@ -85,37 +85,40 @@ class User {
     }
 
     // Método que lleve a panel.php
-    public static function panelAdmin($req){
-        if($req->user->admin){
-            $notes = MNotita::orderBy('id', 'DESC')->get();
+    public static function panelAdmin($req ){
+        if($req->user->admin) {
             //View::render("panel-begin",['lastNotes' => $notes]);
-            $req->view->notitas = $notes;
+            $req->view->notitas = MNotita::orderBy('id', 'DESC')->get();;
             $req->view->html('panel-begin');
         }
     }
-    //
+
     // Cargar todas los usuarios para el admin
-    public static function panelUsers($req){
+    public static function panelUsers($req) {
         if($req->user->admin){
             $req->view->Users = $users = MUser::all();
             $req->view->html("panel-users");
 
         }
     }
-    //
-    //
-
 
     // Eliminar usuario
-    public static function deleteUser($req){
-        $theuser = MUser::getById($req->params->id);
-        $theuser->delete();
+    public static function deleteUser($req) {
 
+        $notes = MNotita::where('user_id', $req->params->id)
+              ->orderBy('id', 'DESC')
+               ->get();
+
+        foreach($notes as $note){
+            $note->delete();
+        }
+        //Eliminar todas sus notas
+        MUser::getById($req->params->id)->delete();
         Router::redirect('/panel-users');
     }
 
     // Editat usuario
-    public static function editUsers($req){
+    public static function editUsers($req) {
         $user = MUser::getById($req->params->id);
         View::render("edit-user", ["User" => $user]);
     }
