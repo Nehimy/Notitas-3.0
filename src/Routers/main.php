@@ -73,7 +73,7 @@ Router::get("/panel-notes", "Controllers\Notita::panelNotes")
     ->middleware('Middlewares\User::check');
 
 // editar usuario
-Router::get("/user/{id}/edit", "Controllers\User::editUsers")
+Router::get("/user/{id}/edit", "Controllers\User::editUserForm")
     ->middleware('Middlewares\User::check');
 
 // enlace del search

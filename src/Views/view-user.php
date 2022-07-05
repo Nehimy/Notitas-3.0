@@ -5,7 +5,6 @@
   <div class="transparent-box">
     <div class="white-box">
       <div class=" user-box user-box-edit">
-
         <div class="box-input">
           <div class="box-iconos">
             <a href="<?=SITE_URL?>user/<?=$view->theUser->id?>/edit">

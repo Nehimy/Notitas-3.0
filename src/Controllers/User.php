@@ -118,31 +118,46 @@ class User {
     }
 
     // Editat usuario
-    public static function editUsers($req) {
+    public static function editUserForm($req) {
         //$user = MUser::getById($req->params->id);
         //View::render("edit-user", ["User" => $user]);
-        $req->view->User= MUser::getById($req->params->id);
+        $req->view->user = MUser::getById($req->params->id);
         $req->view->html('edit-user');
     }
 
+
+    //
+    //
+    //
     // Update usuario
     public static function updateUser($req){
         $user = MUser::getById($req->params->id);
         $user->mail = $req->post->mail;
         $password = password_hash($req->post->password, PASSWORD_DEFAULT);
         $user->password = $password;
-
         $user->save();
-        View::render("/view-user",['theUser' => $user]);
+
+        Router::redirect("/user/$user->id/view");
+
     }
+    //
+    //
+    //
+    //
+    //
+
+
+
     // Ver usuario
     public static function viewUser($req) {
         $user = MUser::getById($req->params->id);
+
         View::render("/view-user",['theUser' => $user]);
     }
 
+
     public static function loginOff($req){
-        //eliminar cookie
+
 
         $req->user->eliminateCookie();
         Router::redirect('/login');

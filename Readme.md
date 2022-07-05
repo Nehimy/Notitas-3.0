@@ -49,4 +49,4 @@ Cosas por hacer en Notitas
 - Reacer el view con la libreria actualizada de kj
  - panelAdmin
  - panelUsers
- -
+ - editUserForm
