@@ -47,6 +47,7 @@ Cosas por hacer en Notitas
 - Poner paginación en el admin para notas  y usuarios
 
 - Reacer el view con la libreria actualizada de kj
- - panelAdmin
- - panelUsers
- - editUserForm
+ - panelAdmin✔️
+ - panelUsers✔️
+ - editUserForm✔️
+ - viewUser✔️

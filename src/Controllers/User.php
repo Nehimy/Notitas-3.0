@@ -125,10 +125,6 @@ class User {
         $req->view->html('edit-user');
     }
 
-
-    //
-    //
-    //
     // Update usuario
     public static function updateUser($req){
         $user = MUser::getById($req->params->id);
@@ -140,24 +136,16 @@ class User {
         Router::redirect("/user/$user->id/view");
 
     }
-    //
-    //
-    //
-    //
-    //
 
-
-
-    // Ver usuario
+    // Carga la página luego de aptualizar los datos del usuario
     public static function viewUser($req) {
-        $user = MUser::getById($req->params->id);
 
-        View::render("/view-user",['theUser' => $user]);
+        $req->view->user =  MUser::getById($req->params->id);$user;
+        $req->view->html("view-user");
     }
 
-
+    // Elimina la sesión del usuario
     public static function loginOff($req){
-
 
         $req->user->eliminateCookie();
         Router::redirect('/login');

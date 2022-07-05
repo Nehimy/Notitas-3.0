@@ -7,19 +7,19 @@
       <div class=" user-box user-box-edit">
         <div class="box-input">
           <div class="box-iconos">
-            <a href="<?=SITE_URL?>user/<?=$view->theUser->id?>/edit">
+            <a href="<?=SITE_URL?>user/<?=$view->user->id?>/edit">
               <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
             </a>
-            <a href="<?=SITE_URL?>user/<?=$view->theUser->id?>/remove">
+            <a href="<?=SITE_URL?>user/<?=$view->user->id?>/remove">
               <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
             </a>
           </div>
           <div class="title-of-view">
             <div class="view-user">
-              <?=$view->theUser->nick?>
+              <?=$view->user->nick?>
             </div>
             <div class="view-user">
-              <?=$view->theUser->mail?>
+              <?=$view->user->mail?>
             </div>
           </div>
         </div>
