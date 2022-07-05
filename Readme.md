@@ -39,13 +39,11 @@ Cosas por hacer en Notitas
 - Que el cargar notas del admin este en notas.php  ✔️
 - Css para la página de : el correo no es válido. ✔️
 - Intentar modificar la libreria de kj para no escribir muchas linas ✔️ hecho por kj✔️ lo hiso kj
-- Al eliminar usuario que elimine todas sus notas
+- Al eliminar usuario que elimine todas sus notas✔️
 - Cargar el avatarpara el admin ✔️
 - Arreglar el panel del admin ✔️
 - Arreglar la lupa del buscador
-
 - página de precentación de el programa notitas pop-its
-
 - Poner paginación en el admin para notas  y usuarios
 
 - Reacer el view con la libreria actualizada de kj

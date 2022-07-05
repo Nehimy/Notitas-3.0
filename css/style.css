@@ -350,7 +350,8 @@ textarea{
 }
 
 .user-box-edit{
-  height: 130px;
+    height: 130px;
+    min-height: 250px;
 }
 
 
