@@ -119,8 +119,10 @@ class User {
 
     // Editat usuario
     public static function editUsers($req) {
-        $user = MUser::getById($req->params->id);
-        View::render("edit-user", ["User" => $user]);
+        //$user = MUser::getById($req->params->id);
+        //View::render("edit-user", ["User" => $user]);
+        $req->view->User= MUser::getById($req->params->id);
+        $req->view->html('edit-user');
     }
 
     // Update usuario
