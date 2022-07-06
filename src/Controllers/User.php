@@ -41,7 +41,6 @@ class User {
             if (filter_var($mail, FILTER_VALIDATE_EMAIL)) {
                 $newUser->mail = $mail;
             }else{
-                //echo "Esta dirección de correo ($mail) es válida.";
                 $menssage = "Esta dirección de correo \"$mail\" no es válida.";
                 View::render("message", ["content"=>$menssage, "url"=>"register", "button"=> "Volver al registro!"]);
                 exit();
@@ -64,7 +63,7 @@ class User {
         $nick = $req->post->name;
         $password = $req->post->password;
 
-        //Obtener el user
+        //Obtener el usuario
         $user = MUser::select(["password,id,admin,mail"])
               ->where("nick", "$nick")
               ->getFirst();
@@ -96,7 +95,7 @@ class User {
     // Cargar todas los usuarios para el admin
     public static function panelUsers($req) {
         if($req->user->admin){
-            $req->view->Users = $users = MUser::all();
+            $req->view->users = $users = MUser::all();
             $req->view->html("panel-users");
 
         }

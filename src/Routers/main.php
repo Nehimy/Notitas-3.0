@@ -4,19 +4,24 @@ use Libs\Router;
 /******************************Note***********************************/
 
 // Garga la pagina de new nota
-Router::get("/new", "Controllers\Notita::newNota")->middleware('Middlewares\User::check');
+Router::get("/new", "Controllers\Notita::newNoteForm")
+    ->middleware('Middlewares\User::check');
 
 // guarda la nueva nota
-Router::post("/new", "Controllers\Notita::addNota")
+Router::post("/new", "Controllers\Notita::addNote")
      ->middleware('Middlewares\User::check');
 
 // ver nota
-Router::get("/note/{id}", "Controllers\Notita::viewNota")
+Router::get("/note/{id}", "Controllers\Notita::viewNote")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
 // ver todas las notas
-Router::get("/all", "Controllers\Notita::all")
+Router::get("/all", "Controllers\Notita::allNotes")
+    ->middleware('Middlewares\User::check');
+
+// El admin puede ver todas las notas creadas
+Router::get("/panel-notes", "Controllers\Notita::loadNotesAdmin")
     ->middleware('Middlewares\User::check');
 
 // eliminar nota
@@ -30,13 +35,9 @@ Router::get("/note/{id}/remove/admin", "Controllers\Notita::delete")
     ->middleware('Middlewares\User::check');
 
 // editar nota
-Router::get("/note/{id}/edit", "Controllers\Notita::editing")
+Router::get("/note/{id}/edit", "Controllers\Notita::editNote")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
-
-/*Router::get("/note/{id}/edit", "Controllers\Notita::editing")
-    ->middleware('Middlewares\User::verifyOwner')
-    ->middleware('Middlewares\User::check');*/
 
 // guardar nota editada
 Router::post("/note/{id}/update", "Controllers\Notita::update")
@@ -66,10 +67,6 @@ Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
 
 // ver todas los usuarios para el admin
 Router::get("/panel-users", "Controllers\User::panelUsers")
-    ->middleware('Middlewares\User::check');
-
-// ver todas las notas para el admin
-Router::get("/panel-notes", "Controllers\Notita::panelNotes")
     ->middleware('Middlewares\User::check');
 
 // editar usuario
