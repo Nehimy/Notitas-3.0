@@ -74,7 +74,7 @@ Router::get("/user/{id}/edit", "Controllers\User::editUserForm")
     ->middleware('Middlewares\User::check');
 
 // enlace del search
-Router::post("/search-for", "Controllers\Notita::searching")
+Router::post("/search-for", "Controllers\Notita::searchNotes")
     ->middleware('Middlewares\User::check');
 
 // Adtualizar usuario

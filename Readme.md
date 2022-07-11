@@ -42,7 +42,7 @@ Cosas por hacer en Notitas
 - Al eliminar usuario que elimine todas sus notas✔️
 - Cargar el avatarpara el admin ✔️
 - Arreglar el panel del admin ✔️
-- Arreglar la lupa del buscador
+- Arreglar la lupa del buscador ✔️
 - página de precentación de el programa notitas pop-its
 - Poner paginación en el admin para notas  y usuarios
 - Revisar /cotrolers/user.php y /middelwares/user.php por si puedo acortar las lineas de código
@@ -59,3 +59,7 @@ Cosas por hacer en Notitas
     - allNotes
     - loadNotesAdmin
     - editNote
+    - searchNotes
+
+- El buscador también tiene que buscar usuarios
+- el usuario tambien tendrá un buscador

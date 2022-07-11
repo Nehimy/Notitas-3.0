@@ -21,7 +21,7 @@ class Notita {
         #preguntamos si no es nulo y si esta definido
         if(isset($req->post->title) & isset($req->post->content)) {
             $newNotita->title = $req->post->title;
-            $newNotita->content = $req->post->content;
+            $newNotita->content = trim($req->post->content);
             $newNotita->color = $req->post->color;
             $newNotita->user_id = $req->user->id;
 
@@ -84,16 +84,17 @@ class Notita {
     public static function update($req){
         $saveNota = MNotita::getById($req->params->id);
         $saveNota->title = $req->post->title;
-        $saveNota->content = $req->post->contenido;
+        $saveNota->content = trim($req->post->contenido);
         $saveNota->color = $req->post->color;
         $saveNota->save();
         //Ver la nota acabada de guardar
         Router::redirect('/note/'.$saveNota->id);
     }
     /************************************/
-    public static function searching($req){
-        $notas = MNotita::search($req->post->palabra, ['title'])->get();
-        View::render("panel-notes", ['notitas'=> $notas]);
+    public static function searchNotes($req){
+
+        $req->view->notitas = MNotita::search($req->post->palabra, ['title'])->get();
+        $req->view->html("panel-notes");
 
     }
 

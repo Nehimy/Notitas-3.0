@@ -334,6 +334,14 @@ textarea{
 
 }
 
+
+.searchBoton{
+    position: relative;
+    left: 144px;
+    bottom: 27px;
+
+}
+
 /*******users*******/
 
 .user-box{
