@@ -45,9 +45,13 @@ class Notita {
     //***************************************
     public static function allNotes($req){
         // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
-        $req->view->notitas = MNotita::where('user_id', $req->user->id)
+        /*$req->view->notitas = MNotita::where('user_id', $req->user->id)
                ->orderBy('id', 'DESC')
-               ->get();
+               ->get();*/
+        //SELECT * FROM notitas LIMIT 5 OFFSET 2;
+
+        $req->view->notitas = MNotita::where('user_id', $req->user->id)->limit(2, 4)->get();
+        //print_r($misnotas);
         $req->view->html("index");
     }
     //***************************************

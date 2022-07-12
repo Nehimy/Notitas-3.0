@@ -27,6 +27,7 @@
       <?php
        }
        ?>
+      <button type="button">Next</button>
     </div>
   </div>
 </div>

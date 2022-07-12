@@ -181,8 +181,8 @@ class ModelMySQL {
     }
 
     /**
-     * Devuelve los atributos a guardar de la case actual.
-     * Los atributos serán aquellos que seran public y
+     * Devuelve los atributos a guardar de la clase actual.
+     * Los atributos serán aquellos que sean public y
      * no esten excluidos en static::$ignoresave y aquellos
      * que sean private o protected pero estén en static::$forceSave.
      *
@@ -364,7 +364,7 @@ class ModelMySQL {
      *   El operador o el valor a comparar como igual en caso de que $value no se defina.
      *
      * @param string $value
-     *   (opcional) El valor el valor a comparar en la columna.
+     *   (opcional) El valor a comparar en la columna.
      *
      * @param bool $no_quote
      *   (opcional) Se usa cuando $value es una columna o un valor que no requiere comillas.
