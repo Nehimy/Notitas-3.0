@@ -301,6 +301,13 @@ textarea{
 	text-align: center;
 }
 
+/*******panel-begin*******/
+
+.color_text{
+    color: black;
+}
+
+
 /*******search*******/
 
 .search{

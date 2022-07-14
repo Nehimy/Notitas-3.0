@@ -45,13 +45,11 @@ class Notita {
     //***************************************
     public static function allNotes($req){
         // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
-        /*$req->view->notitas = MNotita::where('user_id', $req->user->id)
+        $req->view->notitas = MNotita::where('user_id', $req->user->id)
                ->orderBy('id', 'DESC')
-               ->get();*/
-        //SELECT * FROM notitas LIMIT 5 OFFSET 2;
+               ->get();
 
-        $req->view->notitas = MNotita::where('user_id', $req->user->id)->limit(2, 4)->get();
-        //print_r($misnotas);
+        //$req->view->notitas = MNotita::where('user_id', $req->user->id)->limit(2, 4)->get();
         $req->view->html("index");
     }
     //***************************************
@@ -59,10 +57,28 @@ class Notita {
     // Cargar todas las notas de los usuarios para el admin
     public static function loadNotesAdmin($req){
         if($req->user->admin){
-            $req->view->notitas =  MNotita::orderBy('id', 'DESC')->get();
+            //limit(fila, cantidadDeNotas);
+            $row = 0;
+            $amount = 4;
+            $req->view->notitas = MNotita::orderBy('id','DESC')->limit($row, $amount)->get();
+            $req->view->pg = 1;
             $req->view->html("panel-notes");
 
         }
+    }
+
+    //
+    public static function pagination($req){
+        echo $req->params->page;
+        $amount = 4;
+        //$row = $req->params->page + $amount;
+        //en la pagina 2, seria = 4 * (2-1), daria 4, y asi si funcionaria
+        $row =   $amount * ($req->params->page -1);
+        $req->view->notitas = MNotita::orderBy('id','DESC')
+                ->limit($row, $amount)->get();
+
+        $req->view->pg= $req->params->page;
+         $req->view->html("panel-notes");
     }
 
     // Eliminar nota apartir del id

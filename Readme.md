@@ -63,3 +63,6 @@ Cosas por hacer en Notitas
 
 - El buscador también tiene que buscar usuarios
 - el usuario tambien tendrá un buscador
+- Panel_begin y panel_users tienen que quedar en un solo archivo
+- Al cargar el panel de admin quizas tiene que llamar a paginación
+- Fórmula para cargar notas según la página.

@@ -44,6 +44,12 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
+// n cantidad de notas
+
+Router::get("/page{page}", "Controllers\Notita::pagination")
+    ->middleware('Middlewares\User::check');
+
+
 /******************************User***********************************/
 // nuevo user
 Router::get("/register", "Controllers\User::UserRegister");

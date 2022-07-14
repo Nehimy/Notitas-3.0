@@ -14,7 +14,7 @@
             <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
           </a>
         </div>
-        <!--Botón de eliminar -->
+        <!-- Ver la nota -->
         <div class="title-box">
           <a onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>note/<?=$notas->id?>">
             <?=$notas->title; ?>
@@ -26,8 +26,9 @@
       </div>
       <?php
        }
+       $pg = $view->pg + 1;
        ?>
-      <button type="button">Next</button>
+      <a class="color_text" href="<?=SITE_URL?>page<?=$pg?>">Next</a>
     </div>
   </div>
 </div>
