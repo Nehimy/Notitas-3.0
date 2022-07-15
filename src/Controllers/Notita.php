@@ -55,30 +55,37 @@ class Notita {
     //***************************************
 
     // Cargar todas las notas de los usuarios para el admin
-    public static function loadNotesAdmin($req){
+    /*public static function loadNotesAdmin($req){
         if($req->user->admin){
             //limit(fila, cantidadDeNotas);
-            $row = 0;
             $amount = 4;
-            $req->view->notitas = MNotita::orderBy('id','DESC')->limit($row, $amount)->get();
-            $req->view->pg = 1;
+            $row =   $amount * ($req->params->page -1);
+            $req->view->notitas = MNotita::orderBy('id','DESC')
+                ->limit($row, $amount)->get();
+
+            $req->view->pg= $req->params->page;
             $req->view->html("panel-notes");
 
         }
-    }
+        }**/
 
-    //
+    // Carga n cantidad de notas;
     public static function pagination($req){
-        echo $req->params->page;
+
+        //Caso especial cuando sea la primer pagina
         $amount = 4;
-        //$row = $req->params->page + $amount;
-        //en la pagina 2, seria = 4 * (2-1), daria 4, y asi si funcionaria
-        $row =   $amount * ($req->params->page -1);
+        if(is_null($req->params->page)){
+            $row = 0;
+        }else{
+            $row = $amount * ($req->params->page -1);
+        }
+        //Caso general
+
         $req->view->notitas = MNotita::orderBy('id','DESC')
                 ->limit($row, $amount)->get();
 
         $req->view->pg= $req->params->page;
-         $req->view->html("panel-notes");
+        $req->view->html("panel-notes");
     }
 
     // Eliminar nota apartir del id

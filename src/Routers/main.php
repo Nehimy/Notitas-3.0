@@ -21,7 +21,7 @@ Router::get("/all", "Controllers\Notita::allNotes")
     ->middleware('Middlewares\User::check');
 
 // El admin puede ver todas las notas creadas
-Router::get("/panel-notes", "Controllers\Notita::loadNotesAdmin")
+Router::get("/panel-notes", "Controllers\Notita::pagination")
     ->middleware('Middlewares\User::check');
 
 // eliminar nota
@@ -44,7 +44,7 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
-// n cantidad de notas
+// Carga n cantidad de notas para el admin *******************************************
 
 Router::get("/page{page}", "Controllers\Notita::pagination")
     ->middleware('Middlewares\User::check');
