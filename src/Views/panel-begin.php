@@ -1,4 +1,4 @@
-<?php
+h<?php
     include 'panel.php';
 ?>
 <div class="col s9">
@@ -29,7 +29,7 @@
       <?php
        }
        ?>
-       <a class="color_text" href="<?=SITE_URL?>page"> Next </a>
+       <a class="color_text" href="<?=SITE_URL?>page<?= $pg?>"> Next </a>
     </div>
   </div>
 </div>

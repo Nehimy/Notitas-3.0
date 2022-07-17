@@ -63,9 +63,10 @@ Router::get("/login", "Controllers\User::UserLogin");
 // loguearce
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
-// cargar el panel
-Router::get("/panel-begin", "Controllers\User::panelAdmin")
+// cargar el panel //
+Router::get("/panel-begin", "Controllers\Notita::pagination")
     ->middleware('Middlewares\User::check');
+//*********************************************************
 
 // eliminar un usuario
 Router::get("/user/{id}/remove", "Controllers\User::deleteUser")

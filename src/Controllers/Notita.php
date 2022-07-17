@@ -54,33 +54,19 @@ class Notita {
     }
     //***************************************
 
-    // Cargar todas las notas de los usuarios para el admin
-    /*public static function loadNotesAdmin($req){
-        if($req->user->admin){
-            //limit(fila, cantidadDeNotas);
-            $amount = 4;
-            $row =   $amount * ($req->params->page -1);
-            $req->view->notitas = MNotita::orderBy('id','DESC')
-                ->limit($row, $amount)->get();
-
-            $req->view->pg= $req->params->page;
-            $req->view->html("panel-notes");
-
-        }
-        }**/
-
-    // Carga n cantidad de notas;
+    // Carga n cantidad de notas para el admin
     public static function pagination($req){
 
         //Caso especial cuando sea la primer pagina
-        $amount = 4;
+        $amount = 8;
         if(is_null($req->params->page)){
+            $req->params->page = 1;
             $row = 0;
         }else{
             $row = $amount * ($req->params->page -1);
         }
-        //Caso general
 
+        //Caso general
         $req->view->notitas = MNotita::orderBy('id','DESC')
                 ->limit($row, $amount)->get();
 

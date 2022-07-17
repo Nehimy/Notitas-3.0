@@ -84,13 +84,13 @@ class User {
     }
 
     // Método que lleve a panel.php
-    public static function panelAdmin($req ){
+    /*public static function panelAdmin($req ){
         if($req->user->admin) {
             //View::render("panel-begin",['lastNotes' => $notes]);
             $req->view->notitas = MNotita::orderBy('id', 'DESC')->get();;
             $req->view->html('panel-begin');
         }
-    }
+        }*/
 
     // Cargar todas los usuarios para el admin
     public static function panelUsers($req) {

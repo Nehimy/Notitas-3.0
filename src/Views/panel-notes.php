@@ -27,7 +27,8 @@
       <?php
        }
        $pg = $view->pg + 1;
-       ?>
+       echo $pg;
+      ?>
       <a class="color_text" href="<?=SITE_URL?>page<?=$pg?>">Next</a>
     </div>
   </div>
