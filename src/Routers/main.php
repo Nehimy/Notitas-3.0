@@ -44,9 +44,9 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
-// Carga n cantidad de notas para el admin *******************************************
+// Carga n cantidad de notas para el admin ***********************
 
-Router::get("/page{page}", "Controllers\Notita::pagination")
+Router::get("/page{page}", "Controllers\Notita::adminNotes")
     ->middleware('Middlewares\User::check');
 
 

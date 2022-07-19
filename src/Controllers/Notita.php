@@ -55,23 +55,30 @@ class Notita {
     //***************************************
 
     // Carga n cantidad de notas para el admin
-    public static function pagination($req){
+    public static function adminNotes($req){
+        if($req->user->admin ){
+            //Caso especial cuando sea la primer pagina
+            $amount = 8;
+            if(is_null($req->params->page)){
+                $req->params->page = 1;
+                $initialRow = 0;
+            }else{
+                $initialRow = $amount * ($req->params->page -1);
+            }
 
-        //Caso especial cuando sea la primer pagina
-        $amount = 8;
-        if(is_null($req->params->page)){
-            $req->params->page = 1;
-            $row = 0;
-        }else{
-            $row = $amount * ($req->params->page -1);
+            //Caso general
+            $req->view->notitas = MNotita::orderBy('id','DESC')
+                                ->limit($initialRow, $amount)->get();
+
+            if(($initialRow + $amount) < MNotita::limit($initialRow, ($amount + 1))->count(true, true))
+                $req->view->pg= $req->params->page;
+            else
+                $req->view->pg= $req->params->page -1;
+
+            $req->view->html("panel-notes");
         }
 
-        //Caso general
-        $req->view->notitas = MNotita::orderBy('id','DESC')
-                ->limit($row, $amount)->get();
 
-        $req->view->pg= $req->params->page;
-        $req->view->html("panel-notes");
     }
 
     // Eliminar nota apartir del id

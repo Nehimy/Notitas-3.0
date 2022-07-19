@@ -63,8 +63,12 @@ Cosas por hacer en Notitas
 
 - El buscador también tiene que buscar usuarios
 - el usuario tambien tendrá un buscador
-- Panel_begin y panel_users tienen que quedar en un solo archivo
-  - Encontrar la forma de que al optener todas las notas llame a una sola función paginación().
-- Al cargar el panel de admin quizas tiene que llamar a paginación
+- Panel_begin y panel_users tienen que quedar en un solo archivo ✔️
+  - Encontrar la forma de que al optener todas las notas llame a una sola función paginación().✔️
+- Al cargar el panel de admin quizas tiene que llamar a paginación ✔️
 - Fórmula para cargar notas según la página.✔️
 - Crear un botón de atrás.
+- Eliminar panel_begin.php✔️
+- que carguen las notas de a 8 pero que pregunte antes si es admin en pagination().✔️
+- Si no hay más notitas que next deje de cargar otra página.✔️
+- https://godm0de.github.io/calculator-pwa/ 2 themes dark and light.
