@@ -64,7 +64,7 @@ Router::get("/login", "Controllers\User::UserLogin");
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
 // cargar el panel //
-Router::get("/panel-begin", "Controllers\Notita::pagination")
+Router::get("/panel-begin", "Controllers\Notita::adminNotes")
     ->middleware('Middlewares\User::check');
 //*********************************************************
 
