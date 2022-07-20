@@ -68,6 +68,7 @@ Cosas por hacer en Notitas
 - Al cargar el panel de admin quizas tiene que llamar a paginación ✔️
 - Fórmula para cargar notas según la página.✔️
 - Crear un botón de atrás.
+  - Hacer un metodo inverso al de adminNotes
 - Eliminar panel_begin.php✔️
 - que carguen las notas de a 8 pero que pregunte antes si es admin en pagination().✔️
 - Si no hay más notitas que next deje de cargar otra página.✔️

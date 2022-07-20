@@ -21,7 +21,7 @@ Router::get("/all", "Controllers\Notita::allNotes")
     ->middleware('Middlewares\User::check');
 
 // El admin puede ver todas las notas creadas
-Router::get("/panel-notes", "Controllers\Notita::pagination")
+Router::get("/panel-notes", "Controllers\Notita::adminNotes")
     ->middleware('Middlewares\User::check');
 
 // eliminar nota
