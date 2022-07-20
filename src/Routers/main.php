@@ -51,6 +51,7 @@ Router::get("/page{page}", "Controllers\Notita::adminNotes")
 
 
 /******************************User***********************************/
+
 // nuevo user
 Router::get("/register", "Controllers\User::UserRegister");
 
