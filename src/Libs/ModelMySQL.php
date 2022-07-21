@@ -639,7 +639,7 @@ class ModelMySQL {
      *   (opcional) Indica si el query debe reiniciarse o no (por defecto es true).
      *
      * @param bool $useLimit
-     *   (opcional) Permite usar limit para estabecer un máximo inical y final para contar. Requiere que se haya definido antes el límite (por defecto en false).
+     *   (opcional) Permite usar limit para establecer un máximo inical y final para contar. Requiere que se haya definido antes el límite (por defecto en false).
      *
      * @return int
      */

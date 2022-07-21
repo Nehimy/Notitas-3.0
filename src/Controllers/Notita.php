@@ -70,7 +70,17 @@ class Notita {
             $req->view->notitas = MNotita::orderBy('id','DESC')
                                 ->limit($initialRow, $amount)->get();
 
-            if(($initialRow + $amount) < MNotita::limit($initialRow, ($amount + 1))->count(true, true))
+            echo "<br>"."Es la últimanota en cargar <br>";
+            echo $initialRow + $amount;
+            //count = contar
+            //cantidad de notas a cargar para preguntar si hay más notas.
+
+            echo "<br>".MNotita::limit($initialRow, ($initialRow + $amount + 1))->count(true, true);
+            echo "<br>"."suma de la fila y la cantidad + 1<br>";
+            echo $end = $initialRow + $amount + 1;
+
+            //if(($initialRow + $amount) < MNotita::limit($initialRow, ($end))->count(true, true))
+            if(($initialRow + $amount) < $end)
                 $req->view->pg= $req->params->page;
             else
                 $req->view->pg= $req->params->page -1;
