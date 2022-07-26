@@ -84,6 +84,40 @@ class Notita {
 
     }
 
+    /*Back metodo temporal que va hacia una pagina aterior si la hay*/
+    public static function backNotes($req){
+
+        if(isset($req->user->admin)){
+            if(is_null($req->params->page)){
+                $req->params->page = 1;
+                $initialRow = 0;
+            }else{
+                $initialRow = 8 * ($req->params->page -1);
+            }
+            $req->view->notitas = MNotita::orderBy('id','DESC')
+                                ->limit($initialRow, 8)->get();
+
+            $amountOverflow = MNotita::limit($initialRow, (8 +1))->count(true, true) - 8;
+
+            echo $initialRow;
+            echo "<br>";
+            echo $amountOverflow;
+            echo "<br>";
+            echo $req->params->page;
+
+            if ($amountOverflow == 1)
+                $req->view->pg = 1;
+            else{
+              $req->view->pg= $req->params->page -1;
+              echo "hola mundo";
+            }
+
+            $req->view->html("panel-notes");
+        }
+
+    }
+
+
     // Eliminar nota apartir del id
     public static function delete($req){
         //print_r($req->user->admin);

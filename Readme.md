@@ -12,7 +12,7 @@ Cookies
 - Cuando le click a la lista de obcciones tiene que cargar ej. todas las notas dentro del mismo panel y lo mismo con los usuarios
 
 
-- ¿Usuarios con avatar?
+- Usuarios con avatar ✔️
 - buscador shearch ✔️
 - opcion de eliminar usuarios ✔️
 - opcion de eliminar notas ✔️
@@ -73,3 +73,9 @@ Cosas por hacer en Notitas
 - que carguen las notas de a 8 pero que pregunte antes si es admin en pagination().✔️
 - Si no hay más notitas que next deje de cargar otra página.✔️
 - https://godm0de.github.io/calculator-pwa/ 2 themes dark and light.
+
+* how to solve back button dilemma
+  2. El botón de atrás puede empezar en la última pagina y termina en la primera.
+  3. El botón de back detecta la página done esta y carga una página anterior
+  4. Si el button is begin ya no puede avanzar
+  5. Back tiene como limites la pagina 1 y la última pagina que carga las notas.

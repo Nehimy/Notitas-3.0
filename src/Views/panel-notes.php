@@ -26,11 +26,20 @@
       </div>
       <?php
        }
-       $pg = $view->pg + 1;
+       echo $pg = $view->pg + 1;
+      echo "<br>";
+      echo "pg-1 "."<br>";
+      echo $page = $view->pg -1;
+      echo "<br>";
+      echo "pg "."<br>";
+      echo $view->pg;
       ?>
-      <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"> <a href="<?=SITE_URL?>page<?=$pg?>">Next</a> </button>
+      <!-- BACK-->
+      <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"> <a  href="<?=SITE_URL.$view->url?>back-<?=$pg-1?>"> Back </a></button>
 
-      <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"> <a  href="<?=SITE_URL.$view->url?>page<?=$pg?>"> Back </a></button>
+
+      <!-- NEXT-->
+      <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"> <a href="<?=SITE_URL?>page<?=$pg?>">Next</a> </button>
     </div>
   </div>
 </div>
