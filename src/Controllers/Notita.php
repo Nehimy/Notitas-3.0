@@ -56,7 +56,7 @@ class Notita {
 
     // Carga n cantidad de notas para el admin
     public static function adminNotes($req){
-        if($req->user->admin ){
+        if(isset($req->user->admin)){
             //Caso especial cuando sea la primer pagina
             $amount = 8;
             if(is_null($req->params->page)){
@@ -72,7 +72,6 @@ class Notita {
 
             $amountOverflow = MNotita::limit($initialRow, ($amount +1))->count(true, true) - $amount;
 
-            // ($initialRow + $amount) < MNotita::limit($initialRow, ($amount +1))->count(true, true)
             if ($amountOverflow == 1)
                 $req->view->pg= $req->params->page;
             else
@@ -81,38 +80,47 @@ class Notita {
             $req->view->html("panel-notes");
         }
 
-
     }
 
     /*Back metodo temporal que va hacia una pagina aterior si la hay*/
-    public static function backNotes($req){
-
+    public static function backNext($req){
+        $amount = 8;
         if(isset($req->user->admin)){
+            // Cuando la pagina cargue por primera vez
             if(is_null($req->params->page)){
+                echo "mierda";
                 $req->params->page = 1;
                 $initialRow = 0;
             }else{
-                $initialRow = 8 * ($req->params->page -1);
+                //Indica en que parte de la fila esta
+                $initialRow = $amount * ($req->params->page -1);
             }
+            // Obtenemos las notas a mostrar
             $req->view->notitas = MNotita::orderBy('id','DESC')
-                                ->limit($initialRow, 8)->get();
+                                ->limit($initialRow, $amount)->get();
 
-            $amountOverflow = MNotita::limit($initialRow, (8 +1))->count(true, true) - 8;
+            // Calculamos si quedan más notas
+            $amountOverflow = MNotita::limit($initialRow, ($amount +1))->count(true, true) - $amount;
 
-            echo $initialRow;
-            echo "<br>";
-            echo $amountOverflow;
-            echo "<br>";
-            echo $req->params->page;
 
             if ($amountOverflow == 1)
-                $req->view->pg = 1;
-            else{
-              $req->view->pg= $req->params->page -1;
-              echo "hola mundo";
-            }
+                $req->view->pgNext = $req->params->page +1;
+            else
+                $req->view->pgNext = $req->params->page;
 
+            echo $req->view->pgNext;
+             echo "<br>";
+             echo $req->view->pgBack;
+
+            if ($req->params->page > 1)
+                $req->view->pgBack = $req->params->page -1;
+
+            if ($req->params->page == 1)
+                $req->view->pgBack = 1;
+
+            // carga la pagina
             $req->view->html("panel-notes");
+
         }
 
     }

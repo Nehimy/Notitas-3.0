@@ -21,20 +21,23 @@ Router::get("/all", "Controllers\Notita::allNotes")
     ->middleware('Middlewares\User::check');
 
 // El admin puede ver todas las notas en la página inicial del admin
-Router::get("/panel-notes", "Controllers\Notita::adminNotes")
-    ->middleware('Middlewares\User::check');
+//Router::get("/panel-notes", "Controllers\Notita::adminNotes")
+//    ->middleware('Middlewares\User::check');
 
 // Carga n cantidad de notas para el admin ***********************
-
-Router::get("/page{page}", "Controllers\Notita::adminNotes")
-    ->middleware('Middlewares\User::check');
+//Router::get("/page{page}", "Controllers\Notita::adminNotes")
+//    ->middleware('Middlewares\User::check');
 
 ///** Back: carga la pagina atrás */
 
-Router::get("/back-{page}","Controllers\Notita::backNotes")
+
+Router::get("/page{page}","Controllers\Notita::backNext")
         ->middleware('Middlewares\User::check');
 
-/******************************User***********************************/
+// Router::get("/pag-{page}","Controllers\Notita::backNext")
+//        ->middleware('Middlewares\User::check');
+
+/*****************************************************************/
 
 // eliminar nota
 Router::get("/note/{id}/remove", "Controllers\Notita::delete")
@@ -73,9 +76,10 @@ Router::get("/login", "Controllers\User::UserLogin");
 // loguearce
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
-// cargar el panel //
-Router::get("/panel-begin", "Controllers\Notita::adminNotes")
+// cargar el panel ///////////////////////////////////////////////////////
+Router::get("/panel-notes", "Controllers\Notita::backNext")
     ->middleware('Middlewares\User::check');
+
 //*********************************************************
 
 // eliminar un usuario
@@ -104,19 +108,3 @@ Router::get("/user/{id}/view", "Controllers\User::viewUser")
 
 Router::get("/login-off", "Controllers\User::loginOff")
     ->middleware('Middlewares\User::check');
-
-
-//Test 1
-
-Router::get("/pruebita", function(){
-    //echo "hola mundo";
-    \Libs\View::render("login");
-
-} );
-
-//Test 2
-
-Libs\Router::get("/dina-mariguana", function(){
-    $buey = new \Libs\View;
-    $buey ->render("/header", ["avatar"=>"205e460b479e2e5b48aec07710c08d50"]);
-});

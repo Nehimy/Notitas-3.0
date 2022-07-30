@@ -73,7 +73,7 @@ class User {
             $user->createCookie();
             if($user->admin == 1){
                 $hash= md5(strtolower(trim($user->mail)));
-                Router::redirect('/panel-begin', ["avatar"=>$hash]);
+                Router::redirect('/panel-notes', ["avatar"=>$hash]);
             }
             else{
                 Router::redirect('/all');

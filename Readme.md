@@ -79,3 +79,4 @@ Cosas por hacer en Notitas
   3. El botón de back detecta la página done esta y carga una página anterior
   4. Si el button is begin ya no puede avanzar
   5. Back tiene como limites la pagina 1 y la última pagina que carga las notas.
+- Los botones desaparecen cuando llegan a su limite.
