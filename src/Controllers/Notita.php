@@ -82,13 +82,12 @@ class Notita {
 
     }
 
-    /*Back metodo temporal que va hacia una pagina aterior si la hay*/
+    /*Metodo de paginación*/
     public static function backNext($req){
         $amount = 8;
         if(isset($req->user->admin)){
             // Cuando la pagina cargue por primera vez
             if(is_null($req->params->page)){
-                echo "mierda";
                 $req->params->page = 1;
                 $initialRow = 0;
             }else{
@@ -102,21 +101,20 @@ class Notita {
             // Calculamos si quedan más notas
             $amountOverflow = MNotita::limit($initialRow, ($amount +1))->count(true, true) - $amount;
 
-
+            //Next
             if ($amountOverflow == 1)
                 $req->view->pgNext = $req->params->page +1;
             else
                 $req->view->pgNext = $req->params->page;
 
-            echo $req->view->pgNext;
-             echo "<br>";
-             echo $req->view->pgBack;
-
+            //Back
             if ($req->params->page > 1)
                 $req->view->pgBack = $req->params->page -1;
-
-            if ($req->params->page == 1)
+            else
                 $req->view->pgBack = 1;
+
+            /*if ($req->params->page == 1)
+              $req->view->pgBack = 1;*/
 
             // carga la pagina
             $req->view->html("panel-notes");
