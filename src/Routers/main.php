@@ -20,22 +20,10 @@ Router::get("/note/{id}", "Controllers\Notita::viewNote")
 Router::get("/all", "Controllers\Notita::allNotes")
     ->middleware('Middlewares\User::check');
 
-// El admin puede ver todas las notas en la página inicial del admin
-//Router::get("/panel-notes", "Controllers\Notita::adminNotes")
-//    ->middleware('Middlewares\User::check');
-
-// Carga n cantidad de notas para el admin ***********************
-//Router::get("/page{page}", "Controllers\Notita::adminNotes")
-//    ->middleware('Middlewares\User::check');
-
-///** Back: carga la pagina atrás */
-
-
+// Los botones de siguiente y atras
 Router::get("/page{page}","Controllers\Notita::backNext")
         ->middleware('Middlewares\User::check');
 
-// Router::get("/pag-{page}","Controllers\Notita::backNext")
-//        ->middleware('Middlewares\User::check');
 
 /*****************************************************************/
 
@@ -76,7 +64,7 @@ Router::get("/login", "Controllers\User::UserLogin");
 // loguearce
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
-// cargar el panel ///////////////////////////////////////////////////////
+// cargar el panel inicial para el admin
 Router::get("/panel-notes", "Controllers\Notita::backNext")
     ->middleware('Middlewares\User::check');
 

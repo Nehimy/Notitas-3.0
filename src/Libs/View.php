@@ -20,7 +20,7 @@ class View extends Neuron {
      *   Ruta relativa y el nommbre sin extensión del archivo ubicado en src/Views
      *
      * @param array $params
-     *   (opcional) Arreglo que podrá ser usado en la vista mediante $view ($param['index'] se usaría así: $view->index)
+     *   (opcional) Arreglo que podrá ser usado en la vista mediante $view,ej. ($param['index'] se usaría así: $view->index)
      *
      * @param string $viewPath
      *   (opcional) Ruta donde se encuentra la vista. En caso de que la vista no se encuentre en esa ruta, se usará la ruta por defecto "src/Views/".

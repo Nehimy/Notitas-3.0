@@ -57,7 +57,7 @@ class User {
         View::render('login');
     }
 
-    // Carga la cuenta del usuario o admin
+    // Recibe los datos del formulario login
     public static function Login($req){
 
         $nick = $req->post->name;
@@ -82,15 +82,6 @@ class User {
             View::render('login', ['error'=> 'Datos incorrectos']);
         }
     }
-
-    // Método que lleve a panel.php
-    /*public static function panelAdmin($req ){
-        if($req->user->admin) {
-            //View::render("panel-begin",['lastNotes' => $notes]);
-            $req->view->notitas = MNotita::orderBy('id', 'DESC')->get();;
-            $req->view->html('panel-begin');
-        }
-        }*/
 
     // Cargar todas los usuarios para el admin
     public static function panelUsers($req) {

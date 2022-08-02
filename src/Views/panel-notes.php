@@ -33,15 +33,17 @@
        }
       ?>
       <!-- BACK-->
-      <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-        <a  href="<?=SITE_URL?>page<?=$view->pgBack?>"> Back </a>
-      </button>
+      <div class="button_container">
+        <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
+          <a  href="<?=SITE_URL?>page<?=$view->pgBack?>"> Back </a>
+        </button>
 
 
-      <!-- NEXT-->
-      <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-        <a href="<?=SITE_URL?>page<?=$view->pgNext?>"> Next </a>
+        <!-- NEXT-->
+        <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
+          <a href="<?=SITE_URL?>page<?=$view->pgNext?>"> Next </a>
       </button>
+      </div>
     </div>
   </div>
 </div>

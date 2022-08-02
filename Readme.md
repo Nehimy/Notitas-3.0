@@ -62,21 +62,18 @@ Cosas por hacer en Notitas
     - searchNotes
 
 - El buscador también tiene que buscar usuarios
-- el usuario tambien tendrá un buscador
+- el usuario también tendrá un buscador
 - Panel_begin y panel_users tienen que quedar en un solo archivo ✔️
   - Encontrar la forma de que al optener todas las notas llame a una sola función paginación().✔️
 - Al cargar el panel de admin quizas tiene que llamar a paginación ✔️
 - Fórmula para cargar notas según la página.✔️
-- Crear un botón de atrás.
-  - Hacer un metodo inverso al de adminNotes
+- Crear un botón de atrás.✔️
+  - Hacer un metodo inverso al de adminNotes ✔️
 - Eliminar panel_begin.php✔️
 - que carguen las notas de a 8 pero que pregunte antes si es admin en pagination().✔️
 - Si no hay más notitas que next deje de cargar otra página.✔️
 - https://godm0de.github.io/calculator-pwa/ 2 themes dark and light.
 
-* how to solve back button dilemma
-  2. El botón de atrás puede empezar en la última pagina y termina en la primera.
-  3. El botón de back detecta la página done esta y carga una página anterior
-  4. Si el button is begin ya no puede avanzar
-  5. Back tiene como limites la pagina 1 y la última pagina que carga las notas.
+
 - Los botones desaparecen cuando llegan a su limite.
+- posicionar bien los botones de back y next
