@@ -1,6 +1,7 @@
 <?php
 require_once('config.php');
 
+
 // Incluir clases
 spl_autoload_register(function ($className) {
     $fp = str_replace('\\','/',$className);
