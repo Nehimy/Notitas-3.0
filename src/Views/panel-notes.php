@@ -48,15 +48,12 @@
 
         <!-- NEXT-->
         <?php
-          if(($view->nextOff == 1)){
-
+          if(($view->nextOff > 0)){
         ?>
         <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-
           <a href="<?=SITE_URL?>page<?=$view->pgNext?>"> Next </a>
       </button>
       <?php
-        }else{
         }
       ?>
 

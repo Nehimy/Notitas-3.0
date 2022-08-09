@@ -84,3 +84,11 @@ Cosas por hacer en Notitas
 - Si estamos en la pag. 1 back no es cargado.
 - Si estamos en la pag. 1 carga el botón back.
 - Si la pag. es mayor que 1 carga back.
+
+
+** Analizando en que casos next ya no tiene que estar **
+
+- ¿En que casos no carga next?
+
+- Next no carga cuando estoy en la últma pag.
+- Nota  1 = true y 0 = false
