@@ -77,3 +77,10 @@ Cosas por hacer en Notitas
 
 - Los botones desaparecen cuando llegan a su limite. ✔️
 - posicionar bien los botones de back y next ✔️
+
+** Analizando en que casos back ya no tiene que estar **
+
+- El botón back no es incluido en la página 1.
+- Si estamos en la pag. 1 back no es cargado.
+- Si estamos en la pag. 1 carga el botón back.
+- Si la pag. es mayor que 1 carga back.

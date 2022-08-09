@@ -37,9 +37,7 @@
       <div class="button_container">
         <?php
           //echo $view->backOff;
-          if(!($view->backOff == 1)){
-          //if(!($view->backOff == 1) or is_null($view->backOff)){
-          }else{
+          if(is_null($view->backOff) or ($view->backOff == 1)){
         ?>
         <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
           <a  href="<?=SITE_URL?>page<?=$view->pgBack?>"> Back </a>
