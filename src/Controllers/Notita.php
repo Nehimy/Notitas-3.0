@@ -86,14 +86,12 @@ class Notita {
     public static function backNext($req){
         $amount = 8;
 
-        //back off
+        //back off y next off
         $req->view->backOff = 0;
-
-        //next off
         $req->view->nextOff = 1;
 
-        if(isset($req->user->admin)){
             // Cuando la página cargue por primera vez
+        if(isset($req->user->admin)){
             if(is_null($req->params->page)){
                 $req->params->page = 1;
                 $initialRow = 0;
@@ -109,11 +107,10 @@ class Notita {
             $amountOverflow = MNotita::limit($initialRow, ($amount +1))->count(true, true) - $amount;
 
             //Next
-            // Si quedan notas
             if ($amountOverflow == 1){
                 $req->view->pgNext = $req->params->page +1;
+                $req->view->backOff = 1;
             }else{
-                $req->view->pgNext = $req->params->page;
                 $req->view->backOff = 1;
                 //next off
                 $req->view->nextOff = 0;
@@ -123,21 +120,15 @@ class Notita {
             //Back
             if ($req->params->page > 1){
                 $req->view->pgBack = $req->params->page -1;
-
-                $req->view->backOff = 1;
-
-           }else{
-                $req->view->pgBack = 1;
+            }else{
                 //back off
-                //$req->view->backOff = 0;
+                $req->view->backOff = 0;
+            }
 
-           }
-
-            // carga la página
+            // Cargar la página
             $req->view->html("panel-notes");
 
         }
-
     }
 
 

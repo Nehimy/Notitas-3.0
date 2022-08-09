@@ -44,8 +44,8 @@ Cosas por hacer en Notitas
 - Arreglar el panel del admin ✔️
 - Arreglar la lupa del buscador ✔️
 - página de precentación de el programa notitas pop-its
-- Poner paginación (botón de next)
-- Revisar /cotrolers/user.php y /middelwares/user.php por si puedo acortar las lineas de código
+- Poner paginación (botón de next) ✔️
+- Revisar /cotrolers/user.php y /middelwares/user.php por si puedo acortar las lineas de código ✔️
 
 - Reacer el view con la libreria actualizada de kj
 -/controllers/user.php
@@ -54,12 +54,12 @@ Cosas por hacer en Notitas
     - editUserForm✔️
     - viewUser✔️
 -/controllers/notitas.php
-    - newNoteForm
-    - viewNote
-    - allNotes
-    - loadNotesAdmin
-    - editNote
-    - searchNotes
+    - newNoteForm ✔️
+    - viewNote ✔️
+    - allNotes ✔️
+    - loadNotesAdmin ✔️
+    - editNote ✔️
+    - searchNotes ✔️
 
 - El buscador también tiene que buscar usuarios
 - el usuario también tendrá un buscador
@@ -75,5 +75,5 @@ Cosas por hacer en Notitas
 - https://godm0de.github.io/calculator-pwa/ 2 themes dark and light.
 
 
-- Los botones desaparecen cuando llegan a su limite.
-- posicionar bien los botones de back y next
+- Los botones desaparecen cuando llegan a su limite. ✔️
+- posicionar bien los botones de back y next ✔️
