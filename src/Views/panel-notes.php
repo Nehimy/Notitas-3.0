@@ -1,5 +1,10 @@
 <?php
- include 'panel.php';
+ if(!($view->isAdmin == 1)){
+  include 'panel.php';
+}else{
+  include 'header.php';
+}
+
 ?>
 <div class="col s9">
   <div class="transparent-box">
@@ -32,9 +37,10 @@
           //llave de sierre del foreach
           }
         ?>
-      <!-- BACK-->
+
 
       <div class="button_container">
+        <!-- BACK-->
         <?php
           //echo $view->backOff;
           if(is_null($view->backOff) or ($view->backOff == 1)){

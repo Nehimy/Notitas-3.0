@@ -17,8 +17,12 @@ Router::get("/note/{id}", "Controllers\Notita::viewNote")
     ->middleware('Middlewares\User::check');
 
 // ver todas las notas
-Router::get("/all", "Controllers\Notita::allNotes")
+Router::get("/all", "Controllers\Notita::loadUserNotes")
     ->middleware('Middlewares\User::check');
+
+// ver todas las notas
+//Router::get("/all", "Controllers\Notita::backNext")
+//    ->middleware('Middlewares\User::check');
 
 // Los botones de siguiente y atras
 Router::get("/page{page}","Controllers\Notita::backNext")

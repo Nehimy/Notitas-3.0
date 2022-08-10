@@ -61,8 +61,14 @@ Cosas por hacer en Notitas
     - editNote ✔️
     - searchNotes ✔️
 
-- El buscador también tiene que buscar usuarios
-- el usuario también tendrá un buscador
+- El buscador también tiene que buscar usuarios.
+- El usuario también tendrá un buscador.
+- El usuario támbien tiene que tener botones de Back y Next.
+- Que al expandirce el botón que el contenedor no se mueva.
+
+- Un usuario normal no tiene que tener panel.
+- Un usuario normal solo puede ver sus notas.
+
 - Panel_begin y panel_users tienen que quedar en un solo archivo ✔️
   - Encontrar la forma de que al optener todas las notas llame a una sola función paginación().✔️
 - Al cargar el panel de admin quizas tiene que llamar a paginación ✔️
@@ -77,6 +83,9 @@ Cosas por hacer en Notitas
 
 - Los botones desaparecen cuando llegan a su limite. ✔️
 - posicionar bien los botones de back y next ✔️
+-
+
+
 
 ** Analizando en que casos back ya no tiene que estar **
 
@@ -92,3 +101,5 @@ Cosas por hacer en Notitas
 
 - Next no carga cuando estoy en la últma pag.
 - Nota  1 = true y 0 = false
+
+** Aanlizando en que casos carga todas las notas**

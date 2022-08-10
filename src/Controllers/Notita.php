@@ -43,14 +43,19 @@ class Notita {
 
     // Obtener todas las notas
     //***************************************
-    public static function allNotes($req){
+    public static function loadUserNotes($req){
         // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
-        $req->view->notitas = MNotita::where('user_id', $req->user->id)
-               ->orderBy('id', 'DESC')
-               ->get();
+        //$req->view->notitas = MNotita::where('user_id', $req->user->id)
+        //       ->orderBy('id', 'DESC')
+        //       ->get();
+        if($req->user->admin == 0){
+            $initialRow = 0;
+            //Obtengo las primeras 12 notas
+            $req->view->notitas = MNotita::where('user_id', $req->user->id)
+                                ->limit($initialRow, 12)->get();
 
-        //$req->view->notitas = MNotita::where('user_id', $req->user->id)->limit(2, 4)->get();
-        $req->view->html("index");
+            $req->view->html("index");
+        }
     }
     //***************************************
 
@@ -89,7 +94,7 @@ class Notita {
         //back off y next off
         $req->view->backOff = 0;
         $req->view->nextOff = 1;
-
+        $req->view->isAdmin = $req->user->admin;
             // Cuando la página cargue por primera vez
         if(isset($req->user->admin)){
             if(is_null($req->params->page)){
