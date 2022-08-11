@@ -41,53 +41,8 @@ class Notita {
         $req->view->html('view');
     }
 
-    // Obtener todas las notas
-    //***************************************
-    public static function loadUserNotes($req){
-        // SELECT * FROM notitas WHERE user_id=$user_id ORDER BY id DESC;
-        //$req->view->notitas = MNotita::where('user_id', $req->user->id)
-        //       ->orderBy('id', 'DESC')
-        //       ->get();
-        if($req->user->admin == 0){
-            $initialRow = 0;
-            //Obtengo las primeras 12 notas
-            $req->view->notitas = MNotita::where('user_id', $req->user->id)
-                                ->limit($initialRow, 12)->get();
-
-            $req->view->html("index");
-        }
-    }
-    //***************************************
-
-    // Carga n cantidad de notas para el admin
-    public static function adminNotes($req){
-        if(isset($req->user->admin)){
-            //Caso especial cuando sea la primer pagina
-            $amount = 8;
-            if(is_null($req->params->page)){
-                $req->params->page = 1;
-                $initialRow = 0;
-            }else{
-                $initialRow = $amount * ($req->params->page -1);
-            }
-
-            //Caso general
-            $req->view->notitas = MNotita::orderBy('id','DESC')
-                                ->limit($initialRow, $amount)->get();
-
-            $amountOverflow = MNotita::limit($initialRow, ($amount +1))->count(true, true) - $amount;
-
-            if ($amountOverflow == 1)
-                $req->view->pg= $req->params->page;
-            else
-                $req->view->pg= $req->params->page -1;
-
-            $req->view->html("panel-notes");
-        }
-
-    }
-
-    /*Metodo de paginación*/
+    /* Metodo de paginación */
+    // Obtener n cantidad notas por pag.
     public static function backNext($req){
         $amount = 8;
 
@@ -95,45 +50,52 @@ class Notita {
         $req->view->backOff = 0;
         $req->view->nextOff = 1;
         $req->view->isAdmin = $req->user->admin;
-            // Cuando la página cargue por primera vez
-        if(isset($req->user->admin)){
-            if(is_null($req->params->page)){
-                $req->params->page = 1;
-                $initialRow = 0;
-            }else{
-                //Indica en que parte de la fila esta
-                $initialRow = $amount * ($req->params->page -1);
-            }
+
+        if(is_null($req->params->page)){
+            $req->params->page = 1;
+            $initialRow = 0;
+        }else{
+            //Indica en que parte de la fila se encuentra
+            $initialRow = $amount * ($req->params->page -1);
+        }
+
+        if($req->user->admin){
             // Obtenemos las notas a mostrar
             $req->view->notitas = MNotita::orderBy('id','DESC')
                                 ->limit($initialRow, $amount)->get();
-
             // Calculamos si quedan más notas
-            $amountOverflow = MNotita::limit($initialRow, ($amount +1))->count(true, true) - $amount;
-
-            //Next
-            if ($amountOverflow == 1){
-                $req->view->pgNext = $req->params->page +1;
-                $req->view->backOff = 1;
-            }else{
-                $req->view->backOff = 1;
-                //next off
-                $req->view->nextOff = 0;
-            }
-
-
-            //Back
-            if ($req->params->page > 1){
-                $req->view->pgBack = $req->params->page -1;
-            }else{
-                //back off
-                $req->view->backOff = 0;
-            }
-
-            // Cargar la página
-            $req->view->html("panel-notes");
-
+            $amountOverflow = MNotita::limit($initialRow, ($amount +1))
+                            ->count(true, true) - $amount;
+        }else{
+            // Obtenemos las notas a mostrar
+            $req->view->notitas = MNotita::where('user_id', $req->user->id)
+                                ->limit($initialRow, $amount)->get();
+            // Calculamos si quedan más notas
+            $amountOverflow = MNotita::where('user_id', $req->user->id)
+                            ->limit($initialRow, ($amount +1))
+                            ->count(true, true) - $amount;
         }
+
+
+        //Next
+        if ($amountOverflow == 1){
+            $req->view->pgNext = $req->params->page +1;
+            $req->view->backOff = 1;
+        }else{
+            $req->view->backOff = 1;
+            //next off
+            $req->view->nextOff = 0;
+        }
+        //Back
+        if ($req->params->page > 1){
+            $req->view->pgBack = $req->params->page -1;
+        }else{
+            //back off
+            $req->view->backOff = 0;
+        }
+
+        // Cargar la página
+        $req->view->html("panel-notes");
     }
 
 
@@ -147,7 +109,6 @@ class Notita {
             Router::redirect('/panel-notes');
         else
             Router::redirect('/all');
-
     }
 
     /************************************/
