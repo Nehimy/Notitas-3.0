@@ -3,13 +3,20 @@
 ?>
 
 <div class="col s9">
+  <form method="GET">
+    <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
+    <div class="searchBoton">
+      <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+      <input class="boton-search" type="submit" value="">
+    </div>
+  </form>
   <div class="transparent-box">
     <div class="white-box">
       <!--white-box-->
       <?php
-       //Obtener el id del usuario
-       foreach($view->users as $users){
-      //}
+      //Obtener el id del usuario
+      foreach($view->users as $users){
+        //}
       ?>
       <div class="user-box">
         <div class="delete-button">
@@ -28,8 +35,8 @@
         </div>
       </div>
       <?php
-       }
-       ?>
+      }
+      ?>
       <!--white-box-->
     </div>
   </div>

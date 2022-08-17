@@ -82,13 +82,11 @@ Router::get("/panel-users", "Controllers\User::panelUsers")
 Router::get("/user/{id}/edit", "Controllers\User::editUserForm")
     ->middleware('Middlewares\User::check');
 
-// enlace del search
-Router::post("/search-for", "Controllers\Notita::searchNotes")
-    ->middleware('Middlewares\User::check');
-
 // Adtualizar usuario
 Router::post("/user/{id}/update", "Controllers\User::updateUser")
     ->middleware('Middlewares\User::check');
+
+
 
 // Ver usuario
 Router::get("/user/{id}/view", "Controllers\User::viewUser")

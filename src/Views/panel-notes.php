@@ -10,7 +10,13 @@
   <?php
     echo $view->isAdmin? '<div class="col s9">' : '<div class="col s9otro">';
    ?>
-
+  <form method="GET">
+    <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
+    <div class="searchBoton">
+      <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+      <input class="boton-search" type="submit" value="">
+    </div>
+  </form>
     <div class="transparent-box">
       <div class="white-box">
         <?php
@@ -44,7 +50,7 @@
           <!-- BACK-->
           <?php
           //echo $view->backOff;
-          if(is_null($view->backOff) or ($view->backOff == 1)){
+          if(isset($view->pgBack) ){
           ?>
           <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
             <a  href="<?=SITE_URL?>page<?=$view->pgBack?>"> Back </a>
@@ -54,7 +60,7 @@
            ?>
           <!-- NEXT-->
           <?php
-           if(($view->nextOff > 0)){
+          if(isset($view->pgNext)){
           ?>
           <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
             <a href="<?=SITE_URL?>page<?=$view->pgNext?>"> Next </a>

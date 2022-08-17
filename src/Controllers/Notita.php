@@ -45,10 +45,6 @@ class Notita {
     // Obtener n cantidad notas por pag.
     public static function backNext($req){
         $amount = 8;
-
-        //back off y next off
-        $req->view->backOff = 0;
-        $req->view->nextOff = 1;
         $req->view->isAdmin = $req->user->admin;
 
         if(is_null($req->params->page)){
@@ -59,40 +55,27 @@ class Notita {
             $initialRow = $amount * ($req->params->page -1);
         }
 
-        if($req->user->admin){
-            // Obtenemos las notas a mostrar
-            $req->view->notitas = MNotita::orderBy('id','DESC')
-                                ->limit($initialRow, $amount)->get();
-            // Calculamos si quedan más notas
-            $amountOverflow = MNotita::limit($initialRow, ($amount +1))
-                            ->count(true, true) - $amount;
-        }else{
-            // Obtenemos las notas a mostrar
-            $req->view->notitas = MNotita::where('user_id', $req->user->id)
-                                ->limit($initialRow, $amount)->get();
-            // Calculamos si quedan más notas
-            $amountOverflow = MNotita::where('user_id', $req->user->id)
-                            ->limit($initialRow, ($amount +1))
-                            ->count(true, true) - $amount;
-        }
+        $notes = MNotita::orderBy('id','DESC')
+               ->limit($initialRow, $amount);
 
+        if (!$req->user->admin)
+            $notes = $notes->where('user_id', $req->user->id);
+
+        if(isset($req->get->search))
+            $notes = $notes->search($req->get->search,['title']);
+
+        $req->view->notitas = $notes->get(false);
+
+        $amountOverflow = MNotita::limit($initialRow, ($amount +1))
+                        ->count(true, true) - $amount;
 
         //Next
-        if ($amountOverflow == 1){
+        if ($amountOverflow == 1)
             $req->view->pgNext = $req->params->page +1;
-            $req->view->backOff = 1;
-        }else{
-            $req->view->backOff = 1;
-            //next off
-            $req->view->nextOff = 0;
-        }
+
         //Back
-        if ($req->params->page > 1){
+        if ($req->params->page > 1)
             $req->view->pgBack = $req->params->page -1;
-        }else{
-            //back off
-            $req->view->backOff = 0;
-        }
 
         // Cargar la página
         $req->view->html("panel-notes");
@@ -128,11 +111,6 @@ class Notita {
         Router::redirect('/note/'.$saveNota->id);
     }
     /************************************/
-    public static function searchNotes($req){
 
-        $req->view->notitas = MNotita::search($req->post->palabra, ['title'])->get();
-        $req->view->html("panel-notes");
-
-    }
 
 }

@@ -61,10 +61,20 @@ Cosas por hacer en Notitas
     - editNote ✔️
     - searchNotes ✔️
 
-- El buscador también tiene que buscar usuarios.
+- El buscador también tiene que buscar usuarios, del lado Admin.
+  - Crear 2 funciones: buscar @ y eliminar @
+
 - El usuario también tendrá un buscador.
-- El usuario támbien tiene que tener botones de Back y Next.
+- El usuario támbien tiene que tener botones de Back y Next.✔️
 - Que al expandirce el botón que el contenedor no se mueva.
+- Si el admin busca una nota, que cargue el panelAdmin✔️
+- Hacer que panel-users cargue nuevamente.
+- Si cuando busco una nota y cargo la pag. al ser esta unica no tiene que aparecer el botónde baCK.
+- ¿Cambiar panel admin por selec?
+
+
+
+
 
 - Un usuario normal no tiene que tener panel.
 - Un usuario normal solo puede ver sus notas.

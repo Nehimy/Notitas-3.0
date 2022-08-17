@@ -7,13 +7,7 @@
         <li class="option">
 
           <div class="box">
-            <form method="POST"  action="<?=SITE_URL?>search-for">
-              <input id="mysearch" placeholder="Search" type="text" name="palabra" required="" value="">
-              <div class="searchBoton">
-                <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
-                <input class="boton-search" type="submit" value="">
-              </div>
-            </form>
+
           </div>
         </li>
         <li class="option">
