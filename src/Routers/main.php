@@ -17,11 +17,11 @@ Router::get("/note/{id}", "Controllers\Notita::viewNote")
     ->middleware('Middlewares\User::check');
 
 // ver todas las notas
-Router::get("/all", "Controllers\Notita::backNext")
+Router::get("/all", "Controllers\Notita::allNotesForAllUsers")
     ->middleware('Middlewares\User::check');
 
 // Los botones de siguiente y atras
-Router::get("/page{page}","Controllers\Notita::backNext")
+Router::get("/page{page}","Controllers\Notita::allNotesForAllUsers")
         ->middleware('Middlewares\User::check');
 
 
@@ -50,7 +50,7 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
 
 
 
-/******************************User***********************************/
+/****************************** User ***********************************/
 
 // nuevo user
 Router::get("/register", "Controllers\User::UserRegister");
@@ -65,7 +65,7 @@ Router::get("/login", "Controllers\User::UserLogin");
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
 // cargar el panel inicial para el admin
-Router::get("/panel-notes", "Controllers\Notita::backNext")
+Router::get("/panel-notes", "Controllers\Notita::allNotesForAllUsers")
     ->middleware('Middlewares\User::check');
 
 //*********************************************************
@@ -75,7 +75,10 @@ Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
     ->middleware('Middlewares\User::check');
 
 // ver todas los usuarios para el admin
-Router::get("/panel-users", "Controllers\User::panelUsers")
+Router::get("/panel-users", "Controllers\User::allUsersForAdmin")
+    ->middleware('Middlewares\User::check');
+
+Router::get("/p{pag}", "Controllers\User::allUsersForAdmin")
     ->middleware('Middlewares\User::check');
 
 // editar usuario
@@ -85,7 +88,6 @@ Router::get("/user/{id}/edit", "Controllers\User::editUserForm")
 // Adtualizar usuario
 Router::post("/user/{id}/update", "Controllers\User::updateUser")
     ->middleware('Middlewares\User::check');
-
 
 
 // Ver usuario

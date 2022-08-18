@@ -34,7 +34,7 @@ Correo de prueba:
 
  https://en.gravatar.com/emails
 
-Cosas por hacer en Notitas
+** Cosas por hacer en Notitas **
 
 - Que el cargar notas del admin este en notas.php  ✔️
 - Css para la página de : el correo no es válido. ✔️
@@ -61,16 +61,17 @@ Cosas por hacer en Notitas
     - editNote ✔️
     - searchNotes ✔️
 
-- El buscador también tiene que buscar usuarios, del lado Admin.
-  - Crear 2 funciones: buscar @ y eliminar @
+** Cosas por hacer en Notitas **
+
+- El buscador también tiene que buscar usuarios, del lado Admin. ✔️
 
 - El usuario también tendrá un buscador.
 - El usuario támbien tiene que tener botones de Back y Next.✔️
 - Que al expandirce el botón que el contenedor no se mueva.
 - Si el admin busca una nota, que cargue el panelAdmin✔️
-- Hacer que panel-users cargue nuevamente.
-- Si cuando busco una nota y cargo la pag. al ser esta unica no tiene que aparecer el botónde baCK.
+- Hacer que panel-users cargue nuevamente.✔️
 - ¿Cambiar panel admin por selec?
+
 
 
 

@@ -1,5 +1,5 @@
 <?php
- if(($view->isAdmin)){
+if(($view->admin)){
   include 'panel.php';
 }else{
   include 'header.php';
@@ -8,8 +8,9 @@
 ?>
 <div class="row">
   <?php
-    echo $view->isAdmin? '<div class="col s9">' : '<div class="col s9otro">';
-   ?>
+  echo $view->admin? '<div class="col s9">' : '<div class="col s9otro">';
+  ?>
+  <!-- Search GET -->
   <form method="GET">
     <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
     <div class="searchBoton">
@@ -17,11 +18,11 @@
       <input class="boton-search" type="submit" value="">
     </div>
   </form>
-    <div class="transparent-box">
-      <div class="white-box">
-        <?php
-          foreach($view->notitas as $notas){
-        ?>
+  <div class="transparent-box">
+    <div class="white-box">
+      <?php
+      foreach($view->notitas as $notas){
+      ?>
         <div class="note <?=$notas->color?>">
           <!--Botón de eliminar -->
           <div class="delete-button">
@@ -38,42 +39,38 @@
           </div>
 
           <div class="font-index">
-           <?=$notas->content;?>
+            <?=$notas->content;?>
           </div>
-
-      </div>
+        </div>
       <?php
-       //llave de sierre del foreach
-       }
-       ?>
-        <div class="button_container">
-          <!-- BACK-->
-          <?php
-          //echo $view->backOff;
-          if(isset($view->pgBack) ){
-          ?>
+      }//llave de sierre del foreach
+      ?>
+      <div class="button_container">
+        <!-- BACK-->
+        <?php
+        if(isset($view->pgBack) ){
+        ?>
           <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
             <a  href="<?=SITE_URL?>page<?=$view->pgBack?>"> Back </a>
           </button>
-          <?php
-           }
-           ?>
-          <!-- NEXT-->
-          <?php
-          if(isset($view->pgNext)){
-          ?>
+        <?php
+        }
+        ?>
+        <!-- NEXT-->
+        <?php
+        if(isset($view->pgNext)){
+        ?>
           <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
             <a href="<?=SITE_URL?>page<?=$view->pgNext?>"> Next </a>
           </button>
-          <?php
-             }
-           ?>
-
-        </div>
+        <?php
+        }
+        ?>
       </div>
     </div>
   </div>
 </div>
+</div>
 <?php
- include 'footer.html';
+include 'footer.html';
 ?>

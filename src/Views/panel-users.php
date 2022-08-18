@@ -1,8 +1,9 @@
 <?php
- include 'panel.php';
+include 'panel.php';
 ?>
 
 <div class="col s9">
+  <!-- Search GET -->
   <form method="GET">
     <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
     <div class="searchBoton">
@@ -10,6 +11,7 @@
       <input class="boton-search" type="submit" value="">
     </div>
   </form>
+  <!-- Search GET -->
   <div class="transparent-box">
     <div class="white-box">
       <!--white-box-->
@@ -37,6 +39,30 @@
       <?php
       }
       ?>
+      <!-- Botones -->
+      <div class="button_container">
+        <!-- BACK-->
+        <?php
+        if(isset($view->back)){
+        ?>
+          <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
+            <a  href="<?=SITE_URL?>p<?=$view->back?>"> Back </a>
+          </button>
+        <?php
+        }
+        ?>
+        <!-- NEXT-->
+        <?php
+        if(isset($view->next)){
+        ?>
+          <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
+            <a href="<?=SITE_URL?>p<?=$view->next?>"> Next </a>
+          </button>
+        <?php
+        }
+        ?>
+      </div>
+      <!-- Botones -->
       <!--white-box-->
     </div>
   </div>

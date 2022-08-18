@@ -43,9 +43,9 @@ class Notita {
 
     /* Metodo de paginación */
     // Obtener n cantidad notas por pag.
-    public static function backNext($req){
+    public static function allNotesForAllUsers($req){
         $amount = 8;
-        $req->view->isAdmin = $req->user->admin;
+        $req->view->admin = $req->user->admin;
 
         if(is_null($req->params->page)){
             $req->params->page = 1;
@@ -72,7 +72,6 @@ class Notita {
         //Next
         if ($amountOverflow == 1)
             $req->view->pgNext = $req->params->page +1;
-
         //Back
         if ($req->params->page > 1)
             $req->view->pgBack = $req->params->page -1;
@@ -94,7 +93,6 @@ class Notita {
             Router::redirect('/all');
     }
 
-    /************************************/
     // Editar una nota ya creada
     public static function editNote($req){
         $req->view->html("edit");

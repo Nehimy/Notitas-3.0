@@ -84,11 +84,35 @@ class User {
     }
 
     // Cargar todas los usuarios para el admin
-    public static function panelUsers($req) {
+    public static function allUsersForAdmin($req) {
         if($req->user->admin){
-            $req->view->users = $users = MUser::all();
-            $req->view->html("panel-users");
+            $amount = 16;
+            if(is_null($req->params->pag)){
+                $req->params->pag = 1;
+                $initialRow = 0;
+            }else{
+                $initialRow = $amount * ($req->params->pag -1);
+            }
 
+            if($req->get->search)
+                $req->view->users = MUser::search($req->get->search, ['nick']);
+
+            //$req->view->users = $users = MUser::all();
+            $req->view->users = MUser::orderBy('id','DESC')
+                              ->limit($initialRow, $amount)->get(false);
+
+            //calculo para saber si quedan usuarios a cargar en otra pag.
+            $amountOverflow =  MUser::limit($initialRow, ($amount +1))
+                            ->count(true, true) - $amount;
+
+            //next
+            if($amountOverflow == 1)
+                $req->view->next = $req->params->pag +1;
+
+            if($req->params->pag > 1)
+                $req->view->back = $req->params->pag -1;
+
+            $req->view->html("panel-users");
         }
     }
 
