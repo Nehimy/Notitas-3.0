@@ -11,14 +11,16 @@ if(($view->admin)){
   echo $view->admin? '<div class="col s9">' : '<div class="col s9otro">';
   ?>
   <!-- Search GET -->
-  <form method="GET">
-    <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
-    <div class="searchBoton">
-      <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
-      <input class="boton-search" type="submit" value="">
-    </div>
-  </form>
-  <div class="transparent-box">
+  <div class="container-search">
+    <form class ="form-search" method="GET">
+      <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
+      <!--<div class="searchBoton">
+           <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+           <input class="boton-search" type="submit" value="">
+           </div>-->
+    </form>
+  </div>
+      <div class="transparent-box">
     <div class="white-box">
       <?php
       foreach($view->notitas as $notas){

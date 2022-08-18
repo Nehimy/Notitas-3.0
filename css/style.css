@@ -351,11 +351,24 @@ textarea{
 }
 
 
-.searchBoton{
+.search-button{
     position: relative;
-    left: 144px;
-    bottom: 27px;
+    /*left: 14px;*/
+    /*bottom: 27px;*/
+    width: 50px;
+    left: 13vw;
+    bottom: 28px;
 
+}
+
+.container-search{
+    position: relative;
+    margin: 0 auto;
+    width: 250px;
+}
+
+.form-search{
+    text-align: center;
 }
 
 /*******users*******/
@@ -528,4 +541,4 @@ textarea{
 }
 
 
-/**Back and Next**/
+/** panel-notes**/

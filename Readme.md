@@ -64,6 +64,7 @@ Correo de prueba:
 ** Cosas por hacer en Notitas **
 
 - El buscador también tiene que buscar usuarios, del lado Admin. ✔️
+- Alinear el buscador para panel-user y panel-notas.
 
 - El usuario también tendrá un buscador.
 - El usuario támbien tiene que tener botones de Back y Next.✔️
