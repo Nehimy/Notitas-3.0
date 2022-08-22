@@ -7,10 +7,9 @@ include 'panel.php';
   <div class="container-search">
     <form class="form-search" method="GET">
       <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
-
       <div class="search-button">
           <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
-          <input class="boton-search" type="submit" value="">
+          <input class="button-search" type="submit" value="">
         </div>
     </form>
   </div>

@@ -64,7 +64,7 @@ Correo de prueba:
 ** Cosas por hacer en Notitas **
 
 - El buscador también tiene que buscar usuarios, del lado Admin. ✔️
-- Alinear el buscador para panel-user y panel-notas.
+- Alinear el buscador para panel-user y panel-notas. ✔️
 
 - El usuario también tendrá un buscador.
 - El usuario támbien tiene que tener botones de Back y Next.✔️
@@ -72,7 +72,8 @@ Correo de prueba:
 - Si el admin busca una nota, que cargue el panelAdmin✔️
 - Hacer que panel-users cargue nuevamente.✔️
 - ¿Cambiar panel admin por selec?
-
+- Mantener las busqueda con la paginación.
+  - Si ya no quedan elementos de la busqueda detener la paginación
 
 
 
