@@ -24,6 +24,10 @@ Router::get("/all", "Controllers\Notita::allNotesForAllUsers")
 Router::get("/page{page}","Controllers\Notita::allNotesForAllUsers")
         ->middleware('Middlewares\User::check');
 
+// cargar el panel inicial para el admin
+Router::get("/panel-notes", "Controllers\Notita::allNotesForAllUsers")
+    ->middleware('Middlewares\User::check');
+
 
 /*****************************************************************/
 
@@ -63,10 +67,6 @@ Router::get("/login", "Controllers\User::UserLogin");
 
 // loguearce
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
-
-// cargar el panel inicial para el admin
-Router::get("/panel-notes", "Controllers\Notita::allNotesForAllUsers")
-    ->middleware('Middlewares\User::check');
 
 //*********************************************************
 

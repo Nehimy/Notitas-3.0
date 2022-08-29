@@ -22,7 +22,7 @@ Cookies
 - ver usuario de forma individual
 - ver nota de forma individual ✔️
 - efecto de carga lenta
-- Panel que cargue las ultimas notas.
+- Panel que cargue las ultimas notas.✔️
 
 - 23 de junio 10:13
 - Verificar el correo ✔️
@@ -72,9 +72,15 @@ Correo de prueba:
 - Si el admin busca una nota, que cargue el panelAdmin✔️
 - Hacer que panel-users cargue nuevamente.✔️
 - ¿Cambiar panel admin por selec?
-- Mantener las busqueda con la paginación.
+- Mantener las busqueda con la paginación.✔️
   - Si ya no quedan elementos de la busqueda detener la paginación
+  - 2 errores
+     -cuando esta en la pag. 2 el buscador no busca.✔️
+    - Cuando busco algo y hay muchas coincidencias, en la siguiente pag.✔️
+      no hay continuidad y pasa a la pag. 2 en lugar de seguir cargando las conicidencias.
 
+- El botón no tiene que tener una etiqueta <a> dentro.
+- El mouse over se pude hacer con CSS.
 
 
 

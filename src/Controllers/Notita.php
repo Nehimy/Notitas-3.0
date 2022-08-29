@@ -43,9 +43,11 @@ class Notita {
 
     /* Metodo de paginación */
     // Obtener n cantidad notas por pag.
+    // Tambien carga notas que se buscan en el buscador
     public static function allNotesForAllUsers($req){
         $amount = 8;
         $req->view->admin = $req->user->admin;
+
 
         if(is_null($req->params->page)){
             $req->params->page = 1;
@@ -54,15 +56,19 @@ class Notita {
             //Indica en que parte de la fila se encuentra
             $initialRow = $amount * ($req->params->page -1);
         }
-
+        //
         $notes = MNotita::orderBy('id','DESC')
                ->limit($initialRow, $amount);
 
         if (!$req->user->admin)
             $notes = $notes->where('user_id', $req->user->id);
 
-        if(isset($req->get->search))
+        if(isset($req->get->search)){
             $notes = $notes->search($req->get->search,['title']);
+            $req->view->search = '?search='.$req->get->search;
+        } else
+            $req->view->search = '';
+
 
         $req->view->notitas = $notes->get(false);
 

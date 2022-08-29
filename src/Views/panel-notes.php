@@ -12,10 +12,10 @@ if(($view->admin)){
   ?>
   <!-- Search GET -->
   <div class="container-search">
-    <form class ="form-search" method="GET">
+    <form action="<?=SITE_URL?>panel-notes" class ="form-search" method="GET">
       <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
       <div class="search-button">
-        <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
+        <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 3.0">
         <input class="button-search" type="submit" value="">
       </div>
     </form>
@@ -53,7 +53,7 @@ if(($view->admin)){
         if(isset($view->pgBack) ){
         ?>
           <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-            <a  href="<?=SITE_URL?>page<?=$view->pgBack?>"> Back </a>
+            <a  href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
           </button>
         <?php
         }
@@ -63,7 +63,8 @@ if(($view->admin)){
         if(isset($view->pgNext)){
         ?>
           <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-            <a href="<?=SITE_URL?>page<?=$view->pgNext?>"> Next </a>
+
+            <a href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>
           </button>
         <?php
         }
