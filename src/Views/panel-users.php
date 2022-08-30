@@ -47,9 +47,8 @@ include 'panel.php';
         <?php
         if(isset($view->back)){
         ?>
-          <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-            <a  href="<?=SITE_URL?>p<?=$view->back?>"> Back </a>
-          </button>
+          <a class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
+             href="<?=SITE_URL?>p<?=$view->back?>"> Back </a>
         <?php
         }
         ?>
@@ -57,9 +56,7 @@ include 'panel.php';
         <?php
         if(isset($view->next)){
         ?>
-          <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-            <a href="<?=SITE_URL?>p<?=$view->next?>"> Next </a>
-          </button>
+           <a class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" href="<?=SITE_URL?>p<?=$view->next?>"> Next </a>
         <?php
         }
         ?>

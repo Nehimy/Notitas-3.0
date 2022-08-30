@@ -79,7 +79,7 @@ Correo de prueba:
     - Cuando busco algo y hay muchas coincidencias, en la siguiente pag.✔️
       no hay continuidad y pasa a la pag. 2 en lugar de seguir cargando las conicidencias.
 
-- El botón no tiene que tener una etiqueta <a> dentro.
+- El botón no tiene que tener una etiqueta <a> dentro.✔️
 - El mouse over se pude hacer con CSS.
 
 

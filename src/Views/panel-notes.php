@@ -52,9 +52,8 @@ if(($view->admin)){
         <?php
         if(isset($view->pgBack) ){
         ?>
-          <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-            <a  href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
-          </button>
+          <a class="text-a back-button-margin" id="go-back" onmouseover="SaveOver(this)"
+             onmouseout="SaveOut(this)" href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
         <?php
         }
         ?>
@@ -62,10 +61,8 @@ if(($view->admin)){
         <?php
         if(isset($view->pgNext)){
         ?>
-          <button class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)">
-
-            <a href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>
-          </button>
+          <a class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
+             href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>
         <?php
         }
         ?>

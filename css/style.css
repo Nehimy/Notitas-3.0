@@ -494,6 +494,7 @@ textarea{
     font-family: 'Carter One', cursive;
     text-decoration: none;
     font-size: larger;
+    margin-bottom: 10px;
 }
 .text-a {
     font-size: large;
@@ -505,7 +506,12 @@ textarea{
   border-radius: 6px;
   border: none;
   font-family: 'Carter One', cursive;
-  background: rgb(21, 94, 208)
+  background: rgb(21, 94, 208);
+  padding: 4px;
+}
+
+.back-button-margin{
+    margin: 5px;
 }
 
 /**barra de navegación segunda parte sing**/
