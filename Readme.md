@@ -121,4 +121,4 @@ Correo de prueba:
 - Next no carga cuando estoy en la últma pag.
 - Nota  1 = true y 0 = false
 
-** Aanlizando en que casos carga todas las notas**
+** Analizando en que casos carga todas las notas**
