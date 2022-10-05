@@ -1,3 +1,18 @@
+:root {
+    /*Color Notes*/
+    --malibu:         #4fcdff;
+    --bright-Sun:     #fbd635;
+    --hot-pink:       #ff6bb7;
+    --heliotrope:     #9f67ff;
+
+    /*Colores base*/
+    --basic-color: #ffffff;
+    --dodger-blue:#26c2ff;;
+}
+
+
+
+
 body{
     margin: 0;
     background: #fbde43;
