@@ -11,32 +11,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Itim&family=Luckiest+Guy&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="navigation-bar">
-      <ul class = "list-bar">
-        <!--El título esta aquí-->
-        <li class="logo">
-          <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
-            <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
-          </a>
-        </li>
-        <li class="new-note" >
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
-        </li>
-      </ul>
-      <div class="box-container">
-      <ul class = "list-bar list-bar2">
-      <li>
-        <a class="sign" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+    <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
+      <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
+    </a>
+    <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)"
+       onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note
+    </a>
+
+    <a class="sign" onmouseover="colorText(this)" onmouseout="normalColor(this)"
+       href="<?=SITE_URL?>login-off">
           Sign off
-        </a>
-      </li>
-      <li>
-        <a>
-        </a>
-      </li>
-      </ul>
-      </div>
-      <div class="avatar">
+    </a>
+
         <?php
          if(isset($view->avatar)){ ?>
                    <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
@@ -49,7 +35,4 @@
           }
         ?>
 
-      </div>
-
-    </div>
     <script src="<?=SITE_URL?>js/script.js"></script>
