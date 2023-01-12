@@ -6,7 +6,7 @@ use Libs\Router;
 // Ver nota cuando estemos en ney.lh
 //***********************************
 
-Router::get("", "Controllers\Notita::viewNote")
+Router::get("/", "Controllers\Notita::viewNote")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
