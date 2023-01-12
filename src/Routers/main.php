@@ -2,21 +2,30 @@
 use Libs\Router;
 
 /******************************Note***********************************/
+//***********************************
+// Ver nota cuando estemos en ney.lh
+//***********************************
+
+Router::get("", "Controllers\Notita::viewNote")
+    ->middleware('Middlewares\User::verifyOwner')
+    ->middleware('Middlewares\User::check');
+
 
 // Garga la pagina de new nota
 Router::get("/new", "Controllers\Notita::newNoteForm")
     ->middleware('Middlewares\User::check');
 
-// guarda la nueva nota
+// Guarda la nueva nota
 Router::post("/new", "Controllers\Notita::addNote")
      ->middleware('Middlewares\User::check');
 
-// ver nota
+// Ver nota
 Router::get("/note/{id}", "Controllers\Notita::viewNote")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
-// ver todas las notas
+
+// Ver todas las notas
 Router::get("/all", "Controllers\Notita::allNotesForAllUsers")
     ->middleware('Middlewares\User::check');
 
@@ -24,29 +33,29 @@ Router::get("/all", "Controllers\Notita::allNotesForAllUsers")
 Router::get("/page{page}","Controllers\Notita::allNotesForAllUsers")
         ->middleware('Middlewares\User::check');
 
-// cargar el panel inicial para el admin
+// Cargar el panel inicial para el admin
 Router::get("/panel-notes", "Controllers\Notita::allNotesForAllUsers")
     ->middleware('Middlewares\User::check');
 
 
 /*****************************************************************/
 
-// eliminar nota
+// Eliminar nota
 Router::get("/note/{id}/remove", "Controllers\Notita::delete")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
-// eliminar nota - admin
+// Eliminar nota - admin
 Router::get("/note/{id}/remove/admin", "Controllers\Notita::delete")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
-// editar nota
+// Editar nota
 Router::get("/note/{id}/edit", "Controllers\Notita::editNote")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
 
-// guardar nota editada
+// Guardar nota editada
 Router::post("/note/{id}/update", "Controllers\Notita::update")
     ->middleware('Middlewares\User::verifyOwner')
     ->middleware('Middlewares\User::check');
@@ -56,32 +65,32 @@ Router::post("/note/{id}/update", "Controllers\Notita::update")
 
 /****************************** User ***********************************/
 
-// nuevo user
+// Nuevo user
 Router::get("/register", "Controllers\User::UserRegister");
 
-// guarda en la base de datos al usuario nuevo
+// Guarda en la base de datos al usuario nuevo
 Router::post("/register", "Controllers\User::AddUser");
 
-// login
+// Login
 Router::get("/login", "Controllers\User::UserLogin");
 
-// loguearce
+// Loguearce
 Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 
 //*********************************************************
 
-// eliminar un usuario
+// Eliminar un usuario
 Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
     ->middleware('Middlewares\User::check');
 
-// ver todas los usuarios para el admin
+// Ver todas los usuarios para el admin
 Router::get("/panel-users", "Controllers\User::allUsersForAdmin")
     ->middleware('Middlewares\User::check');
 
 Router::get("/p{pag}", "Controllers\User::allUsersForAdmin")
     ->middleware('Middlewares\User::check');
 
-// editar usuario
+// Editar usuario
 Router::get("/user/{id}/edit", "Controllers\User::editUserForm")
     ->middleware('Middlewares\User::check');
 
