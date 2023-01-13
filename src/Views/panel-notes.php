@@ -15,7 +15,7 @@ if(($view->admin)){
     <form action="<?=SITE_URL?>panel-notes" class ="form-search" method="GET">
       <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
       <div class="search-button">
-        <img class="search" src="http://ney.lh/css/search.svg" alt="Notitas 3.0">
+        <img class="search" src="<?=SITE_URL?>css/search.svg" alt="Notitas 3.0">
         <input class="button-search" type="submit" value="">
       </div>
     </form>
