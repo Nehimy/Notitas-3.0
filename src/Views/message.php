@@ -1,4 +1,5 @@
 <?php
+include 'panel.php';
 ?>
 <html>
   <head>
