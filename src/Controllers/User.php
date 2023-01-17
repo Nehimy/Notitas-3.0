@@ -154,7 +154,7 @@ class User {
     // Carga la página luego de aptualizar los datos del usuario
     public static function viewUser($req) {
 
-        $req->view->user =  MUser::getById($req->params->id);$user;
+        $req->view->user =  MUser::getById($req->params->id);
         $req->view->html("view-user");
     }
 

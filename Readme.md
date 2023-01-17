@@ -122,3 +122,7 @@ Correo de prueba:
 - Nota  1 = true y 0 = false
 
 ** Analizando en que casos carga todas las notas**
+
+* Arreglo de Notitas 2023
+ - Hacer un tag con git para marcar el punto desde donde voy a cambiar el código.✔️
+ - Captura de toda la parte bisual, antes de reacer el CSS
