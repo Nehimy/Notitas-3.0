@@ -118,11 +118,12 @@ Correo de prueba:
 
 - ¿En que casos no carga next?
 
-- Next no carga cuando estoy en la últma pag.
+- Next no carga cuando estoy en la última pag.
 - Nota  1 = true y 0 = false
 
 ** Analizando en que casos carga todas las notas**
 
 * Arreglo de Notitas 2023
  - Hacer un tag con git para marcar el punto desde donde voy a cambiar el código.✔️
- - Captura de toda la parte bisual, antes de reacer el CSS
+ - Captura de toda la parte visual, antes de rehacer el CSS✔️
+ - Si soy admin hacer un botón que me lleve del panel user al admin.
