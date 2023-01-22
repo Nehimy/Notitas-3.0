@@ -13,25 +13,20 @@
     <div class="bar-container">
       <div class="bar">
         <!--El título esta aquí-->
-        <div class="container-logo">
-          <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
-            <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
-          </a>
-        </div>
-        <div class="container-new-note">
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
-        </div>
+        <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
+          <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
+        </a>
 
-        <div class="sing-up">
-          <a class="sing" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
-          Sign up
+        <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+
+
+        <a class="sign" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+          Sign off
         </a>
 
         <div class="avatar">
-
           <?php
-          if(isset($view->avatar)){
-          ?>
+          if(isset($view->avatar)){ ?>
             <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
           <?php
           }else{
@@ -42,7 +37,6 @@
           }
           ?>
         </div>
-        </div>
-       </div>
+            </div>
     </div>
     <script src="<?=SITE_URL?>js/script.js"></script>

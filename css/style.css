@@ -1,19 +1,77 @@
 :root {
-    --cyan:#26c2ff;
+    --cyan: #26c2ff;
 
-    --white:#fff;
-    --yellow:#fbde43;
+    --white: #fff;
+    --yellow: #fbde43;
     --pink: #ff6bb7;
-    --lilac:#9f67ff;
-    --whiteTransparent:#ffffff63;
-    --blackTransparent:#0000003d;
-    --royalblue:#155ED0;
+    --lilac: #9f67ff;
+    --whiteTransparent: #ffffff63;
+    --blackTransparent: #0000003d;
+    --royalblue: #155ED0;
     --darkGray: #a2a2a200;
     --grayLight: #8c8c8c;
     --turquoise: #00cc99;
-    --navy:#001c42b5;
+    --navy: #001c42b5;
     --yellowDuck: rgb(255, 244, 188);
     --pinklight: #ff96cc;
-    --yellow2#e6c723;
+    --yellow2: #e6c723;
 
+}
+
+body {
+    margin: 0px;
+}
+
+.bar-container {
+    display: grid;
+    height: 100vh;
+    width: 100vw;
+}
+
+.bar {
+    display: grid;
+    height: 100px;
+    width: 100vw;
+    background: var(--grayLight);
+    grid-template-columns: repeat(3, auto);
+
+}
+
+.container-logo {
+    display: grid;
+    justify-content: left;
+    align-content: center;
+
+}
+
+.container-new-note {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+}
+
+.sing-up {
+  display: grid;
+  justify-content: right;
+  align-content: center;
+  align-items: center;
+  grid-template-columns: repeat(2, auto);
+  grid-column: 3;
+}
+
+.sing {
+    grid-column: 1;
+}
+
+.avatar {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  justify-content: right;
+  grid-column: 2;
+}
+
+.avatar2 {
+    height: 80px;
+    width: 80px;
 }
