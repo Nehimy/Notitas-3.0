@@ -19,11 +19,11 @@
           </a>
         </div>
         <div class="container-new-note">
-          <a alt="Crea nueva notita" title="Crea nueva notita" class="space" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+          <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
         </div>
 
         <div class="sing-up">
-          <a class="sing" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+          <a class="sing style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
           Sign up
         </a>
 
