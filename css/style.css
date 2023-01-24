@@ -18,13 +18,27 @@
 
 }
 
+/*-------------------------------------*/
+/*****************Header**************+*/
+/*-------------------------------------*/
+
+
+
 body {
     margin: 0px;
 }
 
+.container {
+    height: 100vh;
+    display: grid;
+    background: var(--cyan);
+    grid-template-columns: auto;
+    grid-template-rows: auto auto;
+
+}
+
 .bar-container {
     display: grid;
-    height: 100vh;
     width: 100vw;
 }
 
@@ -86,4 +100,37 @@ body {
 .avatar2 {
     height: 80px;
     width: 80px;
+}
+
+/*-------------------------------------*/
+/******************Body***************+*/
+/*-------------------------------------*/
+
+/* body { */
+/*     width:100vw; */
+/*     height: 100vh; */
+/*     background: var(--cyan); */
+/* } */
+.container-transparent {
+    display: grid;
+    justify-content: center;
+}
+
+.white-transparent {
+    width: 80vw;
+    height: 80vh;
+    background: var(--whiteTransparent);
+    border-radius: 10px;
+}
+
+.container-white {
+    display: grid;
+    justify-content: center;
+}
+
+.white {
+    width: 70vw;
+    height: 70vh;
+    background: var(--white);
+    border-radius: 10px;
 }

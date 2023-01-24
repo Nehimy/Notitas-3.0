@@ -10,39 +10,40 @@
     <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Itim&family=Luckiest+Guy&display=swap" rel="stylesheet">
   </head>
   <body>
-    <div class="bar-container">
-      <div class="bar">
-        <!--El título esta aquí-->
-        <div class="container-logo">
-          <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
-            <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
-          </a>
-        </div>
-        <div class="container-new-note">
-          <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
-        </div>
+    <div class="container">
+      <div class="bar-container">
+        <div class="bar">
+          <!--El título esta aquí-->
+          <div class="container-logo">
+            <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
+              <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
+            </a>
+          </div>
+          <div class="container-new-note">
+            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+          </div>
 
-        <div class="sing-up">
-          <a class="sing style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
-          Sign up
-        </a>
+          <div class="sing-up">
+            <a class="sing style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+              Sign up
+            </a>
 
-        <div class="avatar">
+            <div class="avatar">
 
-          <?php
-          if(isset($view->avatar)){
-          ?>
-            <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
-          <?php
-          }else{
-          ?>
-            <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png" alt="Avatar default" />
+              <?php
+              if(isset($view->avatar)){
+              ?>
+                <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
+              <?php
+              }else{
+              ?>
+                <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png" alt="Avatar default" />
 
-          <?php
-          }
-          ?>
+              <?php
+              }
+              ?>
+            </div>
+          </div>
         </div>
-        </div>
-       </div>
-    </div>
-    <script src="<?=SITE_URL?>js/script.js"></script>
+      </div>
+      <script src="<?=SITE_URL?>js/script.js"></script>

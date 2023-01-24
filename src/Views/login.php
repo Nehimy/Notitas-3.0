@@ -1,19 +1,21 @@
 <?php
-include 'header.php';
+ include 'body.php';
 ?>
-<!--Contenedor-->
+<!--Contenedor
 <div id="sky-blue-set">
   <div class="transparent-set">
     <div class="white-set">
     </div>
   </div>
-</div>
+</div>-->
+
 <!--Contenedor-->
-<!--Cortina-->
+<!--Cortina
 <div class="bglayer" style="display: block;">
 </div>
+-->
 <!--Cortina-->
-<!--Formulario-->
+<!--Formulario
 <div class="box-form">
   <div class="box2-form">
     <form method="POST">
@@ -28,5 +30,5 @@ include 'header.php';
       <input class="boton boton-login" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save">
     </form>
   </div>
-</div>
+</div>-->
 <!--Formulario-->
