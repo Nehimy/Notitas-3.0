@@ -1,6 +1,6 @@
 <?php
- include 'header.php';
- ?>
+include 'header.php';
+?>
 <!--cuerpo generico-->
 <div class="container-transparent">
   <div class="white-transparent">
@@ -10,5 +10,4 @@
     </div>
   </div>
 </div>
-<!--div del primer contenedor
-</div>-->
+<!-- </div>  primer contenedor-->
