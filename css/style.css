@@ -26,6 +26,7 @@
 
 body {
     margin: 0px;
+    height: 100vh;
 }
 
 .container {
@@ -102,21 +103,24 @@ body {
     width: 80px;
 }
 
+img {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
 /*-------------------------------------*/
 /******************Body***************+*/
 /*-------------------------------------*/
 
-/* body { */
-/*     width:100vw; */
-/*     height: 100vh; */
-/*     background: var(--cyan); */
-/* } */
+
 .container-transparent {
     display: grid;
     justify-content: center;
 }
 
 .white-transparent {
+    display: grid;
+    place-content: center;
     width: 80vw;
     height: 80vh;
     background: var(--whiteTransparent);
@@ -129,8 +133,38 @@ body {
 }
 
 .white {
-    width: 70vw;
-    height: 70vh;
+    width: 75vw;
+    height: 75vh;
     background: var(--white);
     border-radius: 10px;
+}
+
+/*-------------------------------------*/
+/******************Login***************+*/
+/*-------------------------------------*/
+
+.bglayer {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  background: var(--blackTransparent);
+  z-index: 0;
+  display: none;
+}
+
+
+
+/*@media (min-width: 700px) and (orientation: landscape) {*/
+@media (min-width: 360px) {
+    .avatar2 {
+        height: 50px;
+        width: 50px;
+    }
+    img {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
 }
