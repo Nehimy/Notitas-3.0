@@ -140,27 +140,16 @@ img {
     justify-content: center;
 }
 
-.white {
+.white, .element-container {
     width: 75vw;
     height: 75vh;
     background: var(--white);
     border-radius: 10px;
 }
 
-/*-------------------------------------*/
+/*--------------------------------------*/
 /******************Login***************+*/
-/*-------------------------------------*/
-
-/* .bglayer { */
-/*   position: absolute; */
-/*   top: 0px; */
-/*   left: 0px; */
-/*   right: 0px; */
-/*   bottom: 0px; */
-/*   background: var(--blackTransparent); */
-/*   z-index: 0; */
-/*   display: none; */
-/* } */
+/*--------------------------------------*/
 
 .container-login {
   width: 100vw;
@@ -217,11 +206,41 @@ img {
 }
 
 .input-text {
-  /*border-color: var(--cyan);*/
   border-radius: 5px;
   border: 2px solid var(--grayLight);
 }
 
 .input-text:hover {
   border: 2.3px solid var(--cyan);
+}
+
+/*--------------------------------------*/
+/***************Panel notes************+*/
+/*--------------------------------------*/
+.content-container-user-panel {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-row: 1;
+    grid-column: 1;
+    /*place-content: center;
+    background: var(--blackTransparent);
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;*/
+
+}
+
+.element-container {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-columns: auto;
+}
+
+.container-shearch {
+    display: grid;
+    background: red;
+    grid-row: 1;
+    grid-column: 1;
+    height: 50px;
+    place-content: center;
 }

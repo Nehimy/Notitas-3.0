@@ -1,8 +1,6 @@
 <?php
 include 'body.php';
 ?>
-
-<!-- <div class="bglayer" style="display: block;"> -->
 <div class="container-login">
   <div class="container-form-login">
     <div class="container-login-white">
@@ -22,7 +20,3 @@ include 'body.php';
 
 </div>
 </div>
-
-
-
-<!--Formulario-->
