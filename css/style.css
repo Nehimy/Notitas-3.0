@@ -213,9 +213,15 @@ img {
     color: var(--white);
     font-family: 'Carter One', cursive;
     margin-top: 5px !important;
+    border: none;
 }
 
-input {
-  border-color: var(--cyan);
+.input-text {
+  /*border-color: var(--cyan);*/
   border-radius: 5px;
+  border: 2px solid var(--grayLight);
+}
+
+.input-text:hover {
+  border: 2.3px solid var(--cyan);
 }
