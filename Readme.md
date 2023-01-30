@@ -127,3 +127,7 @@ Correo de prueba:
  - Hacer un tag con git para marcar el punto desde donde voy a cambiar el código.✔️
  - Captura de toda la parte visual, antes de rehacer el CSS✔️
  - Si soy admin hacer un botón que me lleve del panel user al admin.
+
+
+ -------------------------
+ Colocar el shearch en la barra de navegación

@@ -50,7 +50,8 @@ body {
     height: 100px;
     width: 100vw;
     background: var(--white);
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: auto;
     box-shadow: 0px 0.5px 5.5px var(--grayLight);
 
 }
@@ -59,6 +60,7 @@ body {
     display: grid;
     justify-content: left;
     align-content: center;
+    grid-column: 1;
 
 }
 
@@ -66,6 +68,68 @@ body {
     display: grid;
     justify-content: center;
     align-content: center;
+    grid-column: 2;
+}
+
+.shearch-container {
+    display: grid;
+    grid-row: 1;
+    justify-content: center;
+    grid-column: 3;
+}
+
+.form-search {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    place-content: center;
+    margin: 0px;
+}
+
+.container-input-shearch {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    align-content: end;
+}
+
+.input-shearch {
+    grid-column: 1;
+    grid-row: 1;
+
+    height: 40px;
+    border-radius: 7px;
+    color: var(--navy);
+    font-family: 'Carter One', cursive;
+    border: 2px solid var(--blackTransparent);
+    /*++++++++++++++++*/
+}
+
+.container-glass {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1;
+    width: 50px;
+
+}
+
+
+
+.magnifying-glass {
+    width: 20px;
+}
+
+.button-search {
+    grid-column: 2;
+    grid-row: 1;
+    height: 40px;
+    width: 93px;
+    background: var(--royalblue);
+    border-radius: 7px;
+    color: var(--white);
+    font-family: 'Carter One', cursive;
+    margin-top: 5px !important;
+    border: none;
 }
 
 .sing-up {
@@ -74,8 +138,8 @@ body {
     align-content: center;
     align-items: center;
     grid-template-columns: repeat(2, auto);
-    grid-column: 3;
     grid-gap: 5px;
+    grid-column: 4;
 }
 
 .sing {
@@ -234,13 +298,4 @@ img {
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto;
-}
-
-.container-shearch {
-    display: grid;
-    background: red;
-    grid-row: 1;
-    grid-column: 1;
-    height: 50px;
-    place-content: center;
 }

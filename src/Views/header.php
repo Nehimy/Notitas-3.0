@@ -20,6 +20,26 @@
           <div class="container-new-note">
             <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
           </div>
+
+          <!--Shearch-->
+          <div class="shearch-container" >
+            <form action="<?=SITE_URL?>panel-notes" class ="form-search" method="GET">
+
+              <div class="container-input-shearch">
+                <input class="input-shearch" placeholder="Search" type="text" name="search" requierd="" value="" >
+
+                <!-- <div class="container-glass">
+                     <img class="magnifying-glass" src="<?=SITE_URL?>css/search.svg" alt="Notitas 3.0">
+                     </div> -->
+
+              </div>
+              <input class="button-search" type="submit" value="search">
+
+            </form>
+
+          </div>
+          <!--Shearch-->
+
           <div class="sing-up">
             <a class="sing style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
               Sign up
