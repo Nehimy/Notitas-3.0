@@ -4,7 +4,7 @@
 if(($view->admin)){
   include 'panel.php';
 }else{
-  /*include 'header.php';*/
+  include 'header.php';
 }
 
 ?>
@@ -14,11 +14,11 @@ if(($view->admin)){
 <!-- Search GET -->
 <!-- <div class="content-container-user-panel"> -->
 
-<!-- <div class=" container-transparent">
-     <div class="white-transparent">
-     <div class="container-white">
-     <div class="white"> -->
-          <?php
+<div class=" container-transparent">
+  <div class="white-transparent">
+    <div class="container-white">
+      <div class="white">
+        <?php
           foreach($view->notitas as $notas){
           ?>
             <div class="note <?=$notas->color?>">
@@ -39,11 +39,13 @@ if(($view->admin)){
           <?php
           }//llave de sierre del foreach
           ?>
-          <!-- </div>
-               </div>
-               </div>
-               </div> -->
-  <div class="button_container">      <!-- BACK-->
+</div>
+</div>
+</div>
+</div>
+
+
+<div class="button_container">      <!-- BACK-->
     <?php
     if(isset($view->pgBack) ){
     ?>

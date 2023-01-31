@@ -130,4 +130,5 @@ Correo de prueba:
 
 
  -------------------------
- Colocar el shearch en la barra de navegación
+ - Colocar el shearch en la barra de navegación ✔️
+ -
