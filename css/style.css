@@ -98,7 +98,7 @@ body {
     grid-row: 1;
 
     height: 40px;
-    border-radius: 7px;
+    border-radius: 7px 0px 0px 7px;
     color: var(--navy);
     font-family: 'Carter One', cursive;
     border: 2px solid var(--blackTransparent);
@@ -125,11 +125,16 @@ body {
     height: 40px;
     width: 93px;
     background: var(--royalblue);
-    border-radius: 7px;
+    border-radius: 0px 7px 7px 0px;
     color: var(--white);
     font-family: 'Carter One', cursive;
     margin-top: 5px !important;
     border: none;
+}
+
+.button-search:hover {
+    width: 95px;
+    background: var(--grayLight);
 }
 
 .sing-up {
