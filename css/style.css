@@ -8,6 +8,7 @@
     --whiteTransparent: #ffffff63;
     --blackTransparent: #0000003d;
     --royalblue: #155ED0;
+    --blackblue:#03388C;
     --darkGray: #a2a2a200;
     --grayLight: #8c8c8c;
     --turquoise: #00cc99;
@@ -71,7 +72,7 @@ body {
     grid-column: 2;
 }
 
-.shearch-container {
+.search-container {
     display: grid;
     grid-row: 1;
     justify-content: center;
@@ -86,14 +87,14 @@ body {
     margin: 0px;
 }
 
-.container-input-shearch {
+.container-input-search {
     display: grid;
     grid-template-columns: auto;
     grid-template-rows: auto;
     align-content: end;
 }
 
-.input-shearch {
+.input-search {
     grid-column: 1;
     grid-row: 1;
 
@@ -102,7 +103,16 @@ body {
     color: var(--navy);
     font-family: 'Carter One', cursive;
     border: 2px solid var(--blackTransparent);
-    /*++++++++++++++++*/
+}
+
+.input-search:focus {
+    outline: none;
+    caret-color: transparent;
+
+}
+
+.input-search:hover {
+    border: 2px solid var(--royalblue);
 }
 
 .container-glass {
@@ -112,8 +122,6 @@ body {
     width: 50px;
 
 }
-
-
 
 .magnifying-glass {
     width: 20px;
@@ -134,7 +142,7 @@ body {
 
 .button-search:hover {
     width: 95px;
-    background: var(--grayLight);
+    background: var(--blackblue);
 }
 
 .sing-up {
