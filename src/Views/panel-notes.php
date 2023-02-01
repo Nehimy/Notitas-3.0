@@ -1,6 +1,4 @@
 <?php
-
-/*include 'body.php';*/
 if(($view->admin)){
   include 'panel.php';
 }else{
@@ -11,8 +9,6 @@ if(($view->admin)){
 <?php
 /*echo $view->admin? '<div class="col s9">' : '<div class="col s9otro">';*/
 ?>
-<!-- Search GET -->
-<!-- <div class="content-container-user-panel"> -->
 
 <div class=" container-transparent">
   <div class="white-transparent">
@@ -63,7 +59,6 @@ if(($view->admin)){
     }
     ?>
   </div>
-  <!-- </div> -->
 <?php
 include 'footer.html';
 ?>
