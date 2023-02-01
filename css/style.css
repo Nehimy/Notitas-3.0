@@ -314,6 +314,13 @@ img {
     .container-transparent {
         padding-top: 143px;
     }
+
+    .white-transparent {
+        height: 70vh;
+    }
+
+    .white {
+        height: 65vh;
 }
 .boton.boton-login {
     height: 40px;
