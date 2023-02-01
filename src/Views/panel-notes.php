@@ -36,20 +36,20 @@ if(($view->admin)){
                 <?=$notas->content;?>
               </div>
             </div>
-          <?php
-          }//llave de sierre del foreach
-          ?>
-</div>
-</div>
-</div>
+        <?php
+        }//llave de sierre del foreach
+        ?>
+      </div>
+    </div>
+  </div>
 </div>
 
 
-<div class="button_container">      <!-- BACK-->
+<div class="container-next-back">      <!-- BACK-->
     <?php
     if(isset($view->pgBack) ){
     ?>
-      <a class="text-a back-button-margin" id="go-back" onmouseover="SaveOver(this)"
+      <a class="button-next-back" id="go-back" onmouseover="SaveOver(this)"
          onmouseout="SaveOut(this)" href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
     <?php
     }
@@ -57,7 +57,7 @@ if(($view->admin)){
     <?php
     if(isset($view->pgNext)){
     ?>
-      <a class="text-a" id="go-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
+      <a class="button-next-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
          href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>      <!-- NEXT-->
     <?php
     }

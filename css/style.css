@@ -132,7 +132,7 @@ body {
 .button-search {
     grid-column: 2;
     grid-row: 1;
-    height: 40px;
+    height: 46px;
     width: 93px;
     background: var(--royalblue);
     border-radius: 0px 7px 7px 0px;
@@ -314,4 +314,21 @@ img {
     display: grid;
     grid-template-rows: auto auto auto;
     grid-template-columns: auto;
+}
+
+.container-next-back {
+  display: grid;
+}
+
+.button-next-back {
+    display: grid;
+    place-content: center;
+    color: var(--white);
+    height: 40px;
+    width: 93px;
+    background: var(--royalblue);
+    border-radius: 7px;
+    font-family: 'Carter One', cursive;
+    text-decoration: inherit;
+    border: none;
 }
