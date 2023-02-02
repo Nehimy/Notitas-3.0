@@ -373,14 +373,36 @@ img {
 /*--------------------------------------*/
 
 .notes {
-    background: yellow;
-    height: 100px;
-    width: 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+    place-content: center;
+    grid-gap: 10px;
+    margin-top: 10px;
+
 }
 
 .note {
-    background: beige;
-    margin: 20px;
-    height: 100px;
-    width: 100px;
+    background: #ffdf54;
+    height: 200px;
+    width: 200px;
+}
+
+.yellow {
+	/*background: #ffed8e;*/
+	background: #fbd635 !important;
+}
+
+.pink {
+	/*background: #ff8ec8;*/
+	background: #ff6bb7 !important;
+}
+
+.lilac {
+	/*background-color: #c18eff;*/
+	background-color: #9f67ff !important;
+}
+
+.lightBlue{
+	/*background: #8ed5ff;*/
+	background: #4fcdff !important;
 }
