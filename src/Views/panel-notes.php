@@ -14,6 +14,7 @@ if(($view->admin)){
   <div class="white-transparent">
     <div class="container-white">
       <div class="white">
+        <div class="notes">
         <?php
           foreach($view->notitas as $notas){
           ?>
@@ -35,6 +36,7 @@ if(($view->admin)){
         <?php
         }//llave de sierre del foreach
         ?>
+        </div>
       </div>
     </div>
   </div>
@@ -42,23 +44,23 @@ if(($view->admin)){
 
 
 <div class="container-next-back">      <!-- BACK-->
-    <?php
-    if(isset($view->pgBack) ){
-    ?>
-      <a class="button-next-back" id="go-back" onmouseover="SaveOver(this)"
-         onmouseout="SaveOut(this)" href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
-    <?php
-    }
-    ?>
-    <?php
-    if(isset($view->pgNext)){
-    ?>
-      <a class="button-next-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
-         href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>      <!-- NEXT-->
-    <?php
-    }
-    ?>
-  </div>
+  <?php
+  if(isset($view->pgBack) ){
+  ?>
+    <a class="button-next-back" id="go-back" onmouseover="SaveOver(this)"
+       onmouseout="SaveOut(this)" href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
+  <?php
+  }
+  ?>
+  <?php
+  if(isset($view->pgNext)){
+  ?>
+    <a class="button-next-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
+       href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>      <!-- NEXT-->
+  <?php
+  }
+  ?>
+</div>
 <?php
 include 'footer.html';
 ?>

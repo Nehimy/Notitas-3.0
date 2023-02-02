@@ -321,6 +321,8 @@ img {
 
     .white {
         height: 65vh;
+    }
+
 }
 .boton.boton-login {
     height: 40px;
@@ -362,4 +364,23 @@ img {
     font-family: 'Carter One', cursive;
     text-decoration: inherit;
     border: none;
+}
+
+
+
+/*--------------------------------------*/
+/******************Notes***************+*/
+/*--------------------------------------*/
+
+.notes {
+    background: yellow;
+    height: 100px;
+    width: 100px;
+}
+
+.note {
+    background: beige;
+    margin: 20px;
+    height: 100px;
+    width: 100px;
 }
