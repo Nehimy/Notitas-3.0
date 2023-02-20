@@ -448,14 +448,23 @@ img {
 .eddit {
     grid-column: 1;
     grid-row: 1;
+    justify-content: end;
+    display: grid;
 }
 
-.eddit {
+.delete {
     grid-column: 2;
     grid-row: 1;
+    justify-content: end;
+    display: grid;
 }
 
 .single-note {
     display: grid;
-    justify-content: center;
+    /* justify-content: center; */
+}
+
+.white.contenet-one-note {
+    display: grid;
+    place-content: center;
 }
