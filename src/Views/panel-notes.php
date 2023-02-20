@@ -25,11 +25,11 @@ if(($view->admin)){
                 </a>
               </div>
               <div class="title-box">        <!-- Ver la nota -->
-                <a onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>note/<?=$notas->id?>">
+                <a class="url" onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>note/<?=$notas->id?>">
                   <?=$notas->title; ?>
                 </a>
               </div>
-              <div class="font-index">
+              <div class="text-content">
                 <?=$notas->content;?>
               </div>
             </div>

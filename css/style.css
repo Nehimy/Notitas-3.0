@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
 :root {
     --cyan: #26c2ff;
 
     --white: #fff;
-    --yellow: #fbde43;
+    --yellow: #ffdd24;
     --pink: #ff6bb7;
     --lilac: #9f67ff;
     --whiteTransparent: #ffffff63;
@@ -15,9 +17,11 @@
     --navy: #001c42b5;
     --yellowDuck: rgb(255, 244, 188);
     --pinklight: #ff96cc;
-    --yellow2: #e6c723;
 
 }
+
+
+
 
 /*-------------------------------------*/
 /*****************Header**************+*/
@@ -382,27 +386,45 @@ img {
 }
 
 .note {
-    background: #ffdf54;
+    background: var(--yellow);
     height: 200px;
     width: 200px;
+    border-radius: 8px;
 }
 
 .yellow {
-	/*background: #ffed8e;*/
-	background: #fbd635 !important;
+	background:  var(--yellow) !important;
 }
 
 .pink {
-	/*background: #ff8ec8;*/
-	background: #ff6bb7 !important;
+	background:  var(--pink) !important;
 }
 
 .lilac {
-	/*background-color: #c18eff;*/
-	background-color: #9f67ff !important;
+	background-color:  var(--lilac) !important;
 }
 
 .lightBlue{
-	/*background: #8ed5ff;*/
-	background: #4fcdff !important;
+	background:  var(--cyan) !important;
+}
+
+.title-box {
+    text-align: center;
+    font-family: 'Carter One', cursive;
+    font-weight: bold;
+
+}
+
+.url {
+    text-decoration: initial;
+    color: var(--white);
+}
+
+.text-content {
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--white);
+
 }

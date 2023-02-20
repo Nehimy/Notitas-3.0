@@ -1,8 +1,10 @@
 <?php
 include 'panel.php';
 ?>
-<div class="col s9">
-  <div class="transparent-box">
+<!-- <div class="col s9"> -->
+aaaa
+<div class="transparent-box">
+  bbb
     <div class="white-box">
       <div class=" user-box user-box-edit">
         <form method="POST" action="<?=SITE_URL?>user/<?=$view->user->id?>/update">
@@ -16,5 +18,5 @@ include 'panel.php';
         </form>
       </div>
     </div>
-  </div>
 </div>
+<!--</div> -->
