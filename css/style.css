@@ -441,22 +441,24 @@ img {
 
 .content-button-emojis {
     display: grid;
-    grid-template-columns: auto auto;
     grid-template-rows: auto;
+    grid-template-columns: 40px 40px;
+    justify-content: end;
+
 }
 
 .eddit {
     grid-column: 1;
     grid-row: 1;
     justify-content: end;
-    display: grid;
+    margin-top: 8px;
 }
 
 .delete {
     grid-column: 2;
     grid-row: 1;
     justify-content: end;
-    display: grid;
+    margin-top: 8px;
 }
 
 .single-note {
