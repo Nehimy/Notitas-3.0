@@ -83,7 +83,7 @@ class Notita {
             $req->view->pgBack = $req->params->page -1;
 
         // Cargar la página
-        $req->view->html("panel-notes");
+        $req->view->html("regular-user-panel");
     }
 
 

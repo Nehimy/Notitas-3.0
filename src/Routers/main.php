@@ -34,7 +34,7 @@ Router::get("/page{page}","Controllers\Notita::allNotesForAllUsers")
         ->middleware('Middlewares\User::check');
 
 // Cargar el panel inicial para el admin
-Router::get("/panel-notes", "Controllers\Notita::allNotesForAllUsers")
+Router::get("/regular-user-panel", "Controllers\Notita::allNotesForAllUsers")
     ->middleware('Middlewares\User::check');
 
 
