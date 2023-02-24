@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="<?=SITE_URL?>css/style.css">
     <link rel="icon" type="image/svg" href="<?=SITE_URL?>css/Notitas_icono.svg">
     <title>Notitas</title>
@@ -13,7 +14,7 @@
       <div class="bar-container">
         <div class="bar">
           <!--El título esta aquí-->
-          <div class="container-logo">
+          <div class="container-logo padding-left">
             <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
               <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
             </a>
@@ -28,9 +29,6 @@
 
               <div class="container-input-search">
                 <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
-                <!-- <div class="container-glass">
-                     <img class="magnifying-glass" src="<?=SITE_URL?>css/search.svg" alt="Notitas 3.0">
-                   </div> -->
               </div>
               <input class="button-search" type="submit" value="search">
             </form>
@@ -38,9 +36,10 @@
           </div>
           <!--Search-->
 
-          <div class="sing-up">
-            <a class="sing style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
-              Sign up
+          <div class="container-avatar">
+            <!-- Logout -->
+            <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+              Logout
             </a>
             <div class="avatar">
               <?php

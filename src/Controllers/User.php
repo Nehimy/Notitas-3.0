@@ -71,12 +71,13 @@ class User {
         if(isset($user) && password_verify($password, $user->password)){
             //Crear una cookie
             $user->createCookie();
-            if($user->admin == 1){
+            if($user->admin){
                 $hash= md5(strtolower(trim($user->mail)));
-                Router::redirect('/panel-notes', ["avatar"=>$hash]);
+                Router::redirect('/panel-notes');
+
             }
             else{
-                Router::redirect('/all');
+                 Router::redirect('/all');
             }
         }else{
             View::render('login', ['error'=> 'Datos incorrectos']);

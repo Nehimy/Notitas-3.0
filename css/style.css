@@ -151,7 +151,7 @@ body {
     background: var(--blackblue);
 }
 
-.sing-up {
+.container-avatar {
     display: grid;
     justify-content: right;
     align-content: center;
@@ -161,9 +161,8 @@ body {
     grid-column: 4;
 }
 
-.sing {
+.logout {
     grid-column: 1;
-
 }
 
 .style-text-big {
@@ -188,9 +187,67 @@ body {
     width: 80px;
 }
 
-img {
-  padding-left: 15px;
+.padding-right {
   padding-right: 15px;
+}
+
+.padding-left {
+  padding-left: 15px;
+
+}
+
+
+
+/*Media  Queries header*/
+
+/*
+Width of 992px
+*/
+
+@media screen and (max-width: 992px) {
+    .input-search {
+        width: 185px;
+    }
+}
+
+/*
+Width of 600px
+*/
+@media screen and (max-width: 600px) {
+    .bar {
+        height: 200px;
+    }
+
+    .container-logo {
+        grid-row: 1;
+        grid-column: 1;
+    }
+
+    .container-new-note {
+        grid-row: 1;
+        grid-column: 2;
+    }
+
+    .search-container {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .container-avatar {
+        grid-row: 2;
+        grid-column: 2;
+    }
+
+    .input-search {
+        width: 150px;
+        height: 35px;
+    }
+
+    .button-search {
+        height: 41px;
+        width: 65px;
+    }
+
 }
 
 /*-------------------------------------*/
@@ -286,9 +343,9 @@ img {
   border: 2.3px solid var(--cyan);
 }
 
-/*--------------------------------------*/
-/***************Panel notes************+*/
-/*--------------------------------------*/
+/*----------------------------------------------*/
+/***************regular-user-panel************+*/
+/*---------------------------------------------*/
 
 .container-next-back {
     display: grid;
@@ -308,11 +365,7 @@ img {
     border: none;
 }
 
-
-
-/*--------------------------------------*/
 /******************Notes***************+*/
-/*--------------------------------------*/
 
 .notes {
     display: grid;
