@@ -434,56 +434,7 @@ img {
 /*-------------------------------------*/
 
 
-.content-button-emojis {
-    display: grid;
-    grid-template-rows: auto;
-    grid-template-columns: 40px 40px;
-    justify-content: end;
-
-    grid-column: 1;
-    grid-row: 1;
-
-}
-
-.eddit {
-    grid-column: 1;
-    grid-row: 1;
-    justify-content: end;
-    margin-top: 8px;
-}
-
-.delete {
-    grid-column: 2;
-    grid-row: 1;
-    justify-content: end;
-    margin-top: 8px;
-}
-
-.single-note {
-    display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: 70px auto;
-    width: 300px;
-    height: 300px;
-    border-radius: 10px;
-
-}
-
-.title-box.top-container {
-    grid-column: 1;
-    grid-row: 1;
-}
-
 .title {
     color: var(--white);
-}
-
-.text-content.one-note {
-    grid-column: 1;
-    grid-row: 2;
-
-}
-.white.contenet-one-note {
-    display: grid;
-    place-content: center;
+    font-family: 'Carter One', cursive;
 }

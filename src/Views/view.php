@@ -9,7 +9,8 @@ include 'header.php';
       <div class="white contenet-one-note">
         <!-- Ver nota indidual-->
         <div class="single-note <?=$view->notita->color?>">
-          <div class="title-box top-container">
+          <!-- Contenedor del título y los botón-emojis -->
+          <div class="top-container">
             <div class="content-button-emojis" >
               <a class="eddit" href="<?=SITE_URL?>note/<?=$view->notita->id?>/edit">
                 <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
