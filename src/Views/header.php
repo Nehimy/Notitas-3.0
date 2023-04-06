@@ -56,5 +56,5 @@
             </div>
           </div>
         </div>
-        </div>
+      </div>
       <script src="<?=SITE_URL?>js/script.js"></script>

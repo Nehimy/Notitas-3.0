@@ -125,10 +125,17 @@ Correo de prueba:
 
 * Arreglo de Notitas 2023
  - Hacer un tag con git para marcar el punto desde donde voy a cambiar el código.✔️
- - Captura de toda la parte visual, antes de rehacer el CSS✔️
+ - Captura de toda la parte visual, antes de rehacer el CSS ✔️
  - Si soy admin hacer un botón que me lleve del panel user al admin.
 
 
  -------------------------
  - Colocar el shearch en la barra de navegación ✔️
  -
+----------------------------------------------------------------------------
+## Reinicio 6 de abril 10:51 2023
+
+1. Arreglar la carga de la página cuando http://ney.lh/ no tenga parametro. ✔️
+2. Arreglar el login para que tenga concordancia con el panel de usuario, me refierio a los contenedores transparente y white.✔️
+3. Barra de anvegación adactable a pantalas pequeñas
+   - Si el width llega determinado tamaño que desaparesca el buscador y new note y apraresca un dropdown
