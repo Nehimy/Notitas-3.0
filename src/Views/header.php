@@ -14,7 +14,7 @@
       <div class="bar-container">
         <div class="bar">
           <!--El título esta aquí-->
-          <div class="container-logo padding-left">
+          <div class="container-logo">
             <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
               <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
             </a>
@@ -36,7 +36,7 @@
           </div>
           <!--Search-->
 
-          <div class="avatar-container padding-right">
+          <div class="avatar-container">
             <!-- Logout -->
             <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
               Logout
