@@ -6,11 +6,10 @@
     <link rel="stylesheet" href="<?=SITE_URL?>css/style.css">
     <link rel="icon" type="image/svg" href="<?=SITE_URL?>css/Notitas_icono.svg">
     <title>Notitas</title>
-    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&family=Itim&family=Luckiest+Guy&display=swap" rel="stylesheet">
   </head>
   <body>
     <div class="container">
+      <!-- Navigation bar -->
       <div class="bar-container">
         <div class="bar">
           <!--El título esta aquí-->
@@ -24,18 +23,15 @@
           </div>
 
           <!--Search-->
-          <div class="search-container" >
-            <form action="<?=SITE_URL?>panel-notes" class ="form-search" method="GET">
-
-              <div class="container-input-search">
-                <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
-              </div>
+          <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
+            <div class="container-input-search">
+              <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
+            </div>
+            <div class="container-button-search">
               <input class="button-search" type="submit" value="search">
-            </form>
-
-          </div>
-          <!--Search-->
-
+            </div>
+          </form>
+          <!--Avatar-->
           <div class="avatar-container">
             <!-- Logout -->
             <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">

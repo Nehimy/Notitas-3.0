@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&display=swap');
+
 :root {
   --cyan: #26c2ff;
 
@@ -22,7 +24,7 @@
 
 /*
    El valor border-box en el box-sizing hace que el padding y el border pasen a formar parte
-   del cálculo del ancho de la caja y no lo suman posteriormente.
+   del cálculo del ancho de la caja.
  */
 
 *{
@@ -85,34 +87,24 @@ body {
   display: grid;
   place-content: center;
   grid-column: 2;
-}
-
-.search-container {
-    display: grid;
-    grid-row: 1;
-    justify-content: center;
-    grid-column: 3;
+  grid-row: 1;
 }
 
 .form-search {
     display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
     place-content: center;
-    margin: 0px;
+    grid-row: 1;
+    grid-column: 3;
 }
 
 .container-input-search {
     display: grid;
-    grid-template-columns: auto;
-    grid-template-rows: auto;
-    align-content: end;
+    align-content: center;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .input-search {
-    grid-column: 1;
-    grid-row: 1;
-
     height: 40px;
     border-radius: 7px 0px 0px 7px;
     color: var(--navy);
@@ -120,15 +112,38 @@ body {
     border: 2px solid var(--blackTransparent);
 }
 
+.container-button-search {
+    display: grid;
+    align-content: center;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.button-search {
+    height: 40px;
+    width: 93px;
+    background: var(--royalblue);
+    border-radius: 0px 7px 7px 0px;
+    color: var(--white);
+    font-family: 'Carter One', cursive;
+
+    border: none;
+}
+
 .input-search:focus {
     outline: none;
     caret-color: transparent;
-
 }
 
 .input-search:hover {
     border: 2px solid var(--royalblue);
 }
+
+.button-search:hover {
+    width: 95px;
+    background: var(--blackblue);
+}
+/******************************/
 
 .container-glass {
     display: grid;
@@ -140,24 +155,6 @@ body {
 
 .magnifying-glass {
     width: 20px;
-}
-
-.button-search {
-    grid-column: 2;
-    grid-row: 1;
-    height: 46px;
-    width: 93px;
-    background: var(--royalblue);
-    border-radius: 0px 7px 7px 0px;
-    color: var(--white);
-    font-family: 'Carter One', cursive;
-    margin-top: 5px !important;
-    border: none;
-}
-
-.button-search:hover {
-    width: 95px;
-    background: var(--blackblue);
 }
 
 .avatar-container {
