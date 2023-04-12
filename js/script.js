@@ -48,8 +48,8 @@ function normalImg(element){
 }
 
 function SaveOver(element){
-  element.style.height = "44px";
-  element.style.width = " 97.5px";
+  // element.style.height = "44px";
+  // element.style.width = " 97.5px";
   element.style.background = "#03388C";
 }
 

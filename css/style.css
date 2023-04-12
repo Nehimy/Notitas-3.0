@@ -38,8 +38,6 @@
 /*****************Header**************+*/
 /*-------------------------------------*/
 
-
-
 body {
   margin: 0px;
   height: 100vh;
@@ -58,16 +56,16 @@ body {
   display: grid;
   width: 100vw;
   height: 100px;
+  background: var(--white);
   grid-row: 1;
   grid-column: 1;
-  /* z-index: 1; */
+  z-index: 1;
 }
 
 .bar {
   display: grid;
   /* height: 100px;
      width: 100vw; */
-  background: var(--white);
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(1, auto);
   box-shadow: 0px 0.5px 5.5px var(--grayLight);
@@ -139,13 +137,13 @@ body {
 }
 /******************************/
 
-.container-glass {
-    display: grid;
-    grid-column: 1;
-    grid-row: 1;
-    width: 50px;
+/* .container-glass { */
+/*     display: grid; */
+/*     grid-column: 1; */
+/*     grid-row: 1; */
+/*     width: 50px; */
 
-}
+/* } */
 
 /* .magnifying-glass { */
 /*     width: 20px; */
@@ -172,10 +170,21 @@ body {
     color: var(--cyan);
 }
 
-
 .avatar2, .avatar {
     height: 80px;
     width: 80px;
+}
+
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (max-width: 768px) {
+    body {
+        background: #323f67;
+    }
+
+    .bar {
+        display: none;
+    }
 }
 
 
@@ -183,6 +192,7 @@ body {
 /******************Body***************+*/
 /*-------------------------------------*/
 
+/**************** Login ****************/
 
 .container-transparent {
     display: grid;
@@ -214,6 +224,7 @@ body {
 .white, .element-container {
     width: 75vw;
     /* height: 75vh; */
+    min-height: 75vh;
     background: var(--white);
     border-radius: 10px;
     padding: 10px;
@@ -223,14 +234,16 @@ body {
 /******************Login***************+*/
 /*--------------------------------------*/
 
+/* Layer black transparent */
 .container-login {
-  width: 100vw;
-  height: 100vh;
-  background: var(--blackTransparent);
-  grid-row: 1;
-  grid-column: 1;
-  place-content: center;
-  display: grid;
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background: var(--blackTransparent);
+    grid-row: 1;
+    grid-column: 1;
+    place-content: center;
+    z-index: 2;
 }
 
 .container-form-login {
@@ -258,7 +271,7 @@ body {
     height: 40px;
     width: 93px;
     background: var(--royalblue);
-    border-radius: 7px;
+    border-radius: 10px;
     color: var(--white);
     font-family: 'Carter One', cursive;
     margin-top: 5px !important;
