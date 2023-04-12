@@ -19,37 +19,35 @@
             </a>
           </div>
           <div class="container-new-note">
-            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)"
+               onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
           </div>
 
           <!--Search-->
           <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
             <div class="container-input-search">
               <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
-            </div>
-            <div class="container-button-search">
               <input class="button-search" type="submit" value="search">
             </div>
           </form>
           <!--Avatar-->
           <div class="avatar-container">
+            <?php
+            if(isset($view->avatar)){
+            ?>
+              <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
+            <?php
+            }else{
+            ?>
+              <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png"
+                   alt="Avatar default" />
+            <?php
+            }
+            ?>
             <!-- Logout -->
             <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
               Logout
             </a>
-            <div class="avatar">
-              <?php
-              if(isset($view->avatar)){
-              ?>
-                <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
-              <?php
-              }else{
-              ?>
-                <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png" alt="Avatar default" />
-              <?php
-              }
-              ?>
-            </div>
           </div>
         </div>
       </div>

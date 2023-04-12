@@ -60,7 +60,7 @@ body {
   height: 100px;
   grid-row: 1;
   grid-column: 1;
-  z-index: 1;
+  /* z-index: 1; */
 }
 
 .bar {
@@ -112,13 +112,6 @@ body {
     border: 2px solid var(--blackTransparent);
 }
 
-.container-button-search {
-    display: grid;
-    align-content: center;
-    grid-column: 2;
-    grid-row: 1;
-}
-
 .button-search {
     height: 40px;
     width: 93px;
@@ -126,8 +119,9 @@ body {
     border-radius: 0px 7px 7px 0px;
     color: var(--white);
     font-family: 'Carter One', cursive;
-
     border: none;
+    grid-column: 2;
+    grid-row: 1;
 }
 
 .input-search:focus {
@@ -153,21 +147,20 @@ body {
 
 }
 
-.magnifying-glass {
-    width: 20px;
-}
+/* .magnifying-glass { */
+/*     width: 20px; */
+/* } */
 
 .avatar-container {
   display: grid;
-  justify-content: right;
-  align-items: center;
-  grid-gap: 5px;
   grid-column: 4;
-  padding-right: 15px;
+  align-items: center;
+  justify-content: right;
+  padding-right: 10px;
 }
 
 .logout {
-    grid-column: 1;
+    text-align: center;
 }
 
 .style-text-big {
@@ -179,15 +172,8 @@ body {
     color: var(--cyan);
 }
 
-.avatar {
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  justify-content: right;
-  grid-column: 2;
-}
 
-.avatar2 {
+.avatar2, .avatar {
     height: 80px;
     width: 80px;
 }
