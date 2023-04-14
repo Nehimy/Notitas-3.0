@@ -56,15 +56,33 @@
               <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
             </a>
           </div>
-          <div class="dropdown">
-            <svg  class="svg-line" version="1.1" height="30" width="60">
-              <line class="line-dropdown" x1="10" y1="15" x2="50" y2="15"
-                    stroke-width="5" stroke="orange" stroke-linecap="round" />
-              <line class="line-dropdown" x1="10" y1="25" x2="50" y2="25"
-                    stroke-width="5" stroke="orange" stroke-linecap="round" />
-              <line class="line-dropdown" x1="10" y1="35" x2="50" y2="35"
-                    stroke-width="5" stroke="orange" stroke-linecap="round" />
-            </svg>
+          <div class="container-dropdown">
+            <label for="trigger-drop">
+              <svg  class="svg-line" version="1.1" height="30" width="60">
+                <line class="line-dropdown" x1="10" y1="15" x2="50" y2="15"
+                      stroke-width="5" stroke="orange" stroke-linecap="round" />
+                <line class="line-dropdown" x1="10" y1="25" x2="50" y2="25"
+                      stroke-width="5" stroke="orange" stroke-linecap="round" />
+                <line class="line-dropdown" x1="10" y1="35" x2="50" y2="35"
+                      stroke-width="5" stroke="orange" stroke-linecap="round" />
+              </svg>
+            </label>
+            <input id="trigger-drop" type="checkbox" />
+            <div class="dropdown">
+              <div class="container-new-note">
+                <a class="space style-text-big" alt="Crea nueva notita"
+                   title="Crea nueva notita" onmouseover="colorText(this)"
+                   onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+              </div>
+
+              <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
+                <div class="container-input-search">
+                  <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
+                  <input class="button-search" type="submit" value="search">
+                </div>
+              </form>
+
+            </div>
           </div>
         </div>
       </div>
