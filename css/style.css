@@ -229,9 +229,6 @@ input:checked + .dropdown {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (max-width: 768px) {
-    body {
-        background: #323f67;
-    }
 
     .bar {
         display: none;

@@ -18,6 +18,7 @@
               <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
             </a>
           </div>
+          <!--new note-->
           <div class="container-new-note">
             <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)"
                onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
@@ -69,18 +70,23 @@
             </label>
             <input id="trigger-drop" type="checkbox" />
             <div class="dropdown">
+              <!--new note-->
               <div class="container-new-note">
                 <a class="space style-text-big" alt="Crea nueva notita"
                    title="Crea nueva notita" onmouseover="colorText(this)"
                    onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
               </div>
-
+              <!--Search-->
               <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
                 <div class="container-input-search">
                   <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
                   <input class="button-search" type="submit" value="search">
                 </div>
               </form>
+              <!-- Logout -->
+              <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+                Logout
+              </a>
 
             </div>
           </div>
