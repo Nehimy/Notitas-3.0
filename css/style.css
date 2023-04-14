@@ -15,6 +15,8 @@
   --blackblue:#03388C;
   --darkGray: #a2a2a200;
   --grayLight: #8c8c8c;
+  --grayblack:#646363;
+  --grayVeryLight:#9797973d;
   --turquoise: #00cc99;
   --navy: #001c42b5;
   --yellowDuck: rgb(255, 244, 188);
@@ -171,8 +173,34 @@ body {
 }
 
 .avatar2, .avatar {
-    height: 80px;
-    width: 80px;
+    height: 70px;
+    /* width: 80px; */
+}
+
+.navbar {
+    display: none;
+}
+
+.dropdown {
+    display: grid;
+    grid-column: 3;
+    grid-row: 1;
+    justify-content: end;
+    padding-right: 5px;
+
+}
+
+.svg-line {
+    height: 50px;
+}
+
+line {
+    stroke: #646363;
+}
+
+svg:hover {
+  fill: var(--lilac);
+  background-color: #9797973d;
 }
 
 
@@ -184,6 +212,14 @@ body {
 
     .bar {
         display: none;
+    }
+    .navbar {
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+
+
     }
 }
 

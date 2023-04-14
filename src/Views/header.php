@@ -50,5 +50,22 @@
             </a>
           </div>
         </div>
+        <div class="navbar">
+          <div class="container-logo">
+            <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
+              <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
+            </a>
+          </div>
+          <div class="dropdown">
+            <svg  class="svg-line" version="1.1" height="30" width="60">
+              <line class="line-dropdown" x1="10" y1="15" x2="50" y2="15"
+                    stroke-width="5" stroke="orange" stroke-linecap="round" />
+              <line class="line-dropdown" x1="10" y1="25" x2="50" y2="25"
+                    stroke-width="5" stroke="orange" stroke-linecap="round" />
+              <line class="line-dropdown" x1="10" y1="35" x2="50" y2="35"
+                    stroke-width="5" stroke="orange" stroke-linecap="round" />
+            </svg>
+          </div>
+        </div>
       </div>
       <script src="<?=SITE_URL?>js/script.js"></script>
