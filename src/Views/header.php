@@ -70,24 +70,25 @@
             </label>
             <input id="trigger-drop" type="checkbox" />
             <div class="dropdown">
-              <!--new note-->
-              <div class="container-new-note">
-                <a class="space style-text-big" alt="Crea nueva notita"
-                   title="Crea nueva notita" onmouseover="colorText(this)"
-                   onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
-              </div>
               <!--Search-->
-              <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
+              <form class ="form-search border-top" action="<?=SITE_URL?>panel-notes" method="GET">
                 <div class="container-input-search">
                   <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
                   <input class="button-search" type="submit" value="search">
                 </div>
               </form>
+              <!--new note-->
+              <div class="container-new-note border-top">
+                <a class="space style-text-big" alt="Crea nueva notita"
+                   title="Crea nueva notita" onmouseover="colorText(this)"
+                   onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+              </div>
               <!-- Logout -->
-              <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
-                Logout
-              </a>
-
+              <div class="container-logout border-top">
+                <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+                  Logout
+                </a>
+              </div>
             </div>
           </div>
         </div>
