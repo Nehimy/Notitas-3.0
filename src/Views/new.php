@@ -2,13 +2,12 @@
 include 'header.php';
 
 ?>
-<!--Contenido-->
-<div id="sky-blue-set">
-  <div class="transparent-set">
-    <div class="white-set">
-      <div class="new-litle-note">
+<div class=" container-transparent">
+  <div class="white-transparent">
+    <div class="container-white">
+      <div class="white">
         <form method="POST">
-          <div class="titulo">
+          <div class="title">
             Título:
           </div>
           <input type="text" name ="title" value="" required="">

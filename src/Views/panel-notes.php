@@ -15,7 +15,7 @@ if(($view->admin)){
     <div class="container-white">
       <div class="white">
         <div class="notes">
-        <?php
+          <?php
           foreach($view->notitas as $notas){
           ?>
             <div class="note <?=$notas->color?>">
@@ -33,9 +33,9 @@ if(($view->admin)){
                 <?=$notas->content;?>
               </div>
             </div>
-        <?php
-        }//llave de sierre del foreach
-        ?>
+          <?php
+          }//llave de sierre del foreach
+          ?>
         </div>
       </div>
     </div>
