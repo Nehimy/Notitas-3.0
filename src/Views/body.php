@@ -8,7 +8,6 @@ include 'header.php';
       <div class="white">
         <?php
         include($view->part);
-        //$view-part;
         ?>
       </div>
     </div>

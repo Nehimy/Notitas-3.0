@@ -13,7 +13,7 @@ include 'header.php';
         <input class="input-text" type="text" name="name" value="">
         <p class="titulo" for="password">Contraseña:</p>
         <input class="input-text" type="password" name="password" value="">
-        <input class="boton boton-login" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save">
+        <input class="botton" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save">
       </form>
     </div>
   </div>

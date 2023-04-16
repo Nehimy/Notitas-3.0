@@ -17,6 +17,7 @@
   --grayLight: #8c8c8c;
   --grayblack:#646363;
   --grayVeryLight:#9797973d;
+  --grayLilac:#bcb5c1;
   --turquoise: #00cc99;
   --navy: #001c42b5;
   --yellowDuck: rgb(255, 244, 188);
@@ -319,7 +320,7 @@ Medium devices (landscape tablets, 768px and up)
     font-family: 'Carter One', cursive;
 }
 
-.boton.boton-login {
+.botton {
     height: 40px;
     width: 93px;
     background: var(--royalblue);
@@ -330,7 +331,7 @@ Medium devices (landscape tablets, 768px and up)
     border: none;
 }
 
-.input-text {
+.input-text, textarea-text {
   border-radius: 5px;
   border: 2px solid var(--grayLight);
 }
@@ -429,4 +430,36 @@ Notes
 .title {
     color: var(--white);
     font-family: 'Carter One', cursive;
+}
+
+/*-------------------------------------------*/
+/****************** New note ***************+*/
+/*-------------------------------------------*/
+.container-new-note-form {
+    display: grid;
+    place-content: center;
+    background: var(--grayLilac);
+    border-radius: 3px;
+    padding: 20px 25px;
+    text-align: center;
+    color: var(--white);
+    font-family: 'Carter One', cursive;
+    min-width: 250px;
+    width: 350px;
+}
+
+.input-size, .textarea-size{
+    width: 240px;
+}
+
+.select-color {
+    background: var(--yellow);
+    border: none;
+    border-radius: 5px;
+    color: var(--white);
+    font-family: 'Carter One', cursive;
+    text-align: center;
+    height: 30px;
+    width: 93px;
+    margin-top: 5px;
 }
