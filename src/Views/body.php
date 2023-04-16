@@ -1,13 +1,19 @@
 <?php
 include 'header.php';
 ?>
-<!--cuerpo generico-->
+<!--Basic contaniner-->
 <div class="container-transparent">
   <div class="white-transparent">
     <div class="container-white">
       <div class="white">
+        <?php
+        include($view->part);
+        //$view-part;
+        ?>
       </div>
     </div>
   </div>
 </div>
-<!-- </div>  primer contenedor-->
+<?php
+include($view->bottonNextBack);
+?>

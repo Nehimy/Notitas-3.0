@@ -42,7 +42,7 @@ class Notita {
     }
 
     /* Metodo de paginación */
-    // Obtener n cantidad notas por pag.
+    // Obtener n cantidad de notas por pag.
     // Tambien carga notas que se buscan en el buscador
     public static function allNotesForAllUsers($req){
         $amount = 8;
@@ -83,7 +83,11 @@ class Notita {
             $req->view->pgBack = $req->params->page -1;
 
         // Cargar la página
-        $req->view->html("panel-notes");
+        //$req->view->html("panel-notes");
+        $req->view->part = 'panel-notes.php';
+        $req->view->bottonNextBack = 'botton-next-back.php';
+        $req->view->html("body");
+
     }
 
 
