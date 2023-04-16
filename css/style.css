@@ -135,19 +135,6 @@ body {
     width: 95px;
     background: var(--blackblue);
 }
-/******************************/
-
-/* .container-glass { */
-/*     display: grid; */
-/*     grid-column: 1; */
-/*     grid-row: 1; */
-/*     width: 50px; */
-
-/* } */
-
-/* .magnifying-glass { */
-/*     width: 20px; */
-/* } */
 
 .avatar-container {
   display: grid;
@@ -297,9 +284,9 @@ Medium devices (landscape tablets, 768px and up)
     padding: 10px;
 }
 
-/*--------------------------------------*/
-/******************Login***************+*/
-/*--------------------------------------*/
+/*-------------------------------------------*/
+/******************From Login***************+*/
+/*-------------------------------------------*/
 
 /* Layer black transparent */
 .container-login {
@@ -332,8 +319,6 @@ Medium devices (landscape tablets, 768px and up)
     font-family: 'Carter One', cursive;
 }
 
-/* /\*@media (min-width: 700px) and (orientation: landscape) {*\/ */
-
 .boton.boton-login {
     height: 40px;
     width: 93px;
@@ -345,14 +330,14 @@ Medium devices (landscape tablets, 768px and up)
     border: none;
 }
 
-/* .input-text { */
-/*   border-radius: 5px; */
-/*   border: 2px solid var(--grayLight); */
-/* } */
+.input-text {
+  border-radius: 5px;
+  border: 2px solid var(--grayLight);
+}
 
-/* .input-text:hover { */
-/*   border: 2.3px solid var(--cyan); */
-/* } */
+.input-text:hover {
+  border: 2px solid var(--cyan);
+}
 
 /*----------------------------------------------*/
 /***************regular-user-panel************+*/
@@ -362,6 +347,8 @@ Medium devices (landscape tablets, 768px and up)
     display: grid;
     place-content: center;
     padding: 10px;
+    grid-row: 2;
+    grid-column: 1;
 }
 
 .button-next-back {
@@ -377,7 +364,9 @@ Medium devices (landscape tablets, 768px and up)
     border: none;
 }
 
-/******************Notes***************+*/
+/*
+Notes
+*/
 
 .notes {
     display: grid;

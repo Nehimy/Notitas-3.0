@@ -1,5 +1,6 @@
 <?php
- include 'header.php';
+include 'header.php';
+
 ?>
 <!--Contenido-->
 <div id="sky-blue-set">
