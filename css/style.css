@@ -435,6 +435,11 @@ Notes
 /*-------------------------------------------*/
 /****************** New note ***************+*/
 /*-------------------------------------------*/
+.first-contaniner-form {
+    display: grid;
+    place-content: center;
+    min-height: 75vh;
+}
 .container-new-note-form {
     display: grid;
     place-content: center;
@@ -450,6 +455,11 @@ Notes
 
 .input-size, .textarea-size{
     width: 240px;
+}
+
+.container-bottons {
+    display: grid;
+    place-content: center;
 }
 
 .select-color {

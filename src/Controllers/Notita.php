@@ -11,7 +11,12 @@ class Notita {
     // Método que carge o lleva a crear una nueva nota
     public static function newNoteForm($req) {
 
-        $req->view->html("new");
+        //$req->view->html("new");
+        //Cargar pagina
+
+        $req->view->part = 'new.php';
+        $req->view->bottonNextBack = 'botton-next-back.php';
+        $req->view->html("body");
     }
 
     // Guardar nota recien creada
