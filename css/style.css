@@ -413,14 +413,7 @@ Notes
     color: var(--white);
 }
 
-.text-content {
-    text-align: center;
-    font-family: 'Handlee', cursive;
-    font-weight: bold;
-    font-size: 20px;
-    color: var(--white);
 
-}
 
 /*-------------------------------------*/
 /******************View***************+*/
@@ -500,6 +493,40 @@ Notes
 
 .container-title {
     display: grid;
-    gird-template-columns: auto auto;
-    gird-templete-row: auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+
+.container-emoji {
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+}
+
+.container-eddit {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.container-delete {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.second-container-title {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.container-content-note {
+    text-align: center;
+    font-family: 'Handlee', cursive;
+    font-weight: bold;
+    font-size: 20px;
+    color: var(--white);
+
+    grid-column: 1;
+    grid-row: 2;
 }
