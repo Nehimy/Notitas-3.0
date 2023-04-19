@@ -481,3 +481,25 @@ Notes
         width: 85vw;
     }
 }
+
+/*---------------------------------------*/
+/****************** View ***************+*/
+/*---------------------------------------*/
+
+.container-see-note {
+    display: grid;
+    place-content: center;
+    min-height: 75vh;
+}
+
+.see-note {
+    width: 350px;
+    height: 350px;
+    border-radius: 5px;
+}
+
+.container-title {
+    display: grid;
+    gird-template-columns: auto auto;
+    gird-templete-row: auto;
+}
