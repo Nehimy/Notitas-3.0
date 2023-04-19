@@ -449,7 +449,6 @@ Notes
     text-align: center;
     color: var(--white);
     font-family: 'Carter One', cursive;
-    min-width: 250px;
     width: 350px;
 }
 
@@ -472,4 +471,13 @@ Notes
     height: 30px;
     width: 93px;
     margin-top: 5px;
+}
+
+@media only screen and (max-width: 430px) {
+    .container-new-note-form {
+        width: 300px;
+    }
+    .white {
+        width: 85vw;
+    }
 }

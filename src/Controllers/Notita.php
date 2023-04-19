@@ -43,7 +43,10 @@ class Notita {
     // Método o camino que lleve a ver la nota completa del usuario
     public static function viewNote($req) {
 
-        $req->view->html('view');
+        // $req->view->html('view');
+        $req->view->part = 'view.php';
+        $req->view->bottonNextBack = 'botton-next-back.php';
+        $req->view->html("body");
     }
 
     /* Metodo de paginación */
