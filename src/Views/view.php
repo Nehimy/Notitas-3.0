@@ -23,7 +23,7 @@
         </div>
       </div>
     </div>
-    <div class="container-content-note">
+    <div class="container-content-note text-content">
       <?=$view->notita->content?>
     </div>
 
