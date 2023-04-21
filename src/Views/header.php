@@ -20,8 +20,7 @@
           </div>
           <!--new note-->
           <div class="container-new-note">
-            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" onmouseover="colorText(this)"
-               onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
           </div>
 
           <!--Search-->
@@ -80,12 +79,11 @@
               <!--new note-->
               <div class="container-new-note border-top">
                 <a class="space style-text-big" alt="Crea nueva notita"
-                   title="Crea nueva notita" onmouseover="colorText(this)"
-                   onmouseout="normalColor(this)" href="<?=SITE_URL?>new"> new note </a>
+                   title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
               </div>
               <!-- Logout -->
               <div class="container-logout border-top">
-                <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
+                <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
                   Logout
                 </a>
               </div>
@@ -93,4 +91,4 @@
           </div>
         </div>
       </div>
-      <script src="<?=SITE_URL?>js/script.js"></script>
+      <!-- <script src="<?=SITE_URL?>js/script.js"></script> -->

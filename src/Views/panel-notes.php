@@ -14,12 +14,12 @@ if(($view->admin)){
       <!--Botón de eliminar -->
       <div class="delete-button">
         <a href="<?=SITE_URL?>note/<?=$notas->id?>/remove/admin">
-          <img onmouseover="bigImg(this)" onmouseout="normalImg(this)" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
+          <img class="delete-emoji" src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
         </a>
       </div>
       <!-- Ver la nota -->
       <div class="title-box">
-        <a class="url" onmouseover="colorTitleOver(this)" onmouseout="colorTitleOut(this)" href="<?=SITE_URL?>note/<?=$notas->id?>">
+        <a class="url" href="<?=SITE_URL?>note/<?=$notas->id?>">
           <?=$notas->title; ?>
         </a>
       </div>

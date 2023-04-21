@@ -132,10 +132,10 @@ body {
     border: 2px solid var(--royalblue);
 }
 
-.button-search:hover {
-    width: 95px;
-    background: var(--blackblue);
-}
+/* .button-search:hover { */
+/*     width: 95px; */
+/*     background: var(--blackblue); */
+/* } */
 
 .avatar-container {
   display: grid;
@@ -560,4 +560,43 @@ Notes
 .bt-menssage{
     text-decoration: inherit;
     padding: 3px 8px;
+}
+
+.message-container-white {
+    display: grid;
+    place-content: center;
+    width: 250px;
+    height: 150px;
+}
+
+.message-container-transparent {
+    display: grid;
+}
+
+.container-bt-menssage {
+    margin-top: 10px;
+}
+
+/*------------------------------------------------*/
+/****************** botton hover ****************+*/
+/*------------------------------------------------*/
+
+.button-search:hover, .botton:hover, .button-next-back:hover{
+    background:   var(--blackblue);
+}
+
+.style-text-big:hover, .url:hover {
+    color: var(--grayLight);
+}
+
+.url:hover {
+    color: var(--blackTransparent);
+}
+
+.edit-emoji, .delete-emoji {
+    height: 14px;
+}
+
+.edit-emoji:hover, .delete-emoji:hover {
+    height: 19px;
 }

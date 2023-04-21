@@ -4,12 +4,12 @@
     <div class="container-title">
       <!-- container emoji -->
       <div class="container-emoji">
-          <a href="<?=SITE_URL?>note/<?=$view->notita->id?>/edit">
-            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"
-                 src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
+        <a href="<?=SITE_URL?>note/<?=$view->notita->id?>/edit">
+          <img class="edit-emoji"
+               src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
           </a>
           <a href="<?=SITE_URL?>note/<?=$view->notita->id?>/remove">
-            <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"
+            <img class="delete-emoji"
                  src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
           </a>
       </div>
