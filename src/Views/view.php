@@ -4,18 +4,14 @@
     <div class="container-title">
       <!-- container emoji -->
       <div class="container-emoji">
-        <div class="container-eddit">
-          <a class="eddit" href="<?=SITE_URL?>note/<?=$view->notita->id?>/edit">
+          <a href="<?=SITE_URL?>note/<?=$view->notita->id?>/edit">
             <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"
                  src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
           </a>
-        </div>
-        <div class="container-delete">
-          <a class="delete" href="<?=SITE_URL?>note/<?=$view->notita->id?>/remove">
+          <a href="<?=SITE_URL?>note/<?=$view->notita->id?>/remove">
             <img onmouseover="bigImg(this)" onmouseout="normalImg(this)"
                  src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
           </a>
-        </div>
       </div>
       <div class="second-container-title">
         <div class="title">
@@ -28,5 +24,4 @@
     </div>
 
   </div>
-
-<script src="<?=SITE_URL?>js/script.js"></script>
+</div>

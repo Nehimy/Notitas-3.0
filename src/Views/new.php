@@ -11,7 +11,7 @@
     <textarea class="textarea-text textarea-size" name="content"
               rows="10" cols="50" required=""></textarea>
     <div class="container-bottons">
-      <select class="select-color" name="color" onChange="changeColor(this)">
+      <select class="select-color" id="select-color" name="color" onChange="changeColor(this)">
         <option value="yellow">Amarillo</option>
         <option value="pink">Rosa</option>
         <option value="lilac">Lila</option>
