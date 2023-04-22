@@ -3,20 +3,21 @@
   <?php
   if(isset($view->pgBack) ){
   ?>
-    <a class="button-next-back" id="go-back" onmouseover="SaveOver(this)"
-       onmouseout="SaveOut(this)" href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
+    <div class="container-back">
+      <a class="button-next-back"
+         href="<?=SITE_URL?>page<?=$view->pgBack.$view->search?>"> Back </a>
+    </div>
   <?php
   }
   ?>
   <?php
   if(isset($view->pgNext)){
   ?>
-    <a class="button-next-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)"
-       href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>
+    <div class="container-next">
+      <a class="button-next-back"
+         href="<?=SITE_URL?>page<?=$view->pgNext.$view->search?>"> Next </a>
+    </div>
   <?php
   }
   ?>
 </div>
-<?php
-include 'footer.html';
-?>

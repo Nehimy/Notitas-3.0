@@ -20,7 +20,8 @@
           </div>
           <!--new note-->
           <div class="container-new-note">
-            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
+            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita"
+               href="<?=SITE_URL?>new"> new note </a>
           </div>
 
           <!--Search-->
@@ -39,7 +40,8 @@
             <?php
             }else{
             ?>
-              <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png"
+              <img class="avatar2"
+                   src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png"
                    alt="Avatar default" />
             <?php
             }
