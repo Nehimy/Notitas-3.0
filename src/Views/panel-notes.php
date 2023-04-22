@@ -1,11 +1,3 @@
-<?php
-/*Borrar en un futuro*/
-if(($view->admin)){
-  include 'panel.php';
-}else{
-  //include 'header.php';
-}
-?>
 <div class="notes">
   <?php
   foreach($view->notitas as $notas){

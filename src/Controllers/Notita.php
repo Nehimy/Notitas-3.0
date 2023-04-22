@@ -51,7 +51,7 @@ class Notita {
 
     /* Metodo de paginación */
     // Obtener n cantidad de notas por pag.
-    // Tambien carga notas que se buscan en el buscador
+    // También carga notas que se buscan en el buscador
     public static function allNotesForAllUsers($req){
         $amount = 8;
         $req->view->admin = $req->user->admin;
@@ -92,9 +92,14 @@ class Notita {
 
         // Cargar la página
         //$req->view->html("panel-notes");
-        $req->view->part = 'panel-notes.php';
-        $req->view->bottonNextBack = 'botton-next-back.php';
-        $req->view->html("body");
+        if($req->user->admin) {
+          $req->view->html("panel-admin");
+        }else{
+            $req->view->part = 'panel-notes.php';
+            $req->view->bottonNextBack = 'botton-next-back.php';
+            $req->view->html("body");
+        }
+
 
     }
 

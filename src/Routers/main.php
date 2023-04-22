@@ -84,7 +84,7 @@ Router::post("/login", "Controllers\User::Login"); //confirmar logueo
 Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
     ->middleware('Middlewares\User::check');
 
-// Ver todas los usuarios para el admin
+// Ver todos los usuarios para el admin
 Router::get("/panel-users", "Controllers\User::allUsersForAdmin")
     ->middleware('Middlewares\User::check');
 

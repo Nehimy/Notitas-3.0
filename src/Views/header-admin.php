@@ -45,7 +45,7 @@
             }
             ?>
             <!-- Logout -->
-            <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
+            <a class="logout style-text-big" onmouseover="colorText(this)" onmouseout="normalColor(this)" href="<?=SITE_URL?>login-off">
               Logout
             </a>
           </div>
