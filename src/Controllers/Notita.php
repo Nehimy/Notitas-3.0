@@ -93,7 +93,7 @@ class Notita {
         // Cargar la página
         //$req->view->html("panel-notes");
         if($req->user->admin) {
-          $req->view->html("panel-admin");
+          $req->view->html("panel");
         }else{
             $req->view->part = 'panel-notes.php';
             $req->view->bottonNextBack = 'botton-next-back.php';

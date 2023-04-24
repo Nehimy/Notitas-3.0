@@ -592,26 +592,40 @@ Notes
     margin-top: 10px;
 }
 
+
 /*----------------------------------------------------*/
-/********************* Panel-admin ******************+*/
+/********************* Panel-content ******************+*/
+/*----------------------------------------------------*/
+
+
+/*----------------------------------------------------*/
+/********************* Panel ******************+*/
 /*----------------------------------------------------*/
 .container-global {
     display:grid;
     grid-template-columns: auto auto;
     grid-template-rows: auto;
-}
-
-.panel {
-    display: grid;
     grid-column: 1;
     grid-row: 1;
-    width: 12vw;
-    background: aliceblue;
+}
+.container-panel {
+    display: grid;
+
+}
+.panel {
+    display: grid;
+    width: 20vw;
+    background: var(--white);
+    height: 100vh;
+
 }
 
-.container-content {
+.container-transparent-content {
     grid-column: 2;
     grid-row: 1;
+    display: grid;
+    place-content: center;
+    padding-top: 100px;
 }
 
 /*------------------------------------------------*/

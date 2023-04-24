@@ -15,5 +15,5 @@ include 'header.php';
 </div>
 <?php
 include($view->bottonNextBack);
-include 'footer.html';
+include 'footer.php';
 ?>
