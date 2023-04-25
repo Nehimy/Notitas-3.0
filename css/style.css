@@ -128,14 +128,6 @@ body {
     caret-color: transparent;
 }
 
-.input-search:hover {
-    border: 2px solid var(--royalblue);
-}
-
-/* .button-search:hover { */
-/*     width: 95px; */
-/*     background: var(--blackblue); */
-/* } */
 
 .avatar-container {
   display: grid;
@@ -149,6 +141,7 @@ body {
     border-top: 1px solid var(--grayVeryLight);
     padding-top: 6px;
     padding-bottom: 6px;
+    width: inherit;
 }
 
 .container-logout {
@@ -593,14 +586,13 @@ Notes
 }
 
 
-/*----------------------------------------------------*/
-/********************* Panel-content ******************+*/
-/*----------------------------------------------------*/
+
 
 
 /*----------------------------------------------------*/
 /********************* Panel ******************+*/
 /*----------------------------------------------------*/
+
 .container-global {
     display:grid;
     grid-template-columns: auto auto;
@@ -614,7 +606,8 @@ Notes
 }
 .panel {
     display: grid;
-    width: 20vw;
+    place-content: center;
+    width: 250px;
     background: var(--white);
     height: 100vh;
 
@@ -628,9 +621,71 @@ Notes
     padding-top: 100px;
 }
 
-/*------------------------------------------------*/
-/****************** botton hover ****************+*/
-/*------------------------------------------------*/
+/*----------------------------------------------------*/
+/********************* Panel-content ****************+*/
+/*----------------------------------------------------*/
+.container-input-search-panel{
+    display: grid;
+    grid-template-columns: auto auto;
+}
+
+.input-search-panel {
+    display: grid;
+    justify-self: self-end;
+
+    height: 35px;
+    width: 175px;
+    border-radius: 7px 0px 0px 7px;
+    color: var(--navy);
+    font-family: 'Carter One', cursive;
+    border: 2px solid var(--blackTransparent);
+
+}
+
+.button-search-panel {
+    display: grid;
+    justify-self: self-start;
+
+    height: 35px;
+    width: 55px;
+    background: var(--royalblue);
+    border-radius: 0px 7px 7px 0px;
+    color: var(--white);
+    font-family: 'Carter One', cursive;
+    text-align: center;
+    border: none;
+}
+
+.padding-text {
+    padding-left: 10px;
+}
+
+.border-botton {
+    border-bottom: 1px solid var(--grayVeryLight);
+    padding-top: 6px;
+    width: inherit;
+}
+
+/*-------------------------------------------*/
+/******************  hover ****************+*/
+/*------------------------------------------*/
+
+.input-search:hover {
+    border: 2px solid var(--royalblue);
+}
+
+.input-search-panel:hover {
+    border: 2px solid var(--royalblue);
+}
+
+/*
+Focus
+*/
+
+.input-search-panel:focus {
+  outline: none;
+  caret-color: transparent;
+}
 
 .button-search:hover, .botton:hover, .button-next-back:hover{
     background:   var(--blackblue);
