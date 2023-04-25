@@ -25,6 +25,7 @@
 
           <!--Search-->
           <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
+            <!-- <form class ="form-search" action="<?=SITE_URL?>search-notes" method="GET"> -->
             <div class="container-input-search">
               <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
               <input class="button-search" type="submit" value="search">

@@ -4,6 +4,7 @@
       <!--Search-->
       <p class="style-text-big border-top"></p>
       <form  action="<?=SITE_URL?>panel-notes" method="GET">
+        <!-- <form  action="<?=SITE_URL?>panel-notes" method="GET"> -->
         <div class="container-input-search-panel">
           <input class="input-search-panel" placeholder="Search" type="text" name="search" required="required" value="" >
           <input class="button-search-panel" type="submit" value="search">
