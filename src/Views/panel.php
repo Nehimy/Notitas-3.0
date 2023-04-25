@@ -83,5 +83,6 @@
         </div>
       </div>
       <?php
-      include 'panel-content.php';
+      /* include 'panel-content.php'; */
+      include ($view->part);
       ?>

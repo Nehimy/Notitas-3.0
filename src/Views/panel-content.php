@@ -17,9 +17,22 @@
           <a class="style-text-big  border-top" alt="Crea nueva notita" title="Crea nueva notita"
                           href="<?=SITE_URL?>new"> New note </a>
         </p>
-        <p class="style-text-big border-top">Todas las notas</p>
-        <p class="style-text-big border-top">Todos los usuarios</p>
-        <p class="style-text-big border-top">Cuenta de usuario</p>
+        <p class="style-text-big border-top">
+          <a alt="Todos las notas" title="Todos las notas de Notitas"
+             href="<?=SITE_URL?>panel-notes">Todas las notas</a>
+        </p>
+        <p class="style-text-big border-top">
+          <a alt="Todos los usuarios" title="Todos los users de Notitas"
+             href="<?=SITE_URL?>panel-users">
+            Todos los usuarios
+          </a>
+        </p>
+        <p class="style-text-big border-top">
+          <a alt="Todos los usuarios" title="Todos los users de Notitas"
+             href="<?=SITE_URL?>all">
+            Cuenta de usuario.
+          </a>
+        </p>
       </div>
       <p class="style-text-big border-botton"</p>
 

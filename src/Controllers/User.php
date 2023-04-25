@@ -113,7 +113,9 @@ class User {
             if($req->params->pag > 1)
                 $req->view->back = $req->params->pag -1;
 
-            $req->view->html("panel-users");
+            // $req->view->html("panel-users");
+            $req->view->part = 'panel-users.php';
+            $req->view->html("panel");
         }
     }
 
