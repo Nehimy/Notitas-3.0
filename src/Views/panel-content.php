@@ -13,11 +13,13 @@
 
       <p class="style-text-big border-top"</p>
       <div class="padding-text">
-        <p class="style-text-big border-top">Mi cuenta</p>
+        <p class="style-text-big border-top">
+          <a class="style-text-big  border-top" alt="Crea nueva notita" title="Crea nueva notita"
+                          href="<?=SITE_URL?>new"> New note </a>
+        </p>
         <p class="style-text-big border-top">Todas las notas</p>
         <p class="style-text-big border-top">Todos los usuarios</p>
-
-        <p class="style-text-big border-top">New note</p>
+        <p class="style-text-big border-top">Cuenta de usuario</p>
       </div>
       <p class="style-text-big border-botton"</p>
 

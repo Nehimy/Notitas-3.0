@@ -19,17 +19,7 @@
             </a>
           </div>
           <!--new note-->
-          <div class="container-new-note">
-            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita"
-               href="<?=SITE_URL?>new"> new note </a>
-          </div>
           <!--Search-->
-          <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
-            <div class="container-input-search">
-              <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
-              <input class="button-search" type="submit" value="search">
-            </div>
-          </form>
           <!--Avatar-->
           <div class="avatar-container">
             <?php
