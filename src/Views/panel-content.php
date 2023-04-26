@@ -12,23 +12,26 @@
       </form>
 
       <p class="style-text-big border-top"</p>
+      <!-- New note -->
       <div class="padding-text">
-        <p class="style-text-big border-top">
+        <p class="border-top">
           <a class="style-text-big  border-top" alt="Crea nueva notita" title="Crea nueva notita"
                           href="<?=SITE_URL?>new"> New note </a>
         </p>
-        <p class="style-text-big border-top">
-          <a alt="Todos las notas" title="Todos las notas de Notitas"
+        <p class="border-top">
+          <!-- Todas las notas -->
+          <a class="style-text-big" alt="Todos las notas" title="Todos las notas de Notitas"
              href="<?=SITE_URL?>panel-notes">Todas las notas</a>
         </p>
-        <p class="style-text-big border-top">
-          <a alt="Todos los usuarios" title="Todos los users de Notitas"
+        <p class="border-top">
+          <!-- Todos los usuarios -->
+          <a class="style-text-big" alt="Todos los usuarios" title="Todos los users de Notitas"
              href="<?=SITE_URL?>panel-users">
             Todos los usuarios
           </a>
         </p>
-        <p class="style-text-big border-top">
-          <a alt="Todos los usuarios" title="Todos los users de Notitas"
+        <p class="border-top">
+          <a class="style-text-big" alt="Todos los usuarios" title="Todos los users de Notitas"
              href="<?=SITE_URL?>all">
             Cuenta de usuario.
           </a>
