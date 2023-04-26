@@ -663,6 +663,9 @@ Notes
     text-align: center;
     border: none;
 }
+.margin-botton {
+    margin-bottom: 10px;
+}
 
 .padding-text {
     padding-left: 10px;
