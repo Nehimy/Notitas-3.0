@@ -99,6 +99,7 @@ class User {
                 $req->view->users = MUser::search($req->get->search, ['nick']);
 
             //$req->view->users = $users = MUser::all();
+            //$req->view->users = MUser::orderBy('id','DESC')
             $req->view->users = MUser::orderBy('id','DESC')
                               ->limit($initialRow, $amount)->get(false);
 
@@ -115,6 +116,7 @@ class User {
 
             // $req->view->html("panel-users");
             $req->view->part = 'panel-users.php';
+            $req->view->bottonNextBack = 'botton-next-back.php';
             $req->view->html("panel");
         }
     }

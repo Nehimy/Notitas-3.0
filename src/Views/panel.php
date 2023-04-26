@@ -18,9 +18,6 @@
               <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
             </a>
           </div>
-          <!--new note-->
-          <!--Search-->
-          <!--Avatar-->
           <div class="avatar-container">
             <?php
             if(isset($view->avatar)){
@@ -85,4 +82,5 @@
       <?php
       /* include 'panel-content.php'; */
       include ($view->part);
+      include 'footer.php';
       ?>

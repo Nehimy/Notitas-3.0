@@ -94,6 +94,7 @@ class Notita {
         //$req->view->html("panel-notes");
         if($req->user->admin) {
           $req->view->part = 'panel-content.php';
+          $req->view->bottonNextBack = 'botton-next-back.php';
           $req->view->html("panel");
         }else{
             $req->view->part = 'panel-notes.php';

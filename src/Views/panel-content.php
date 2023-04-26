@@ -34,11 +34,7 @@
             Cuenta de usuario.
           </a>
         </p>
-        <!-- </div> -->
       <p class="style-text-big border-botton"</p>
-
-
-
     </div>
   </div>
   <div class="container-transparent-content">
@@ -53,7 +49,3 @@
     </div>
   </div>
 </div>
-
-<?php
-include 'footer.php';
-?>

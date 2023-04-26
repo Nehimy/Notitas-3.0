@@ -1,62 +1,71 @@
-<div class="col s9">
-  <!-- Search GET -->
-  <div class="container-search">
-    <form class="form-search" method="GET">
-      <input id="mysearch" placeholder="Search" type="text" name="search" required="" value="">
-      <div class="search-button">
-        <img class="search" src="http://prueba.ney/css/search.svg" alt="Notitas 2.0">
-        <input class="button-search" type="submit" value="">
-      </div>
-    </form>
-  </div>
-  <!-- Search GET -->
-  <div class="transparent-box">
-    <div class="white-box">
-      <!--white-box-->
-      <?php
-      //Obtener el id del usuario
-      foreach($view->users as $users){
-        //}
-      ?>
-      <div class="user-box">
-        <div class="delete-button">
-          <a href="<?=SITE_URL?>user/<?=$users->id?>/edit">
-            <img src="<?=SITE_URL?>css/Edit.svg" alt="Editar notita" title="Editar notita">
+<div class="users">
+  <?php
+  //Obtener el id del usuario
+  foreach($view->users as $users){
+  ?>
+    <div class="user">
+      <div class="container-title">
+        <div class="container-emoji">
+          <!-- delete user -->
+          <a class="delete-emoji" href="<?=SITE_URL?>user/<?=$users->id?>/remove">
+            <img src="<?=SITE_URL?>css/Delete.svg" alt="Delete user" title="Eliminar usuario">
           </a>
-          <a href="<?=SITE_URL?>user/<?=$users->id?>/remove">
-            <img src="<?=SITE_URL?>css/Delete.svg" alt="Delete notita" title="Delete notita">
+          <!-- edit user -->
+          <a class="edit-emoji" href="<?=SITE_URL?>user/<?=$users->id?>/edit">
+            <img src="<?=SITE_URL?>css/Edit.svg" alt="Edit user" title="Editar usuario">
           </a>
         </div>
-        <!--Botón de eliminar -->
-        <div class="title-box">
-          <a href="<?=SITE_URL?>user/<?=$users->id?>/view">
+
+        <!--name -->
+        <div class="second-container-title">
+          <a class="title-nick" href="<?=SITE_URL?>user/<?=$users->id?>/view">
             <?=$users->nick; ?>
           </a>
         </div>
       </div>
-      <?php
-      }
-      ?>
-      <!-- Botones -->
-      <div class="container-next-back">
-        <!-- BACK-->
+      <!--Avatar-->
+      <div class="container-avatar-user">
         <?php
-        if(isset($view->back)){
+        if(isset($view->avatar)){
         ?>
-          <a class="button-next-back"
-             href="<?=SITE_URL?>p<?=$view->back?>"> Back </a>
+          <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
         <?php
-        }
+        }else{
         ?>
-        <!-- NEXT-->
-        <?php
-        if(isset($view->next)){
-        ?>
-          <a class="button-next-back" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" href="<?=SITE_URL?>p<?=$view->next?>"> Next </a>
+          <img class="avatar2"
+               src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png"
+               alt="Avatar default" />
         <?php
         }
         ?>
       </div>
     </div>
-  </div>
+
+
+<?php
+// llave del foreach
+}
+?>
+</div>
+
+
+<!-- Botones -->
+<div class="container-next-back">
+  <!-- BACK-->
+  <?php
+  if(isset($view->back)){
+  ?>
+    <a class="button-next-back"
+       href="<?=SITE_URL?>p<?=$view->back?>"> Back </a>
+  <?php
+  }
+  ?>
+  <!-- NEXT-->
+  <?php
+  if(isset($view->next)){
+  ?>
+    <a href="<?=SITE_URL?>p<?=$view->next?>"> Next </a>
+  <?php
+  }
+  ?>
 </div>

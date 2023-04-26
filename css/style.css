@@ -632,6 +632,7 @@ Notes
 /*----------------------------------------------------*/
 /********************* Panel-content ****************+*/
 /*----------------------------------------------------*/
+
 .container-input-search-panel{
     display: grid;
     grid-template-columns: auto auto;
@@ -677,6 +678,36 @@ Notes
     width: inherit;
 }
 
+/*--------------------------------------------------*/
+/********************* Panel-users ****************+*/
+/*--------------------------------------------------*/
+.users{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 200px));
+    place-content: center;
+    grid-gap: 10px;
+    margin-top: 10px;
+    background: aliceblue;
+}
+
+.user {
+    background: var(--grayVeryLight);
+    height: 150px;
+    width: 200px;
+    padding: 5px;
+    border-radius: 8px;
+}
+.title-nick {
+    text-decoration: initial;
+    font-family: 'Carter One', cursive;
+    color: var(--cyan);
+}
+
+.container-avatar-user {
+    display: grid;
+    place-content: center;
+}
+
 /*-------------------------------------------*/
 /******************  hover ****************+*/
 /*------------------------------------------*/
@@ -702,7 +733,7 @@ Focus
     background:   var(--blackblue);
 }
 
-.style-text-big:hover, .url:hover {
+.style-text-big:hover, .url:hover, .title-nick:hover {
     color: var(--grayLight);
 }
 
