@@ -116,7 +116,7 @@ class User {
 
             // $req->view->html("panel-users");
             $req->view->part = 'panel-users.php';
-            $req->view->bottonNextBack = 'botton-next-back.php';
+            $req->view->bottonNextBack = 'botton-next-back-users.php';
             $req->view->html("panel");
         }
     }

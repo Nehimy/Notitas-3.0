@@ -130,9 +130,11 @@
             </div>
           </div>
         </div>
+        <?php
+        include ($view->bottonNextBack);
+        ?>
       </div>
       <?php
       /* include 'panel-content.php'; */
-      /* include ($view->part); */
       include 'footer.php';
       ?>

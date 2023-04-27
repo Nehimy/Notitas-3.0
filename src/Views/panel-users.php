@@ -15,7 +15,6 @@
             <img src="<?=SITE_URL?>css/Edit.svg" alt="Edit user" title="Editar usuario">
           </a>
         </div>
-
         <!--name -->
         <div class="second-container-title">
           <a class="title-nick" href="<?=SITE_URL?>user/<?=$users->id?>/view">
@@ -40,32 +39,7 @@
         ?>
       </div>
     </div>
-
-
-<?php
-// llave del foreach
-}
-?>
-</div>
-
-
-<!-- Botones -->
-<div class="container-next-back">
-  <!-- BACK-->
   <?php
-  if(isset($view->back)){
-  ?>
-    <a class="button-next-back"
-       href="<?=SITE_URL?>p<?=$view->back?>"> Back </a>
-  <?php
-  }
-  ?>
-  <!-- NEXT-->
-  <?php
-  if(isset($view->next)){
-  ?>
-    <a href="<?=SITE_URL?>p<?=$view->next?>"> Next </a>
-  <?php
-  }
+  } // llave del foreach
   ?>
 </div>

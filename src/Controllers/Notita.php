@@ -93,30 +93,28 @@ class Notita {
         // Cargar la página
         //$req->view->html("panel-notes");
         if($req->user->admin) {
-          $req->view->part = 'panel-notes.php';
-          $req->view->bottonNextBack = 'botton-next-back.php';
-          $req->view->html("panel");
+            $req->view->part = 'panel-notes.php';
+            $req->view->bottonNextBack = 'botton-next-back.php';
+            $req->view->html("panel");
         }else{
             $req->view->part = 'panel-notes.php';
             $req->view->bottonNextBack = 'botton-next-back.php';
             $req->view->html("body");
         }
-
-
     }
 
 
     // Eliminar nota apartir del id
-  public static function delete($req){
-    //print_r($req->user->admin);
-    //$req->notita->delete();
-    $req->view->notita->delete();
-    //Regresar al index
-    if(basename($req->path) == "admin")
-      Router::redirect('/panel-notes');
-    else
-      Router::redirect('/all');
-  }
+    public static function delete($req){
+        //print_r($req->user->admin);
+        //$req->notita->delete();
+        $req->view->notita->delete();
+        //Regresar al index
+        if(basename($req->path) == "admin")
+            Router::redirect('/panel-notes');
+        else
+            Router::redirect('/all');
+    }
 
     // Editar una nota ya creada
     public static function editNote($req){
