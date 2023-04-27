@@ -119,10 +119,11 @@
             <p class="style-text-big border-botton"</p>
           </div>
         </div>
+        <!-- contenedor de las notas y users -->
         <div class="container-transparent-content">
           <div class="white-transparent">
             <div class="container-white">
-              <div class="white">
+              <div class="white-panel-admin">
                 <?php
                 include ($view->part);
                 ?>
