@@ -17,11 +17,8 @@
         <option value="lilac">Lila</option>
         <option value="lightBlue">Celeste</option>
       </select>
-      <input class="botton" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save">
+      <input class="botton" type="submit" value="Save">
     </div>
 
   </form>
 </div>
-
-<script src="<?=SITE_URL?>js/script.js">
-</script>
