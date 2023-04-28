@@ -87,7 +87,7 @@ class User {
     // Cargar todas los usuarios para el admin
     public static function allUsersForAdmin($req) {
         if($req->user->admin){
-            $amount = 16;
+            $amount = 12;
             if(is_null($req->params->pag)){
                 $req->params->pag = 1;
                 $initialRow = 0;
@@ -140,8 +140,9 @@ class User {
     public static function editUserForm($req) {
         //$user = MUser::getById($req->params->id);
         //View::render("edit-user", ["User" => $user]);
+        $req->view->part = 'edit-user.php';
         $req->view->user = MUser::getById($req->params->id);
-        $req->view->html('edit-user');
+        $req->view->html('panel');
     }
 
     // Update usuario

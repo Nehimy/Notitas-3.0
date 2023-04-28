@@ -218,37 +218,6 @@ Hidden
     display: none;
 }
 
-/*-----------------------------------------------*/
-/******************Media queries ***************+*/
-/*-----------------------------------------------*/
-
-/*
-Medium devices (landscape tablets, 768px and up)
-*/
-
-@media only screen and (max-width: 768px) {
-
-    .bar {
-        display: none;
-    }
-
-    .navbar {
-        display: grid;
-        align-items: center;
-        grid-template-columns: auto auto auto;
-        grid-template-rows: auto;
-    }
-}
-
-@media only screen and (max-width:931px) {
-    .container-panel {
-        height: inherit !important;
-    }
-    /* body { */
-    /*     background: green; */
-    /* } */
-}
-
 
 /*-------------------------------------*/
 /******************Body***************+*/
@@ -556,28 +525,6 @@ Notes
 }
 
 /*------------------------------------------------*/
-/****************** Media queries ***************+*/
-/*------------------------------------------------*/
-
-@media only screen and (max-width: 430px) {
-    .container-new-note-form {
-        width: 300px;
-    }
-    .white {
-        width: 85vw;
-    }
-}
-
-@media only screen and (max-width: 412px) {
-
-    .see-note {
-        width: 300px;
-        min-height: 300px;
-    }
-}
-
-
-/*------------------------------------------------*/
 /********************* message ******************+*/
 /*------------------------------------------------*/
 
@@ -628,6 +575,7 @@ Notes
     padding-top: 120px;
     box-shadow: 0px 0.5px 5.5px var(--grayLight);
 }
+
 .panel {
     display: grid;
     place-content: center;
@@ -770,4 +718,56 @@ Focus
 
 .edit-emoji:hover, .delete-emoji:hover {
     height: 19px;
+}
+
+/*------------------------------------------------*/
+/****************** Media queries ***************+*/
+/*------------------------------------------------*/
+
+/*
+Medium devices (landscape tablets, 768px and up)
+*/
+
+@media only screen and (max-width: 768px) {
+
+    .bar {
+        display: none;
+    }
+
+    .navbar {
+        display: grid;
+        align-items: center;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto;
+    }
+}
+
+@media only screen and (max-width:939px) {
+    .container-panel {
+        height: inherit !important;
+    }
+    /* body { */
+    /*     background: green; */
+    /* } */
+}
+
+/*
+Medium devices (landscape cellphone, 430px and up)
+*/
+
+@media only screen and (max-width: 430px) {
+    .container-new-note-form {
+        width: 300px;
+    }
+    .white {
+        width: 85vw;
+    }
+}
+
+@media only screen and (max-width: 412px) {
+
+    .see-note {
+        width: 300px;
+        min-height: 300px;
+    }
 }

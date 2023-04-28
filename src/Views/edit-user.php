@@ -1,6 +1,4 @@
-<?php
-include 'panel.php';
-?>
+
 <!-- <div class="col s9"> -->
 aaaa
 <div class="transparent-box">
