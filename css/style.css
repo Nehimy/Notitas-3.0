@@ -684,6 +684,19 @@ Notes
 /********************* Edit users *****************+*/
 /*--------------------------------------------------*/
 
+.container-panel-view-user {
+    display: grid;
+    grid-column: 1;
+    grid-row: 1/span 2;
+    background: var(--whiteTwo);
+    grid-template-rows: repeat(3, auto);
+    height: 100vh;
+    width: 250px;
+    align-content: start;
+    padding-top: 120px;
+    box-shadow: 0px 0.5px 5.5px var(--grayLight);
+}
+
 .container-form-edit-user {
     display: grid;
     place-content: center;
@@ -693,8 +706,34 @@ Notes
     padding: 20px 25px;
     text-align: center;
     background: var(--whiteTwo);
+    min-height: 180px;
+    width: 200px;
 }
 
+.container-form-view-user {
+    display: grid;
+    /* place-content: center; */
+    font-family: 'Carter One', cursive;
+    color: var(--cyan);
+    border-radius: 10px;
+    padding: 20px 25px;
+    text-align: center;
+    background: var(--whiteTwo);
+    min-height: 180px;
+    width: 200px;
+    padding: 5px;
+}
+
+.container-title-edit-user {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto auto;
+}
+
+.second-container-title-edit-user {
+    grid-column: 1/3;
+    grid-row: 2;
+}
 
 
 

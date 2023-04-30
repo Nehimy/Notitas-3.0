@@ -143,7 +143,7 @@ class User {
         $req->view->part = 'edit-user.php';
         $req->view->bottonNextBack = 'botton-next-back-users.php';
         $req->view->user = MUser::getById($req->params->id);
-        $req->view->html('panel');
+        $req->view->html('panel-view-user');
     }
 
     // Update usuario
@@ -166,8 +166,7 @@ class User {
 
         $req->view->part = 'view-user.php';
         $req->view->bottonNextBack = 'botton-next-back-users.php';
-        $req->view->html("panel");
-        $req->view->html("view-user");
+        $req->view->html("panel-view-user");
     }
 
     // Elimina la sesión del usuario
