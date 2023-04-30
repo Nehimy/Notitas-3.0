@@ -141,6 +141,7 @@ class User {
         //$user = MUser::getById($req->params->id);
         //View::render("edit-user", ["User" => $user]);
         $req->view->part = 'edit-user.php';
+        $req->view->bottonNextBack = 'botton-next-back-users.php';
         $req->view->user = MUser::getById($req->params->id);
         $req->view->html('panel');
     }
@@ -153,14 +154,19 @@ class User {
         $user->password = $password;
         $user->save();
 
-        Router::redirect("/user/$user->id/view");
 
+        // Router::redirect("/user/$user->id/view");
+        Router::redirect("/user/$user->id/view");
     }
 
     // Carga la página luego de aptualizar los datos del usuario
     public static function viewUser($req) {
 
         $req->view->user =  MUser::getById($req->params->id);
+
+        $req->view->part = 'view-user.php';
+        $req->view->bottonNextBack = 'botton-next-back-users.php';
+        $req->view->html("panel");
         $req->view->html("view-user");
     }
 
