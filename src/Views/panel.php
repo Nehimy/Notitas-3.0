@@ -11,7 +11,7 @@
     <div class="container">
       <!-- Navigation bar -->
       <div class="bar-container">
-        <div class="bar">
+        <div class="bar-admin">
           <!--El título esta aquí-->
           <div class="container-logo">
             <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
@@ -38,7 +38,7 @@
             </a>
           </div>
         </div>
-        <div class="navbar">
+        <div class="navbar-admin">
           <div class="container-logo">
             <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
               <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
@@ -64,13 +64,27 @@
                   <input class="button-search" type="submit" value="search">
                 </div>
               </form>
-              <!--new note-->
-              <div class="container-new-note border-top">
-                <a class="space style-text-big" alt="Crea nueva notita"
-                   title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
+              <!--New note dropdown-->
+              <div class="dropdown-center-text border-top">
+                <!-- <a class="space style-text-big" alt="Crea nueva notita" -->
+                <a class="style-text-big" alt="Crea nueva notita"
+                     title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
               </div>
+              <!-- Todas las notas dropdown -->
+              <p class="border-top">
+                <!-- Todas las notas -->
+                <a class="style-text-big dropdown-center-text" alt="Todos las notas" title="Todos las notas de Notitas"
+                   href="<?=SITE_URL?>panel-notes">Todas las notas</a>
+              </p>
+              <!-- Todos los usuarios dropdown-->
+              <p class="border-top">
+                <a class="style-text-big dropdown-center-text" alt="Todos los usuarios" title="Todos los users de Notitas"
+                   href="<?=SITE_URL?>panel-users">
+                  Todos los usuarios
+                </a>
+              </p>
               <!-- Logout -->
-              <div class="container-logout border-top">
+              <div class="dropdown-center-text border-top">
                 <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
                   Logout
                 </a>
@@ -93,7 +107,6 @@
               </form>
             </p>
             <!-- New note -->
-            <!-- <div class="padding-text"> -->
             <p class="border-top">
               <a class="style-text-big padding-text" alt="Crea nueva notita" title="Crea nueva notita"
                  href="<?=SITE_URL?>new"> New note </a>

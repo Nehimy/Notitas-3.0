@@ -11,7 +11,6 @@
         </form>
       </p>
       <!-- New note -->
-      <!-- <div class="padding-text"> -->
         <p class="border-top">
           <a class="style-text-big padding-text" alt="Crea nueva notita" title="Crea nueva notita"
              href="<?=SITE_URL?>new"> New note </a>
