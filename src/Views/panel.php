@@ -61,14 +61,14 @@
               <form class ="form-search border-top" action="<?=SITE_URL?>panel-notes" method="GET">
                 <div class="container-input-search">
                   <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
-                  <input class="button-search" type="submit" value="search">
+                  <input class="button-search" type="submit" value="Search">
                 </div>
               </form>
               <!--New note dropdown-->
               <div class="dropdown-center-text border-top">
                 <!-- <a class="space style-text-big" alt="Crea nueva notita" -->
                 <a class="style-text-big" alt="Crea nueva notita"
-                     title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
+                     title="Crea nueva notita" href="<?=SITE_URL?>new"> New note </a>
               </div>
               <!-- Todas las notas dropdown -->
               <p class="border-top">
@@ -102,7 +102,7 @@
               <form class="margin-botton"  action="<?=SITE_URL?>panel-notes" method="GET">
                 <div class="container-input-search-panel">
                   <input class="input-search-panel" placeholder="Search" type="text" name="search" required="required" value="" >
-                  <input class="button-search-panel" type="submit" value="search">
+                  <input class="button-search-panel" type="submit" value="Search">
                 </div>
               </form>
             </p>

@@ -66,7 +66,15 @@ body {
   z-index: 1;
 }
 
-.bar, .bar-admin {
+.bar {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  grid-template-rows: repeat(1, auto);
+  box-shadow: 0px 0.5px 5.5px var(--grayLight);
+
+}
+
+.bar-admin {
   display: grid;
   grid-template-columns: repeat(4, auto);
   grid-template-rows: repeat(1, auto);
@@ -85,16 +93,20 @@ body {
 
 .container-new-note {
   display: grid;
-  place-content: center;
+  align-content: center;
+  justify-content: left;
+  /* place-content: center; */
   grid-column: 2;
   grid-row: 1;
+  padding-left: 15px;
 }
 
 .form-search {
     display: grid;
-    place-content: center;
+    justify-content: left;
     grid-row: 1;
-    grid-column: 3;
+    grid-column: 4;
+    padding-left: 15px;
 }
 
 .container-input-search {
@@ -106,6 +118,7 @@ body {
 
 .input-search {
     height: 35px;
+    width: 195px;
     border-radius: 7px 0px 0px 7px;
     color: var(--navy);
     font-family: 'Carter One', cursive;
@@ -132,7 +145,7 @@ body {
 
 .avatar-container {
   display: grid;
-  grid-column: 4;
+  grid-column: 5;
   align-items: center;
   justify-content: right;
   padding-right: 10px;
@@ -147,12 +160,17 @@ body {
 
 .container-logout {
     display: grid;
-    place-content: center;
+    justify-content: left;
+    align-content: center;
+    grid-column: 3;
+    padding-left: 15px;
 }
 
 .logout {
     text-align: center;
+
 }
+
 
 .style-text-big {
     /*font-family: 'Indie Flower', cursive;*/
@@ -595,7 +613,8 @@ Notes
 
 .dropdown-center-text {
     display: grid;
-    place-content: center;
+    justify-content: left;
+    padding-left: 15px;
 }
 
 /*----------------------------------------------------*/
