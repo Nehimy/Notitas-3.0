@@ -91,6 +91,7 @@ Router::get("/user/{id}/remove", "Controllers\User::deleteUser")
 Router::get("/panel-users", "Controllers\User::allUsersForAdmin")
     ->middleware('Middlewares\User::check');
 
+// Carga la siguiete pagina de ususarios
 Router::get("/p{pag}", "Controllers\User::allUsersForAdmin")
     ->middleware('Middlewares\User::check');
 
@@ -102,10 +103,10 @@ Router::get("/user/{id}/edit", "Controllers\User::editUserForm")
 Router::post("/user/{id}/update", "Controllers\User::updateUser")
     ->middleware('Middlewares\User::check');
 
-
 // Ver usuario
 Router::get("/user/{id}/view", "Controllers\User::viewUser")
     ->middleware('Middlewares\User::check');
 
+// Mandar al login
 Router::get("/login-off", "Controllers\User::loginOff")
     ->middleware('Middlewares\User::check');

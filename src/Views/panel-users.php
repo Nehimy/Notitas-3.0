@@ -27,7 +27,7 @@
         <?php
         if(isset($view->avatar)){
         ?>
-          <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
+          <img class="avatar" src="https://www.gravatar.com/avatar/<?=md5(strtolower(trim($users->mail)));?>" alt="Avatar">
         <?php
         }else{
         ?>

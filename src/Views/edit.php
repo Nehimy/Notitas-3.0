@@ -27,11 +27,11 @@
         $selected = '<option value="'.$selected.'">'.$colors[$selected].'</option>';
         ?>
         <div class="container-bottons">
-          <select class="<?=$view->notita->color?>" id="select-color" name="color" onChange="changeColor(this)">
+          <select class="<?=$view->notita->color?>" id="select-color" name="color">
             <?=$selected?>
             <?=$notSelected?>
           </select>
-          <input class="botton" onmouseover="SaveOver(this)" onmouseout="SaveOut(this)" type="submit" value="Save" >
+          <input class="botton" type="submit" value="Save" >
         </div>
 
       </form>
