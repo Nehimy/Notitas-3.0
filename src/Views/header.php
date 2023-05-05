@@ -12,45 +12,48 @@
       <!-- Navigation bar -->
       <div class="bar-container">
         <div class="bar">
-          <!--El título esta aquí-->
-          <div class="container-logo">
-            <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
-              <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
-            </a>
-          </div>
-          <!--new note-->
-          <div class="container-new-note">
-            <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" href="<?=SITE_URL?>new"> New note </a>
-          </div>
-
-          <!--Search-->
-          <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
-            <!-- <form class ="form-search" action="<?=SITE_URL?>search-notes" method="GET"> -->
-            <div class="container-input-search">
-              <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
-              <input class="button-search" type="submit" value="Search">
+          <div class="container-left">
+            <div class="container-logo">
+              <a href="<?=SITE_URL?>all" alt="Notita Logo" title="Notita Logo">
+                <img src="<?=SITE_URL?>css/Notitas_Logo.svg" alt="Notitas 2.0">
+              </a>
             </div>
-          </form>
-          <!-- Logout -->
-          <div class="container-logout">
-            <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
-              Logout
-            </a>
+            <!--new note-->
+            <div class="container-new-note">
+              <a class="space style-text-big" alt="Crea nueva notita" title="Crea nueva notita" href="<?=SITE_URL?>new"> New note </a>
+            </div>
+            <!-- Logout -->
+            <div class="container-logout">
+              <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
+                Logout
+              </a>
+            </div>
           </div>
-          <!--Avatar-->
-          <div class="avatar-container">
-            <?php
-            if(isset($view->avatar)){
-            ?>
-              <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
-            <?php
-            }else{
-            ?>
-              <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png"
-                   alt="Avatar default" />
-            <?php
-            }
-            ?>
+          <div class="container-right">
+            <!--Search-->
+            <form class ="form-search" action="<?=SITE_URL?>panel-notes" method="GET">
+              <!-- <form class ="form-search" action="<?=SITE_URL?>search-notes" method="GET"> -->
+              <div class="container-input-search">
+                <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
+                <input class="button-search" type="submit" value="Search">
+              </div>
+            </form>
+
+            <!--Avatar-->
+            <div class="avatar-container">
+              <?php
+              if(isset($view->avatar)){
+              ?>
+                <img class="avatar" src="https://www.gravatar.com/avatar/<?=$view->avatar?>" alt="Avatar">
+              <?php
+              }else{
+              ?>
+                <img class="avatar2" src="https://www.gravatar.com/avatar/00000000000000000000000000000000?d=https://i.imgur.com/nTgwSKj.png"
+                     alt="Avatar default" />
+              <?php
+              }
+              ?>
+            </div>
           </div>
         </div>
         <div class="navbar">
@@ -73,7 +76,7 @@
             <input id="trigger-drop" type="checkbox" />
             <div class="dropdown">
               <!--Search-->
-              <form class ="form-search border-top" action="<?=SITE_URL?>panel-notes" method="GET">
+              <form class ="form-search-phone border-top" action="<?=SITE_URL?>panel-notes" method="GET">
                 <div class="container-input-search">
                   <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
                   <input class="button-search" type="submit" value="search">

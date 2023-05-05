@@ -68,18 +68,24 @@ body {
 
 .bar {
   display: grid;
-  grid-template-columns: repeat(5, auto);
+  grid-template-columns: repeat(2, auto);
   grid-template-rows: repeat(1, auto);
   box-shadow: 0px 0.5px 5.5px var(--grayLight);
 
 }
 
-.bar-admin {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-template-rows: repeat(1, auto);
-  box-shadow: 0px 0.5px 5.5px var(--grayLight);
+.container-left {
+    display: grid;
+    justify-content: left;
+    grid-column: 1;
+}
 
+.container-right {
+    display: grid;
+    justify-content: right;
+    grid-column: 2;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: auto;
 }
 
 .container-logo {
@@ -105,8 +111,8 @@ body {
     display: grid;
     justify-content: left;
     grid-row: 1;
-    grid-column: 4;
-    padding-left: 15px;
+    grid-column: 1;
+    padding-right: 15px;
 }
 
 .container-input-search {
@@ -123,6 +129,15 @@ body {
     color: var(--navy);
     font-family: 'Carter One', cursive;
     border: 2px solid var(--blackTransparent);
+}
+
+.form-search-phone {
+    display: grid;
+    justify-content: left;
+    grid-row: 1;
+    grid-column: 1;
+    padding-left: 15px;
+
 }
 
 .button-search {
@@ -144,11 +159,12 @@ body {
 
 
 .avatar-container {
-  display: grid;
-  grid-column: 5;
-  align-items: center;
-  justify-content: right;
-  padding-right: 10px;
+    display: grid;
+    grid-column: 2;
+    grid-row: 1;
+    align-items: center;
+    justify-content: right;
+    padding-right: 10px;
 }
 
 .border-top {
@@ -573,6 +589,28 @@ Notes
 /*----------------------------------------------------*/
 /********************* Panel ******************+*/
 /*----------------------------------------------------*/
+.form-search-admin {
+    display: grid;
+    justify-content: left;
+    grid-row: 1;
+    grid-column: 1;
+    padding-left: 15px;
+}
+
+.bar-admin {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  grid-template-rows: repeat(1, auto);
+  box-shadow: 0px 0.5px 5.5px var(--grayLight);
+}
+
+.logout-admin {
+    display: grid;
+    justify-content: left;
+    align-content: center;
+    grid-column: 3;
+    padding-left: 15px;
+}
 
 .container-global {
     display:grid;

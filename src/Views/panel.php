@@ -32,10 +32,6 @@
             <?php
             }
             ?>
-            <!-- Logout -->
-            <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
-              Logout
-            </a>
           </div>
         </div>
         <div class="navbar-admin">
@@ -58,7 +54,7 @@
             <input id="trigger-drop" type="checkbox" />
             <div class="dropdown">
               <!--Search-->
-              <form class ="form-search border-top" action="<?=SITE_URL?>panel-notes" method="GET">
+              <form class ="form-search-admin border-top" action="<?=SITE_URL?>panel-notes" method="GET">
                 <div class="container-input-search">
                   <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
                   <input class="button-search" type="submit" value="Search">
@@ -124,9 +120,9 @@
               </a>
             </p>
             <p class="border-top">
-              <a class="style-text-big padding-text" alt="Todos los usuarios" title="Todos los users de Notitas"
-                 href="<?=SITE_URL?>all">
-                Cuenta de usuario.
+              <!-- Logout-admin -->
+              <a class="logout-admin style-text-big" href="<?=SITE_URL?>login-off">
+                Logout
               </a>
             </p>
             <p class="style-text-big border-botton"</p>
