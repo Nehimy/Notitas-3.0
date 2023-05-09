@@ -58,23 +58,33 @@
             <input id="trigger-drop" type="checkbox" />
             <div class="dropdown">
               <!--Search-->
-              <form class ="form-search border-top" action="<?=SITE_URL?>panel-notes" method="GET">
-                <div class="container-input-search">
+              <!-- <form class ="form-search border-top" action="<?=SITE_URL?>panel-notes" method="GET"> -->
+              <form class ="form-search-admin border-top" action="<?=SITE_URL?>panel-notes" method="GET">
+                  <div class="container-input-search">
                   <input class="input-search" placeholder="Search" type="text" name="search" required="required" value="" >
                   <input class="button-search" type="submit" value="search">
                 </div>
               </form>
-              <!--new note-->
-              <div class="container-new-note border-top">
-                <a class="space style-text-big" alt="Crea nueva notita"
-                   title="Crea nueva notita" href="<?=SITE_URL?>new"> new note </a>
-              </div>
+              <!-- Todas las notas dropdown -->
+              <p class="border-top">
+                <!-- Todas las notas -->
+                <a class="style-text-big dropdown-center-text" alt="Todos las notas" title="Todos las notas de Notitas"
+                   href="<?=SITE_URL?>panel-notes">Todas las notas</a>
+              </p>
+              <!-- Todos los usuarios dropdown-->
+              <p class="border-top">
+                <a class="style-text-big dropdown-center-text" alt="Todos los usuarios" title="Todos los users de Notitas"
+                   href="<?=SITE_URL?>panel-users">
+                  Todos los usuarios
+                </a>
+              </p>
               <!-- Logout -->
               <div class="container-logout border-top">
                 <a class="logout style-text-big" href="<?=SITE_URL?>login-off">
                   Logout
                 </a>
               </div>
+
             </div>
           </div>
         </div>
@@ -92,12 +102,7 @@
                 </div>
               </form>
             </p>
-            <!-- New note -->
             <!-- <div class="padding-text"> -->
-            <p class="border-top">
-              <a class="style-text-big padding-text" alt="Crea nueva notita" title="Crea nueva notita"
-                 href="<?=SITE_URL?>new"> New note </a>
-            </p>
             <p class="border-top">
               <!-- Todas las notas -->
               <a class="style-text-big padding-text" alt="Todos las notas" title="Todos las notas de Notitas"
@@ -120,10 +125,10 @@
           </div>
         </div>
         <!-- contenedor de las notas y users -->
-        <div class="container-transparent-content">
+        <div class="container-transparent-content-view-user">
           <div class="white-transparent">
             <div class="container-white">
-              <div class="white-panel-admin">
+              <div class="white-panel-admin-view-user">
                 <?php
                 include ($view->part);
                 ?>

@@ -60,12 +60,6 @@
                   <input class="button-search" type="submit" value="Search">
                 </div>
               </form>
-              <!--New note dropdown-->
-              <div class="dropdown-center-text border-top">
-                <!-- <a class="space style-text-big" alt="Crea nueva notita" -->
-                <a class="style-text-big" alt="Crea nueva notita"
-                     title="Crea nueva notita" href="<?=SITE_URL?>new"> New note </a>
-              </div>
               <!-- Todas las notas dropdown -->
               <p class="border-top">
                 <!-- Todas las notas -->
@@ -101,11 +95,6 @@
                   <input class="button-search-panel" type="submit" value="Search">
                 </div>
               </form>
-            </p>
-            <!-- New note -->
-            <p class="border-top">
-              <a class="style-text-big padding-text" alt="Crea nueva notita" title="Crea nueva notita"
-                 href="<?=SITE_URL?>new"> New note </a>
             </p>
             <p class="border-top">
               <!-- Todas las notas -->
